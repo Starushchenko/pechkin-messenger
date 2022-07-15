@@ -1,0 +1,32 @@
+{
+  "name": "pechkin-messenger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/pages/index.njk --open",
+    "build": "parcel build src/pages/*.njk"
+  },
+  "author": "Yaroslav Starushchenko <starushchenkoyaroslav@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "cssnano": "^4.1.11",
+    "nunjucks": "^3.2.3",
+    "parcel": "^2.6.2",
+    "parcel-plugin-custom-dist-structure": "^1.1.18",
+    "parcel-plugin-nunjucks": "^2.2.2",
+    "sass": "^1.53.0"
+  },
+  "customDistStructure": {
+    "config": {
+      ".js": "js",
+      "images": [
+        ".jpg",
+        ".png"
+      ]
+    },
+    "options": {
+      "development": true
+    }
+  }
+}
