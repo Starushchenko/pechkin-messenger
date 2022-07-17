@@ -4,18 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/pages/index.njk --open",
-    "build": "parcel build src/pages/*.njk"
+    "start": "npm run build && node ./server/index.js",
+    "dev": "parcel src/pages/index.njk --open",
+    "build": "parcel build src/pages/*.njk",
+    "lint": "eslint src"
   },
   "author": "Yaroslav Starushchenko <starushchenkoyaroslav@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "cssnano": "^4.1.11",
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.26.0",
+    "express": "^4.18.1",
     "nunjucks": "^3.2.3",
     "parcel": "^2.6.2",
     "parcel-plugin-custom-dist-structure": "^1.1.18",
     "parcel-plugin-nunjucks": "^2.2.2",
     "sass": "^1.53.0"
+  },
+  "engines": {
+    "npm": "8.1.1",
+    "node": "v14.18.1"
   },
   "customDistStructure": {
     "config": {
