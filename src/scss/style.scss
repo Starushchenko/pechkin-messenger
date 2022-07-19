@@ -7,3 +7,15 @@
 @import "base/print";
 @import "base/reset";
 @import "base/scaffolding";
+
+// Components
+@import "../components/button/button";
+@import "../components/chat/chat";
+@import "../components/chat-actions/chat-actions";
+@import "../components/chat-header/chat-header";
+@import "../components/chats-list/chats-list";
+@import "../components/dropdown/dropdown";
+@import "../components/form/form";
+@import "../components/modal/modal";
+@import "../components/placeholder/placeholder";
+@import "../components/search/search";
