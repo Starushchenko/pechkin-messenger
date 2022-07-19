@@ -1,0 +1,67 @@
+@import "../../scss/base/variables";
+@import "../../scss/base/mixins";
+
+.button {
+  padding: 12px 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  color: $text-light;
+  background: $accent-gradient;
+  box-shadow: $accent-btn-shadow;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  
+  &:hover {
+    box-shadow: none;
+    
+    &::before {
+      opacity: 1;
+      box-shadow: $btn-inner-shadow;
+    }
+  }
+}
+
+.button--alert {
+  background: $alert-gradient;
+  box-shadow: $alert-btn-shadow;
+}
+
+.button--light {
+  background: $text-light;
+  color: $gray-1;
+  box-shadow: $card-shadow;
+}
+
+.button--icon-r {
+  svg {
+    margin-left: 6px;
+  }
+}
+
+.button--icon-l {
+  svg {
+    margin-right: 6px;
+  }
+}
+
+.button--disabled {
+  box-shadow: none;
+  background: $gray-1;
+}

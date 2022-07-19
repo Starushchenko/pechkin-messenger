@@ -1,0 +1,38 @@
+{% macro chatsList(items) %}
+  <div class="chats-list">
+    {% if items.length > 0 %}
+      {% for item in items %}
+        <a class="chats-list__item" href="#">
+          <div class="chats-list__item-img">
+            {% if item.avatar %}
+              <img src="{{ item.avatar }}" alt="{{ item.name }}">
+            {% else %}
+              <img src="./../images/svg/placeholder.svg" alt="Изображение не загружено">
+            {% endif %}
+          </div>
+
+          <div class="chats-list__item-content">
+            <span class="chats-list__item-title">{{ item.name }}</span>
+            <span class="chats-list__item-desc">
+            {% if item.lastMessageIsMine %}
+              <span class="chats-list__item-yours">Вы: </span>
+            {% endif %}
+              {{ item.lastMessage }}
+          </span>
+          </div>
+
+          <div class="chats-list__item-info">
+            <span class="chats-list__item-datetime">{{ item.lastMessageDatetime }}</span>
+            {% if item.unreadCount > 0 %}
+              <span class="chats-list__unread">
+              {{ item.unreadCount }}
+            </span>
+            {% endif %}
+          </div>
+        </a>
+      {% endfor %}
+    {% else %}
+      <span class="chats-list__empty">По запросу ничего не найдено</span>
+    {% endif %}
+  </div>
+{% endmacro %}

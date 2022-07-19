@@ -1,0 +1,43 @@
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app__header {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 0 0 10px;
+}
+
+.app__logo {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.app__logo-text {
+  font-size: 23px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #cecece;
+  position: relative;
+  top: 20px;
+  left: -9px;
+}
+
+.app__sidebar {
+  width: 315px;
+  background: $gray-4;
+  border-right: 1px solid $gray-3;
+}
+
+.app__main {
+  flex-grow: 1;
+}
+
+.app__profile-link.button {
+  padding: 10px 15px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}

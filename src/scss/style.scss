@@ -1,5 +1,9 @@
-body {
-  background: red;
-  width: 100vw;
-  height: 100vh;
-}
+// Base styles
+@import "base/variables";
+@import "base/mixins";
+@import "base/app";
+@import "base/fonts";
+@import "base/mixins";
+@import "base/print";
+@import "base/reset";
+@import "base/scaffolding";
