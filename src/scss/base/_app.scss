@@ -1,6 +1,7 @@
 .app {
   display: flex;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .app__header {
@@ -27,13 +28,16 @@
 }
 
 .app__sidebar {
-  width: 315px;
+  min-width: 315px;
+  max-width: 315px;
   background: $gray-4;
   border-right: 1px solid $gray-3;
 }
 
 .app__main {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .app__profile-link.button {

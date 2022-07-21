@@ -1,13 +1,10 @@
-@import "../../scss/base/variables";
-@import "../../scss/base/mixins";
-
 .search {
   display: flex;
   align-items: center;
   background: $gray-2;
   margin: 0 10px 14px;
   border-radius: 5px;
-  min-height: 32px;
+  min-height: 36px;
 }
 
 .search__submit {

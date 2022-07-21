@@ -1,3 +1,7 @@
+{% from "../components/search/search.njk" import search %}
+{% from "../components/chats-list/chats-list.njk" import chatsList %}
+{% from "../components/placeholder/placeholder.njk" import placeholder %}
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -9,10 +13,6 @@
   <link rel="stylesheet" href="../scss/style.scss"/>
   {% include "../partials/favicon.njk" %}
 </head>
-
-{% from "../components/search/search.njk" import search %}
-{% from "../components/chats-list/chats-list.njk" import chatsList %}
-{% from "../components/placeholder/placeholder.njk" import placeholder %}
 
 <body class="app">
   {% block sidebar %}

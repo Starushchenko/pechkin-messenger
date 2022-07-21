@@ -1,8 +1,9 @@
 {% extends '../layouts/default.njk' %}
+{% from "../components/chat/chat.njk" import chat %}
 
 {% block main %}
   <div class="app__main">
-    <h1>ТУТ БУДЕТ ЧАТ</h1>
+    {{ chat(chatHistory) }}
   </div>
 {% endblock %}
  

@@ -2,7 +2,7 @@
   <div class="chats-list">
     {% if items.length > 0 %}
       {% for item in items %}
-        <a class="chats-list__item" href="#">
+        <a class="chats-list__item" href="chat.njk">
           <div class="chats-list__item-img">
             {% if item.avatar %}
               <img src="{{ item.avatar }}" alt="{{ item.name }}">

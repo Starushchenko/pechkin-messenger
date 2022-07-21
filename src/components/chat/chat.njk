@@ -1,0 +1,17 @@
+{% from "../chat-header/chat-header.njk" import chatHeader %}
+{% from "../chat-conversation/chat-conversation.njk" import chatConversation %}
+{% from "../chat-actions/chat-actions.njk" import chatActions %}
+
+{% macro chat(data) %}
+  <div class="chat">
+    {{ chatHeader({
+      name: data.name,
+      avatar: data.avatar
+    }) }}
+    
+    {{ chatConversation(data.archive) }}
+    
+    {{ chatActions() }}
+  </div>
+  
+{% endmacro %}
