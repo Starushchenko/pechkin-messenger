@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "start": "npm run build && node ./server/index.js",
-    "dev": "parcel src/pages/index.njk --open",
-    "build": "parcel build src/pages/*.njk --public-url ./ --no-source-maps",
+    "dev": "parcel src/pages/index.njk --open --no-cache",
+    "build": "parcel build src/pages/*.njk --public-url ./ --no-source-maps --no-cache",
     "lint": "eslint src"
   },
   "author": "Yaroslav Starushchenko <starushchenkoyaroslav@gmail.com>",
@@ -29,11 +29,23 @@
   },
   "customDistStructure": {
     "config": {
-      ".js": "js",
       "images": [
         ".jpg",
         ".png",
         ".svg"
+      ],
+      "js": [
+        ".js",
+        ".js.map"
+      ],
+      "css": [
+        ".css",
+        ".css.map"
+      ],
+      "fonts": [
+        ".ttf",
+        ".woff",
+        ".eot"
       ]
     },
     "options": {

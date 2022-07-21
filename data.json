@@ -72,5 +72,82 @@
       "lastMessageIsMine": false,
       "unreadCount": 0
     }
-  ]
+  ],
+  "chatHistory": {
+    "name": "Кот Матроскин",
+    "avatar": false,
+    "archive": [
+      {
+        "date": "12.06.2022",
+        "messages": [
+          {
+            "text": "Привет, есть новости из космоса ?",
+            "time": "05:50",
+            "asset": false,
+            "isMine": true,
+            "delivered": true,
+            "read": true
+          },
+          {
+            "text": "Аууу!",
+            "time": "06:01",
+            "asset": false,
+            "isMine": true,
+            "delivered": true,
+            "read": true
+          }
+        ]
+      },
+      {
+        "date": "13.06.2022",
+        "messages": [
+          {
+            "text": "Нет новостей, отвали",
+            "time": "10:00",
+            "asset": false,
+            "isMine": false,
+            "delivered": true,
+            "read": true
+          }
+        ]
+      },
+      {
+        "date": "19.06.2022",
+        "messages": [
+          {
+            "text": "Привет, есть новости из космоса ?",
+            "time": "11:50",
+            "asset": false,
+            "isMine": true,
+            "delivered": true,
+            "read": true
+          },
+          {
+            "text": "<p>Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.</p><p>Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.</p>",
+            "time": "11:56",
+            "asset": false,
+            "isMine": false,
+            "delivered": true,
+            "read": true
+          },
+          {
+            "text": "",
+            "time": "11:57",
+            "asset": "../images/message-asset-sample.jpg",
+            "isMine": false,
+            "delivered": true,
+            "read": true
+          },
+          {
+            "text": "Круто!",
+            "time": "11:59",
+            "asset": false,
+            "isMine": true,
+            "delivered": true,
+            "read": false
+          }
+        ]
+      }
+    ]
+  }
 }
