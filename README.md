@@ -57,6 +57,18 @@ data.json                      # - статические данные для в
   умолчанию создаёт папку с .html и .scss. При перечислении дополнительных расширений, создаёт соответствующие файлы,
   например `node createComponent.js button js,md,img`
 
+## Страницы на Netlify
+- [Регистрация](https://deploy--shiny-croissant-34c918.netlify.app/register.html)
+- [Авторизация](https://deploy--shiny-croissant-34c918.netlify.app/auth.html)
+- [Чаты](https://deploy--shiny-croissant-34c918.netlify.app/)
+- [Чат детально](https://deploy--shiny-croissant-34c918.netlify.app/chat.html)
+- [Поиск по чатам](https://deploy--shiny-croissant-34c918.netlify.app/empty-search.html)
+- [Профиль](https://deploy--shiny-croissant-34c918.netlify.app/profile.html)
+- [Изменение настроек профиля](https://deploy--shiny-croissant-34c918.netlify.app/change-settings.html)
+- [Изменение пароля](https://deploy--shiny-croissant-34c918.netlify.app/change-password.html)
+- [Ошибка 404](https://deploy--shiny-croissant-34c918.netlify.app/error-404.html)
+- [Ошибка 5**](https://deploy--shiny-croissant-34c918.netlify.app/error-500.html)
+
 ## Стек
 - `parcel` - упаковщик приложения
 - `nunjucks` - шаблонизатор для сниппетов
