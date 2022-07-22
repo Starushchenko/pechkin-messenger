@@ -1,1 +1,10 @@
-<!-- Вёрстка для компонента button -->
+{% macro button(text, classes, icon) %}
+  <button type="button" class="button {% for class in classes %}{{ class }} {% endfor %}"
+    title="{{ text }}"
+  >
+    {{ text }}
+    {% if icon %}
+      {{ icon | safe }}
+    {% endif %}
+  </button>
+{% endmacro %}

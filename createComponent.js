@@ -27,7 +27,7 @@ if (blockName) {
 
         if (extention === 'scss') {
           filePath = `${dirPath}${blockName}.scss`;
-          fileContent = `${blockName} {}\n`;
+          fileContent = `.${blockName} {}\n`;
         } else if (extention === 'html') {
           fileContent = `<!-- Вёрстка для компонента ${blockName} -->\n`;
         } else if (extention === 'js') {
@@ -64,7 +64,7 @@ if (blockName) {
       })
       ;
     }
-    console.log(`[------] Папка для блока: ${blockName} создана.\n[------] При использовании блока в сборке, импортируйте ${blockName}.scss в /app/scss/style.scss и ${blockName}.js в /app/script.js`);
+    console.log(`[------] Папка для блока: ${blockName} создана.\n[------] При использовании блока в сборке, импортируйте ${blockName}.scss в src/scss/style.scss и ${blockName}.js в src/script.js`);
   })
   ;
 } else {

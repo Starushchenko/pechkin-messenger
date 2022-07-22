@@ -1,3 +1,5 @@
+{% from "../button/button.njk" import button %}
+
 {% macro chatActions() %}
   <div class="chat-actions">
     <div class="chat-actions__add-file">
@@ -42,12 +44,13 @@
       </div>
     </div>
     <div class="chat-actions__buttons">
-      <button class="button button--icon">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {{ button('Отправить',
+        ['button--icon'],
+        '<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="5" y="10.2" width="11" height="1.6" fill="white"/>
           <path d="M12 6L16 11L12 16" stroke="white" stroke-width="1.6"/>
-        </svg>
-      </button>
+        </svg>'
+      ) }}
     </div>
   </div>
 {% endmacro %}

@@ -1,0 +1,11 @@
+{% extends '../layouts/error.njk' %}
+
+{% from "../components/error-screen/error-screen.njk" import errorScreen %}
+
+{% set pageTitle = 'Ошибка 500' %}
+
+{% block main %}
+  <div class="app__error">
+    {{ errorScreen('server', 500, 'Ошибка на сервере, уже исправляем') }}
+  </div>
+{% endblock %}

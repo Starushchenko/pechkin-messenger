@@ -1,0 +1,13 @@
+{% extends '../layouts/settings.njk' %}
+
+{% from "../components/profile/profile.njk" import profile %}
+
+{% set pageTitle = 'Профиль' %}
+ 
+{% block main %}
+  <div class="app__main">
+    {# profileInfo prop used from ./data.json #}
+    {{ profile(profileInfo) }}
+  </div>
+{% endblock %}
+
