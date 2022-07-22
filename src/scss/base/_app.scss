@@ -28,10 +28,14 @@
 }
 
 .app__sidebar {
-  min-width: 315px;
-  max-width: 315px;
-  background: $gray-4;
+  min-width: 340px;
+  max-width: 340px;
+  background: $gray-5;
   border-right: 1px solid $gray-3;
+  
+  &--white {
+    background: #ffffff;
+  }
 }
 
 .app__main {
@@ -44,4 +48,18 @@
   padding: 10px 15px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+.app__sidebar-title {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: $text-dark;
+  text-align: center;
+}
+
+.app__sidebar-form {
+  padding: 0 30px;
+  margin-bottom: 20px;
 }

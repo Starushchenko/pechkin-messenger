@@ -15,6 +15,7 @@
   overflow: hidden;
   outline: none;
   border: 0;
+  font-family: $main-font;
   
   &::before {
     content: '';
@@ -67,5 +68,20 @@
 
 .button--icon {
   font-size: 0;
-  padding: 12px;
+  padding: 10px;
+}
+
+.button--link {
+  background: 0;
+  box-shadow: none;
+  text-decoration: underline;
+  color: $success;
+  
+  &:hover {
+    &::before {
+      display: none;
+    }
+    
+    opacity: 0.75;
+  }
 }

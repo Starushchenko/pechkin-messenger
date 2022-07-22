@@ -1,8 +1,7 @@
 {% extends '../layouts/default.njk' %}
 
-{% block main %}
-  <div class="app__main">
-    <h1>ТУТ БУДЕТ ПОИСК</h1>
-  </div>
+{% block sidebarContent %}
+  {{ search('белиберда') }}
+  {{ chatsList() }}
 {% endblock %}
  

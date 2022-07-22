@@ -9,14 +9,15 @@
 @import "base/scaffolding";
 
 // Components
-@import "../components/button/button";
-@import "../components/chat/chat";
-@import "../components/chat-actions/chat-actions";
-@import "../components/chat-conversation/chat-conversation";
-@import "../components/chat-header/chat-header";
-@import "../components/chats-list/chats-list";
-@import "../components/dropdown/dropdown";
-@import "../components/form/form";
-@import "../components/modal/modal";
-@import "../components/placeholder/placeholder";
-@import "../components/search/search";
+@import "./src/components/button/button";
+@import "./src/components/chat/chat";
+@import "./src/components/chat-actions/chat-actions";
+@import "./src/components/chat-conversation/chat-conversation";
+@import "./src/components/chat-header/chat-header";
+@import "./src/components/chats-list/chats-list";
+@import "./src/components/dropdown/dropdown";
+@import "./src/components/form/form";
+@import "./src/components/modal/modal";
+@import "./src/components/placeholder/placeholder";
+@import "./src/components/search/search";
+@import "./src/components/welcome/welcome";

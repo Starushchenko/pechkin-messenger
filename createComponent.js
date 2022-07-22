@@ -27,7 +27,7 @@ if (blockName) {
 
         if (extention === 'scss') {
           filePath = `${dirPath}${blockName}.scss`;
-          fileContent = `@import "../../scss/base/variables";\n@import "../../scss/base/mixins";\n\n.${blockName} {}\n`;
+          fileContent = `${blockName} {}\n`;
         } else if (extention === 'html') {
           fileContent = `<!-- Вёрстка для компонента ${blockName} -->\n`;
         } else if (extention === 'js') {

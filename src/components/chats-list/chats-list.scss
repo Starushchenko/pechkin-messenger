@@ -6,7 +6,7 @@
 
 .chats-list__empty {
   text-align: center;
-  color: $gray-0;
+  color: $text-gray;
   padding: 24px 10px;
 }
 
@@ -51,7 +51,7 @@
 
 .chats-list__item-desc {
   font-size: 12px;
-  color: $gray-0;
+  color: $text-gray;
   line-height: 1.2;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -70,7 +70,7 @@
   align-items: flex-end;
   justify-content: space-between;
   align-self: stretch;
-  color: $gray-0;
+  color: $text-gray;
   font-size: 10px;
 }
 

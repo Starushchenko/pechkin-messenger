@@ -1,0 +1,7 @@
+{% macro welcome(title, desc) %}
+  <div class="welcome">
+    <img class="welcome__image" src="../images/welcome.png" alt="Добро пожаловать!">
+    <span class="welcome__app-name">{{ title }}</span>
+    <span class="welcome__app-description">{{ desc }}</span>
+  </div>
+{% endmacro %}

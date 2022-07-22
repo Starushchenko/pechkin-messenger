@@ -18,7 +18,7 @@
   {% block sidebar %}
     <aside class="app__sidebar">
       <div class="app__header">
-        <a href="/" class="app__logo">
+        <a href="index.njk" class="app__logo">
           <img src="../images/logo.png" alt="Pechkin Messenger">
           <span class="app__logo-text">Pechkin</span>
         </a>
@@ -30,10 +30,13 @@
           </svg>
         </a>
       </div>
-      
-      {{ search() }}
-      {# chats arguments is used from ./data.json #}
-      {{ chatsList(chats) }}
+
+      {% block sidebarContent %}
+        {{ search() }}
+
+        {# chats prop used from ./data.json #}
+        {{ chatsList(chats) }}
+      {% endblock %}
     </aside>
   {% endblock %}
 
