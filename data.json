@@ -1,0 +1,162 @@
+{
+  "chats": [
+    {
+      "name": "Кот Матроскин",
+      "avatar": false,
+      "lastMessage": "Изображение",
+      "lastMessageDatetime": "10:49",
+      "lastMessageIsMine": false,
+      "unreadCount": 2
+    },
+    {
+      "name": "Киноклуб",
+      "avatar": false,
+      "lastMessage": "Cтикер",
+      "lastMessageDatetime": "12:00",
+      "lastMessageIsMine": true,
+      "unreadCount": 0
+    },
+    {
+      "name": "Шарик",
+      "avatar": false,
+      "lastMessage": "Друзья, у меня для вас особенный выпуск новостей!...",
+      "lastMessageDatetime": "12:00",
+      "lastMessageIsMine": false,
+      "unreadCount": 4
+    },
+    {
+      "name": "Вадим",
+      "avatar": false,
+      "lastMessage": "Круто!",
+      "lastMessageDatetime": "Пт",
+      "lastMessageIsMine": true,
+      "unreadCount": 0
+    },
+    {
+      "name": "тет-а-теты",
+      "avatar": false,
+      "lastMessage": "И Human Interface Guidelines и Material Design рекомендуют...",
+      "lastMessageDatetime": "Ср",
+      "lastMessageIsMine": false,
+      "unreadCount": 0
+    },
+    {
+      "name": "1, 2, 3",
+      "avatar": false,
+      "lastMessage": "Миллионы россиян ежедневно проводят десятки часов свое...",
+      "lastMessageDatetime": "Пн",
+      "lastMessageIsMine": false,
+      "unreadCount": 0
+    },
+    {
+      "name": "Design Destroyer",
+      "avatar": false,
+      "lastMessage": "В 2008 году художник Jon Rafman начал собирать...",
+      "lastMessageDatetime": "Пн",
+      "lastMessageIsMine": false,
+      "unreadCount": 0
+    },
+    {
+      "name": "Day.",
+      "avatar": false,
+      "lastMessage": "Так увлёкся работой по курсу, что совсем забыл его анонсир...",
+      "lastMessageDatetime": "1 Мая 2020",
+      "lastMessageIsMine": false,
+      "unreadCount": 0
+    },
+    {
+      "name": "Стас Рогозин",
+      "avatar": false,
+      "lastMessage": "Можно или сегодня или завтра вечером.",
+      "lastMessageDatetime": "12 Апр 2020",
+      "lastMessageIsMine": false,
+      "unreadCount": 0
+    }
+  ],
+  "chatHistory": {
+    "name": "Кот Матроскин",
+    "avatar": false,
+    "archive": [
+      {
+        "date": "12.06.2022",
+        "messages": [
+          {
+            "text": "Привет, есть новости из космоса ?",
+            "time": "05:50",
+            "asset": false,
+            "isMine": true,
+            "delivered": true,
+            "read": true
+          },
+          {
+            "text": "Аууу!",
+            "time": "06:01",
+            "asset": false,
+            "isMine": true,
+            "delivered": true,
+            "read": true
+          }
+        ]
+      },
+      {
+        "date": "13.06.2022",
+        "messages": [
+          {
+            "text": "Нет новостей, отвали",
+            "time": "10:00",
+            "asset": false,
+            "isMine": false,
+            "delivered": true,
+            "read": true
+          }
+        ]
+      },
+      {
+        "date": "19.06.2022",
+        "messages": [
+          {
+            "text": "Привет, есть новости из космоса ?",
+            "time": "11:50",
+            "asset": false,
+            "isMine": true,
+            "delivered": true,
+            "read": true
+          },
+          {
+            "text": "<p>Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.</p><p>Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.</p>",
+            "time": "11:56",
+            "asset": false,
+            "isMine": false,
+            "delivered": true,
+            "read": true
+          },
+          {
+            "text": "",
+            "time": "11:57",
+            "asset": "../images/message-asset-sample.jpg",
+            "isMine": false,
+            "delivered": true,
+            "read": true
+          },
+          {
+            "text": "Круто!",
+            "time": "11:59",
+            "asset": false,
+            "isMine": true,
+            "delivered": true,
+            "read": false
+          }
+        ]
+      }
+    ]
+  },
+  "profileInfo": {
+    "avatar": false,
+    "email": "pochta@yandex.ru",
+    "login": "konstantin_ivanov",
+    "userName": "Константин",
+    "userSurname": "Иванов",
+    "nameInChat": "Константин",
+    "phone": "+7 (909) 967 30 30"
+  }
+}

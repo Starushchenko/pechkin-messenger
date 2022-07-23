@@ -1,0 +1,71 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+*::selection {
+    background: $accent;
+}
+ 
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    font-family: $main-font;
+    color: $text-dark;
+    font-size: 14px;
+    line-height: 1;
+} 
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+button {
+    transition: 0.3s;
+}
+
+input,
+select,
+textarea {
+    -webkit-appearance: none;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+path {
+    transition: 0.3s;
+}
+
+input {
+    -webkit-box-shadow: inset 0 0 0 50px #fff;
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}

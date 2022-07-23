@@ -1,0 +1,13 @@
+{% extends '../layouts/default.njk' %}
+
+{% from "../components/chat/chat.njk" import chat %}
+
+{% set pageTitle = 'Чат c пользователем Кот Матроскин' %}
+
+{% block main %}
+  <div class="app__main">
+    {# chatHistory prop used from ./data.json #}
+    {{ chat(chatHistory) }}
+  </div>
+{% endblock %}
+ 

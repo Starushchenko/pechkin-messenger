@@ -1,0 +1,36 @@
+.error-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-screen__image {
+  margin-bottom: 20px;
+}
+
+.error-screen__code {
+  font-size: 90px;
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 10px;
+  
+  &--404 {
+    color: #c35450;
+  }
+
+  &--500 {
+    color: #5d2b2c;
+  }
+}
+
+.error-screen__description {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 75px;
+}
+
+.error-screen__go-back {
+  font-size: 15px;
+  color: $text-gray;
+  text-decoration: underline;
+}

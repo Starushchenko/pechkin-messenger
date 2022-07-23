@@ -1,0 +1,36 @@
+{% extends '../layouts/default.njk' %}
+
+{% from "../components/welcome/welcome.njk" import welcome %}
+{% from "../components/button/button.njk" import button %}
+
+{% set pageTitle = 'Авторизация' %}
+
+{% block sidebar %}
+  <div class="app__sidebar app__sidebar--white">
+    <h1 class="app__sidebar-title">Вход</h1>
+    <div class="app__sidebar-form form">
+      <div class="form__field form__field--error">
+        <label for="login">Логин</label>
+        <input type="text" name="login" id="login" placeholder="Ваш логин" aria-label="Ваш логин" value="matroskin">
+        <span class="form__field-info">Неверный логин</span>
+      </div>
+      <div class="form__field">
+        <label for="password">Пароль</label>
+        <input type="password" name="password" id="password" placeholder="***********************"
+          aria-label="Ваш пароль">
+      </div>
+
+      <div class="form__buttons">
+        {{ button('Авторизоваться') }}
+        {{ button('Нет аккаунта?', ['button--link']) }}
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block main %}
+  <div class="app__main">
+    {{ welcome('Pechkin Messanger', 'место, где нет преград общению') }}
+  </div>
+{% endblock %}
+ 

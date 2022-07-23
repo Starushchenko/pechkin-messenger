@@ -1,0 +1,79 @@
+.app {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.app__header {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 0 0 10px;
+}
+
+.app__logo {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.app__logo-text {
+  font-size: 23px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #cecece;
+  position: relative;
+  top: 20px;
+  left: -9px;
+}
+
+.app__sidebar {
+  min-width: 340px;
+  max-width: 340px;
+  background: $gray-5;
+  border-right: 1px solid $gray-3;
+  
+  &--white {
+    background: #ffffff;
+  }
+  
+  &--slim {
+    min-width: 65px;
+    padding: 18px;
+  }
+}
+
+.app__main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.app__error {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.app__profile-link.button {
+  padding: 10px 15px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.app__sidebar-title {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: $text-dark;
+  text-align: center;
+}
+
+.app__sidebar-form {
+  padding: 0 30px;
+  margin-bottom: 20px;
+}

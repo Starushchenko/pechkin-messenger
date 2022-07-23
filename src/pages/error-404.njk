@@ -1,0 +1,11 @@
+{% extends '../layouts/error.njk' %}
+
+{% from "../components/error-screen/error-screen.njk" import errorScreen %}
+
+{% set pageTitle = 'Ошибка 404' %}
+
+{% block main %}
+  <div class="app__error">
+    {{ errorScreen('client', 404, 'Страница не найдена') }}
+  </div>
+{% endblock %}

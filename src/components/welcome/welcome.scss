@@ -1,0 +1,26 @@
+.welcome {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.welcome__image {
+  margin-bottom: 10px;
+}
+
+.welcome__app-name {
+  color: $text-dark;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.welcome__app-description {
+  font-size: 18px;
+  color: $text-gray;
+  font-weight: 300;
+}
