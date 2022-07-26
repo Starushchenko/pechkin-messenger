@@ -22,14 +22,14 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  
+
   img {
     width: 60px;
     height: 60px;
   }
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -37,7 +37,7 @@
     height: 100%;
     opacity: 0;
     transition: 0.3s;
-    background: rgba(0,0,0,0.6);
+    background: rgb(0 0 0 / 60%);
   }
 
   &::after {
@@ -53,8 +53,9 @@
     text-align: center;
     padding-top: 5px;
   }
-  
-  &:hover::before, &:hover::after {
+
+  &:hover::before,
+  &:hover::after {
     opacity: 1;
   }
 }
@@ -75,7 +76,7 @@
   justify-content: space-between;
   padding: 10px 0;
   border-bottom: 1px solid $gray-3;
-  
+
   &:last-of-type {
     border-bottom: 0;
   }
@@ -102,15 +103,15 @@
   padding: 10px 0;
   border-bottom: 1px solid $gray-3;
   font-weight: 500;
-  
+
   &:hover {
-    opacity: .75;
+    opacity: 0.75;
   }
-  
+
   &:last-of-type {
     border-bottom: 0;
   }
-  
+
   &--alert {
     color: $alert;
   }

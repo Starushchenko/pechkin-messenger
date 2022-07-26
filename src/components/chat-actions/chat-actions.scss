@@ -25,10 +25,10 @@
   align-items: center;
   width: 50px;
   cursor: pointer;
-  
+
   &:hover {
     path {
-      fill: $success
+      fill: $success;
     }
   }
 }

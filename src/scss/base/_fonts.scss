@@ -1,43 +1,50 @@
 @font-face {
-  font-family: 'Navigo';
-  src: url('../fonts/Navigo-Medium.eot');
-  src: local('Navigo Medium'), local('Navigo-Medium'),
-  url('../fonts/Navigo-Medium.woff') format('woff'),
-  url('../fonts/Navigo-Medium.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/Navigo-Medium.ttf') format('truetype');
+  font-family: Navigo;
+  src: url("../fonts/Navigo-Medium.eot");
+  src:
+    local("Navigo Medium"),
+    local("Navigo-Medium"),
+    url("../fonts/Navigo-Medium.woff") format("woff"),
+    url("../fonts/Navigo-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Navigo-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Navigo';
-  src: url('../fonts/Navigo-Regular.eot');
-  src: local('Navigo'),
-  url('../fonts/Navigo-Regular.woff') format('woff'),
-  url('../fonts/Navigo-Regular.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/Navigo-Regular.ttf') format('truetype');
+  font-family: Navigo;
+  src: url("../fonts/Navigo-Regular.eot");
+  src:
+    local("Navigo"),
+    url("../fonts/Navigo-Regular.woff") format("woff"),
+    url("../fonts/Navigo-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Navigo-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Navigo';
-  src: url('../fonts/Navigo-Bold.eot');
-  src: local('Navigo Bold'), local('Navigo-Bold'),
-  url('../fonts/Navigo-Bold.woff') format('woff'),
-  url('../fonts/Navigo-Bold.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/Navigo-Bold.ttf') format('truetype');
+  font-family: Navigo;
+  src: url("../fonts/Navigo-Bold.eot");
+  src:
+    local("Navigo Bold"),
+    local("Navigo-Bold"),
+    url("../fonts/Navigo-Bold.woff") format("woff"),
+    url("../fonts/Navigo-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Navigo-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Navigo';
-  src: url('../fonts/Navigo-Light.eot');
-  src: local('Navigo Light'), local('Navigo-Light'),
-  url('../fonts/Navigo-Light.woff') format('woff'),
-  url('../fonts/Navigo-Light.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/Navigo-Light.ttf') format('truetype');
+  font-family: Navigo;
+  src: url("../fonts/Navigo-Light.eot");
+  src:
+    local("Navigo Light"),
+    local("Navigo-Light"),
+    url("../fonts/Navigo-Light.woff") format("woff"),
+    url("../fonts/Navigo-Light.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Navigo-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }

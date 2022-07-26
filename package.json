@@ -6,11 +6,13 @@
     "start": "npm run build && node ./server/index.js",
     "dev": "parcel src/pages/*.njk --no-cache",
     "build": "parcel build src/pages/*.njk --public-url ./ --no-source-maps --no-cache",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "lint:styles": "npx stylelint \"src/**/*.scss\""
   },
   "author": "Yaroslav Starushchenko <starushchenkoyaroslav@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@namics/stylelint-bem": "^7.0.0",
     "babel-eslint": "10.1.0",
     "cssnano": "4.1.11",
     "eslint": "5.16.0",
@@ -21,7 +23,9 @@
     "parcel-bundler": "1.12.5",
     "parcel-plugin-custom-dist-structure": "1.1.18",
     "parcel-plugin-nunjucks": "2.2.2",
-    "sass": "1.53.0"
+    "sass": "1.53.0",
+    "stylelint": "14.9.1",
+    "stylelint-config-standard-scss": "^5.0.0"
   },
   "engines": {
     "npm": "8.11.0",

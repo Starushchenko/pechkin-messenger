@@ -11,7 +11,7 @@
   color: $text-gray;
   align-self: center;
   margin-bottom: 30px;
-  
+
   & ~ .chat-conversation__date {
     margin-top: 30px;
   }
@@ -24,18 +24,18 @@
   background: $accent-pale;
   max-width: 800px;
   min-width: 350px;
-  border-radius: 0 15px 15px 15px;
+  border-radius: 0 15px 15px;
   line-height: 1.4;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 10px;
   position: relative;
-  
+
   p {
     margin-bottom: 4px;
   }
-  
+
   p + p {
     margin-top: 4px;
   }
@@ -44,14 +44,14 @@
 .chat-conversation__message--mine {
   background: $accent-secondary;
   align-self: flex-end;
-  border-radius: 15px 15px 0 15px;
+  border-radius: 15px 15px 0;
 }
 
 .chat-conversation__message--asset {
   background: $text-light;
   border: 1px solid $gray-3;
   min-width: unset;
-  justify-content: center;  
+  justify-content: center;
 }
 
 .chat-conversation__timestamp {

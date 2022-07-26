@@ -52,6 +52,7 @@ data.json                      # - статические данные для в
 - `npm run dev` - запуск сервера для разработки
 - `npm run build` - сборка проекта в папку `/dist` с оптимизацией ресурсов
 - `npm run lint` - проверка директории `/src` на наличие ошибок eslint
+- `npm run lint:styles` - проверка файлов scss на наличие ошибок stylelint
 - `node createComponent.js <component_name> <ext, ext2>` - удобное создание компонента в `/src/components`. По
   умолчанию создаёт папку с .njk и .scss. При перечислении дополнительных расширений, создаёт соответствующие файлы,
   например `node createComponent.js button js,md,img`
