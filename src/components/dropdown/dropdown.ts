@@ -12,9 +12,11 @@
       }
     };
     const onDocumentClick = () => {
-      item.nextElementSibling.classList.remove('dropdown--visible');
-      document.removeEventListener('click', onDocumentClick);
-      item.addEventListener('click', onToggleDropdown);
+      if (item.nextElementSibling) {
+        item.nextElementSibling.classList.remove('dropdown--visible');
+        document.removeEventListener('click', onDocumentClick);
+        item.addEventListener('click', onToggleDropdown);
+      }
     };
     item.addEventListener('click', onToggleDropdown);
   });
