@@ -5,7 +5,7 @@ const distFolder = (__dirname + '/../dist/');
 
 app.use(express.static(distFolder));
 
-app.get('*', (req, res) => {
+app.get('**/*', (req, res) => {
   res.status(404).type('.html').sendFile('error-404.html', {root: distFolder});
 });
 

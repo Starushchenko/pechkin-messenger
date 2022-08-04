@@ -5,15 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pechkin Messenger | {{ pageTitle }}</title>
+  <title>{{ pageTitle }}</title>
   <link rel="stylesheet" href="../scss/style.scss"/>
-  {% include "../partials/favicon.njk" %}
+  {{> favicon/favicon }}
 </head>
 
 <body class="app">
+{{{body}}}
 
-{% block main %}{% endblock %}
-
-<script src="../js/script.js"></script>
+<script src="../js/script.ts" type="module"></script>
 </body>
 </html>

@@ -71,6 +71,8 @@
 }
 
 .form__field {
+  position: relative;
+  
   input[type="text"],
   input[type="email"],
   input[type="number"],

@@ -1,3 +1,5 @@
 'use strict';
 
-// import '../components/dropdown/dropdown';
+declare function require(name:string) : any;
+
+require('../components/dropdown/dropdown.ts')
