@@ -1,0 +1,36 @@
+<div class="chats-list">
+  {{#if chats}}
+    {{#each chats}}
+      <a class="chats-list__item" href="#">
+        <div class="chats-list__item-img">
+          {{#if this.avatar }}
+            <img src="{{ this.avatar }}{{ item.avatar }}" alt="{{ item.name }}">
+          {{ else }}
+            <img src="./../images/svg/placeholder.svg" alt="Изображение не загружено">
+          {{/if}}
+        </div>
+
+        <div class="chats-list__item-content">
+          <span class="chats-list__item-title">{{ this.name }}</span>
+          <span class="chats-list__item-desc">
+          {{#if this.lastMessageIsMine }}
+            <span class="chats-list__item-yours">Вы: </span>
+          {{/if}}
+          {{ this.lastMessage }}
+        </span>
+        </div>
+
+        <div class="chats-list__item-info">
+          <span class="chats-list__item-datetime">{{ this.lastMessageDatetime }}</span>
+          {{#if this.unreadCount }}
+            <span class="chats-list__unread">
+              {{ this.unreadCount }}
+            </span>
+          {{/if}}
+        </div>
+      </a>
+    {{/each}}
+  {{ else }}
+    <span class="chats-list__empty">По запросу ничего не найдено</span>
+  {{/if}}
+</div>

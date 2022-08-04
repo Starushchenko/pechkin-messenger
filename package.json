@@ -4,25 +4,27 @@
   "description": "",
   "scripts": {
     "start": "npm run build && node ./server/index.js",
-    "dev": "parcel src/pages/*.njk --no-cache",
-    "build": "parcel build src/pages/*.njk --public-url ./ --no-source-maps --no-cache",
+    "dev": "parcel src/pages/*.hbs --no-cache",
+    "build": "parcel build src/pages/*.hbs --no-source-maps --no-cache",
     "lint": "tsc --noEmit && eslint ./src/**/*.ts && npx stylelint ./src/**/*.scss",
     "lint:fix": "tsc --noEmit && eslint --fix ./src/**/*.ts && npx stylelint ./src/**/*.scss --fix"
   },
   "author": "Yaroslav Starushchenko <starushchenkoyaroslav@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@anikin/parcel-transformer-handlebars": "1.0.9",
+    "@anikin/parcel-transformer-handlebars-precompile": "1.0.1",
+    "@deeppines/parcel-resolver-root": "^0.4.1",
     "@namics/stylelint-bem": "7.0.0",
+    "@parcel/transformer-sass": "2.7.0",
     "@typescript-eslint/eslint-plugin": "5.32.0",
     "@typescript-eslint/parser": "5.32.0",
     "cssnano": "4.1.11",
     "eslint": "7.14.0",
     "express": "4.18.1",
     "nanoid": "4.0.0",
-    "nunjucks": "3.2.3",
-    "parcel-bundler": "1.12.5",
+    "parcel": "2.7.0",
     "parcel-plugin-custom-dist-structure": "1.1.18",
-    "parcel-plugin-nunjucks": "2.2.2",
     "sass": "1.53.0",
     "stylelint": "14.9.1",
     "stylelint-config-standard-scss": "5.0.0",
@@ -56,5 +58,8 @@
     "options": {
       "development": true
     }
+  },
+  "parcelResolverRoot": {
+    "@": "./src/"
   }
 }

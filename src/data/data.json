@@ -1,4 +1,7 @@
 {
+  "app": {
+    "title": "Pechkin Messenger"
+  },
   "chats": [
     {
       "name": "Кот Матроскин",

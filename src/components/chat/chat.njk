@@ -1,6 +1,7 @@
 {% from "../chat-header/chat-header.njk" import chatHeader %}
 {% from "../chat-conversation/chat-conversation.njk" import chatConversation %}
 {% from "../chat-actions/chat-actions.njk" import chatActions %}
+{% from "../modal/modal.njk" import modal %}
 
 {% macro chat(data) %}
   <div class="chat">
@@ -12,5 +13,7 @@
     {{ chatConversation(data.archive) }}
     
     {{ chatActions() }}
+    
+    {{ modal('Добавить пользователя') }}
   </div>
 {% endmacro %}
