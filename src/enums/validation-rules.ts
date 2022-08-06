@@ -1,6 +1,6 @@
 export const NAME = {
   rule: '^[A-ZА-ЯЁ][A-ZА-ЯЁa-zа-яё-]+$',
-  errorText: 'Только англ. и рус. буквы и цифры без пробелов'
+  errorText: 'Английские и русские буквы с заглавной без пробелов'
 };
 export const LOGIN = {
   rule: '(?=.*[A-Za-z])[A-Za-z0-9\\-_]+',

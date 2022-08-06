@@ -15,7 +15,7 @@ class AuthForm extends Block {
   protected initChildren() {
     this.children['login-field'] = new FormField({
       name: 'login',
-      label: 'Ваш логин',
+      label: 'Логин',
       errorText: LOGIN.errorText,
       field: {
         type: 'text',
@@ -50,8 +50,17 @@ class AuthForm extends Block {
 
     this.children['button-register'] = new Button({
       text: 'Нет аккаунта?',
-      classes: 'button--link'
+      classes: 'button--link',
+      type: 'button',
+      events: {
+        click: (e) => this.onRegisterLinkClick(e),
+      },
     });
+  }
+
+  onRegisterLinkClick(e: Event) : void {
+    e.preventDefault();
+    location.replace("/register/");
   }
 
   render() {
