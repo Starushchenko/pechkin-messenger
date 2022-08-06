@@ -1,0 +1,26 @@
+{{#if isTextArea }}
+  <textarea
+    name="{{name}}"
+    id="{{name}}"
+    class="{{class}}"
+    placeholder="{{placeholder}}"
+    aria-label="{{label}}"
+    required="{{required}}"
+  >
+    {{value}}
+  </textarea>
+{{ else }}
+  <input
+    type="{{type}}"
+    name="{{name}}"
+    id="{{name}}"
+    class="{{class}}"
+    placeholder="{{placeholder}}"
+    aria-label="{{label}}"
+    value="{{value}}"
+    required="{{required}}"
+    pattern="{{rule}}"
+    minlength="{{minlength}}"
+    maxlength="{{maxlength}}"
+  >
+{{/if}}

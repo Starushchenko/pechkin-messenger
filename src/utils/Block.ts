@@ -69,7 +69,7 @@ class Block {
   }
 
   protected componentDidUpdate(oldProps: any, newProps: any) {
-    // TODO: переделать на глубокое сравнение в 3 спринте
+    // TODO: Доработать
     if (oldProps !== newProps) return true;
 
     return;

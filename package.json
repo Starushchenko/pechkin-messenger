@@ -4,15 +4,14 @@
   "description": "",
   "scripts": {
     "start": "npm run build && node ./server/index.js",
-    "dev": "parcel src/pages/*.hbs --no-cache",
-    "build": "parcel build src/pages/*.hbs --public-url ./ --no-source-maps --no-cache",
+    "dev": "parcel src/pages/**/*.html --no-cache",
+    "build": "parcel build src/pages/**/*.html --public-url ./ --no-source-maps --no-cache",
     "lint": "tsc --noEmit && eslint ./src/**/*.ts && npx stylelint ./src/**/*.scss",
     "lint:fix": "tsc --noEmit && eslint --fix ./src/**/*.ts && npx stylelint ./src/**/*.scss --fix"
   },
   "author": "Yaroslav Starushchenko <starushchenkoyaroslav@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "@anikin/parcel-transformer-handlebars": "1.0.9",
     "@anikin/parcel-transformer-handlebars-precompile": "1.0.1",
     "@deeppines/parcel-resolver-root": "^0.4.1",
     "@namics/stylelint-bem": "7.0.0",
@@ -32,8 +31,5 @@
   "engines": {
     "npm": "8.11.0",
     "node": "v16.16.0"
-  },
-  "parcelResolverRoot": {
-    "@": "./src/"
   }
 }
