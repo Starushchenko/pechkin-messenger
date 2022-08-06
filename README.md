@@ -69,7 +69,6 @@ src/                           # Ресурсы проекта
 dist/                          # - папка сборки проекта. Формируется автоматически
 server/                        # - файлы express для раздачи статики
 createComponent.js             # - node-скрипт для удобного создания компонентов
-data.json                      # - статические данные для вёрстки
 ```
 
 ## Команды
@@ -78,9 +77,6 @@ data.json                      # - статические данные для в
 - `npm run build` - сборка проекта в папку `/dist` с оптимизацией ресурсов
 - `npm run lint` - проверка директории `/src` на наличие ошибок eslint и stylelint
 - `npm run lint:fix` - проверка директории `/src` на наличие ошибок eslint и stylelint + автоматическое исправление
-- `node createComponent.js <component_name> <ext, ext2>` - удобное создание компонента в `/src/components`. По
-  умолчанию создаёт папку с .njk и .scss. При перечислении дополнительных расширений, создаёт соответствующие файлы,
-  например `node createComponent.js button js,md,img`
 
 ## Страницы на Netlify
 - [Регистрация](https://deploy--shiny-croissant-34c918.netlify.app/register.html)

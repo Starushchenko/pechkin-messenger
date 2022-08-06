@@ -8,6 +8,7 @@ export interface IField {
   minlength?: number;
   maxlength?: number;
   rule?: string | RegExp;
+  autocomplete?: string;
 }
 
 export default IField;

@@ -22,5 +22,6 @@
     pattern="{{rule}}"
     minlength="{{minlength}}"
     maxlength="{{maxlength}}"
+    autocomplete="{{#if autocomplete }}{{autocomplete}}{{ else }}new-password{{/if}}"
   >
 {{/if}}
