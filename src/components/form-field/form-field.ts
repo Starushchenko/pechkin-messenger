@@ -74,7 +74,7 @@ class FormField extends Block {
   }
 
   protected initChildren(): void {
-    this.childrens.field = new Field({...this.props.field});
+    this.children.field = new Field({...this.props.field});
   }
 }
 

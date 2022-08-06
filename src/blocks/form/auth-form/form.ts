@@ -13,7 +13,7 @@ class AuthForm extends Block {
   }
 
   protected initChildren() {
-    this.childrens['login-field'] = new FormField({
+    this.children['login-field'] = new FormField({
       name: 'login',
       label: 'Ваш логин',
       errorText: LOGIN.errorText,
@@ -28,7 +28,7 @@ class AuthForm extends Block {
       }
     });
 
-    this.childrens['password-field'] = new FormField({
+    this.children['password-field'] = new FormField({
       name: 'password',
       label: 'Пароль',
       errorText: PASSWORD.errorText,
@@ -43,12 +43,12 @@ class AuthForm extends Block {
       }
     });
 
-    this.childrens['button-auth'] = new Button({
+    this.children['button-auth'] = new Button({
       text: 'Авторизоваться',
       type: 'submit'
     });
 
-    this.childrens['button-register'] = new Button({
+    this.children['button-register'] = new Button({
       text: 'Нет аккаунта?',
       classes: 'button--link'
     });

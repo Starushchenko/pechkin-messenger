@@ -16,14 +16,14 @@ const classes: TStringObject = {
 class AuthPage extends Block {
   protected initChildren() {
 
-    this.childrens['auth-form'] = new AuthForm({
+    this.children['auth-form'] = new AuthForm({
       classes: classes.FORM_CLASS,
       events: {
         submit: (e) => this.onSubmit(e),
       },
     });
 
-    this.childrens.welcome = new Welcome({
+    this.children.welcome = new Welcome({
       title: 'Pechkin Messenger',
       desc: 'место, где нет преград общению',
       image: Image
