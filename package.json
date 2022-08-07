@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm run build && node ./server/index.js",
     "dev": "parcel src/pages/**/*.html --no-cache",
-    "build": "parcel build src/pages/**/*.html --no-source-maps --no-cache",
+    "build": "rm -rf dist && parcel build src/pages/**/*.html --no-source-maps --no-cache",
     "lint": "tsc --noEmit && eslint ./src/**/*.ts && npx stylelint ./src/**/*.scss",
     "lint:fix": "tsc --noEmit && eslint --fix ./src/**/*.ts && npx stylelint ./src/**/*.scss --fix"
   },
@@ -15,6 +15,7 @@
     "@anikin/parcel-transformer-handlebars-precompile": "1.0.1",
     "@deeppines/parcel-resolver-root": "^0.4.1",
     "@namics/stylelint-bem": "7.0.0",
+    "@parcel/config-default": "2.7.0",
     "@parcel/transformer-sass": "2.7.0",
     "@typescript-eslint/eslint-plugin": "5.32.0",
     "@typescript-eslint/parser": "5.32.0",
