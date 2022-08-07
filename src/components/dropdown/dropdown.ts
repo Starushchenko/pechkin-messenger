@@ -3,7 +3,7 @@ import IDropdownItem from './interface';
 
 import template from './dropdown.tpl.hbs';
 
-class DropdownItem extends Block {
+class Dropdown extends Block {
   constructor(props: IDropdownItem) {
     super(props);
   }
@@ -13,4 +13,4 @@ class DropdownItem extends Block {
   }
 }
 
-export default DropdownItem;
+export default Dropdown;

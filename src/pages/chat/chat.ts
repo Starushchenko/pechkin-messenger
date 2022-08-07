@@ -1,7 +1,8 @@
 import Block from '../../utils/Block';
 import renderDOM from '../../utils/renderDOM';
 import Logo from '../../images/logo.png';
-import data = require('../../enums/data.json');
+import chats = require('../../enums/chats.json');
+import chatHistory = require('../../enums/chat-history.json');
 
 import Chat from '../../blocks/chat/chat';
 import Button from '../../components/button/button';
@@ -39,16 +40,16 @@ class ChatPage extends Block {
 
     this.children['chats-list'] = new ChatsList({
       emptyText: 'По запросу ничего не найдено',
-      chats: data.chats
+      chats: chats
     });
 
     this.children['chat'] = new Chat({
       chatHeader: {
-        name: data.chatHistory.name,
-        avatar: data.chatHistory.avatar
+        name: chatHistory.name,
+        avatar: chatHistory.avatar
       },
       chatConversation: {
-        items: data.chatHistory.archive,
+        items: chatHistory.archive,
         placeholderText: 'История чата пуста. Напишите первым!'
       }
     });

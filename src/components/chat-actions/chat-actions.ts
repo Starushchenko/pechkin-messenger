@@ -1,18 +1,35 @@
 import Block from '../../utils/Block';
 import IChatActions from './interface';
 import {MESSAGE} from '../../enums/validation-rules';
+import filesMenu = require('../../enums/files-menu.json');
 
 import template from './chat-actions.tpl.hbs';
 
 import FormField from '../form-field/form-field';
 import Button from '../button/button';
+import {onDropdownTrigger} from '../../utils/dropdownTrigger';
+import Dropdown from '../dropdown/dropdown';
 
 class ChatActions extends Block {
   constructor(props: IChatActions) {
     super(props);
+
+    this.onDropdownClick()
+  }
+
+  dropdownTrigger = this.element?.querySelector('.js-dropdown-trigger');
+
+  onDropdownClick() {
+    const trigger = this.dropdownTrigger;
+    onDropdownTrigger(trigger);
   }
 
   protected initChildren() {
+    this.children['dropdown'] = new Dropdown({
+      classes: 'dropdown--top',
+      items: filesMenu
+    });
+    
     this.children['message-field'] = new FormField({
       name: 'message',
       label: 'Сообщение',
