@@ -1,7 +1,7 @@
 interface IWelcome {
   title?: string;
   desc?: string;
-  image?: HTMLImageElement
+  image?: HTMLImageElement | null
 }
 
 export default IWelcome;

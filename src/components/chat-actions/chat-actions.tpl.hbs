@@ -1,4 +1,4 @@
-<div class="chat-actions">
+<form class="chat-actions form">
   <div class="chat-actions__add-file">
     <button class="chat-actions__add-file-btn js-dropdown-trigger" title="Добавить файл">
       Добавить файл
@@ -12,6 +12,8 @@
         <path fill-rule="evenodd" clip-rule="evenodd" d="M9.70092 16.0144C7.95751 17.7578 7.95123 20.5782 9.68689 22.3138C11.4226 24.0495 14.2429 24.0432 15.9863 22.2998L15.0435 21.357C13.8231 22.5774 11.8489 22.5818 10.6339 21.3668C9.41894 20.1518 9.42334 18.1776 10.6437 16.9572L9.70092 16.0144Z" fill="#999999"/>
       </svg>
     </button>
+    
+    {{{ dropdown }}}
     <div class="dropdown dropdown--top">
       <div class="dropdown__items">
         <a href="#" class="dropdown__item">
@@ -35,20 +37,8 @@
       </div>
     </div>
   </div>
-  <div class="chat-actions__field-wrap form">
-    <div class="form__field">
-      <input type="text" name="message" class="chat-actions__field" placeholder="Сообщение" aria-label="Сообщение">
-    </div>
-  </div>
+  {{{ message-field }}}
   <div class="chat-actions__buttons">
-    {{>
-    button/button
-      text="Отправить" classes='button--icon'
-      icon='
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="5" y="10.2" width="11" height="1.6" fill="white"/>
-        <path d="M12 6L16 11L12 16" stroke="white" stroke-width="1.6"/>
-      </svg>'
-    }}
+    {{{ submit-button }}}
   </div>
-</div>
+</form>

@@ -19,6 +19,6 @@ export const PHONE = {
   errorText: 'Телефон введён с ошибкой'
 };
 export const MESSAGE = {
-  rule: '\\S+',
+  rule: '.+',
   errorText: 'Поле не должно быть пустым'
 };

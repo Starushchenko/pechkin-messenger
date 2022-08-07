@@ -31,7 +31,8 @@
   font-size: 14px;
   color: $text-dark;
   font-family: $main-font;
-
+  flex-grow: 1;
+  
   @include input-placeholder {
     font-family: $main-font;
     font-size: 14px;
