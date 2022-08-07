@@ -27,7 +27,7 @@ PAGES.forEach((item) => {
 })
 
 app.get('**/*', (req, res) => {
-  res.status(404).type('.html').sendFile('error-404/error-404.html', {root: distFolder});
+  res.status(404).type('.html').sendFile('error-404/index.html', {root: distFolder});
 });
 
 app.listen(PORT, function() {

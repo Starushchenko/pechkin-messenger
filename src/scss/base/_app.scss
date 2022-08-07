@@ -81,3 +81,19 @@
   padding: 0 30px;
   margin-bottom: 20px;
 }
+
+.app__pages-links {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+}
+ 
+.app__pages-link-item {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: $text-dark;
+  
+  &:hover {
+    background: $gray-2;
+  }
+}
