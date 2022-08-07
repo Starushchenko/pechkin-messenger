@@ -1,5 +1,5 @@
 <div class="error-screen">
-  {{#if client }}
+  {{#if isClient }}
     <div class="error-screen__image">
       <img src="./../images/404-bg.png" alt="Ошибка 404">
     </div>
@@ -12,5 +12,5 @@
   <h1 class="error-screen__code error-screen__code--{{ code }}">{{ code }}</h1>
   <p class="error-screen__description">{{ description }}</p>
 
-  <a class="error-screen__go-back" href="#">Назад к чатам</a>
+  <a class="error-screen__go-back" href="/chats/">Назад к чатам</a>
 </div>

@@ -1,7 +1,7 @@
 import Block from '../../utils/Block';
 import IWelcome from './interface';
 
-import template from './welcome.hbs';
+import template from './welcome.tpl.hbs';
 
 
 class Welcome extends Block {
