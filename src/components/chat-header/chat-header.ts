@@ -15,11 +15,10 @@ class ChatHeader extends Block {
     this.onDropdownClick()
   }
 
-  dropdownTrigger = this.element?.querySelector('.js-dropdown-trigger');
 
   onDropdownClick() {
-    const trigger = this.dropdownTrigger;
-    onDropdownTrigger(trigger);
+    const dropdownTrigger = this.element?.querySelector('.js-dropdown-trigger');
+    onDropdownTrigger(dropdownTrigger);
   }
 
   protected initChildren() {

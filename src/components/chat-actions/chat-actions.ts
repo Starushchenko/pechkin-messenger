@@ -17,10 +17,8 @@ class ChatActions extends Block {
     this.onDropdownClick()
   }
 
-  dropdownTrigger = this.element?.querySelector('.js-dropdown-trigger');
-
   onDropdownClick() {
-    const trigger = this.dropdownTrigger;
+    const trigger = this.element?.querySelector('.js-dropdown-trigger');
     onDropdownTrigger(trigger);
   }
 
