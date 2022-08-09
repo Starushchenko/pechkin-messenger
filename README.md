@@ -85,16 +85,16 @@ createComponent.js             # - node-скрипт для удобного с�
 - `npm run lint:fix` - проверка директории `/src` на наличие ошибок eslint и stylelint + автоматическое исправление
 
 ## Страницы на Netlify
-- [Регистрация](https://deploy--shiny-croissant-34c918.netlify.app/register.html)
-- [Авторизация](https://deploy--shiny-croissant-34c918.netlify.app/auth.html)
+- [Регистрация](https://deploy--shiny-croissant-34c918.netlify.app/register/)
+- [Авторизация](https://deploy--shiny-croissant-34c918.netlify.app/auth/)
 - [Чаты](https://deploy--shiny-croissant-34c918.netlify.app/)
-- [Чат детально](https://deploy--shiny-croissant-34c918.netlify.app/chat.html)
-- [Поиск по чатам](https://deploy--shiny-croissant-34c918.netlify.app/empty-search.html)
-- [Профиль](https://deploy--shiny-croissant-34c918.netlify.app/profile.html)
-- [Изменение настроек профиля](https://deploy--shiny-croissant-34c918.netlify.app/change-settings.html)
-- [Изменение пароля](https://deploy--shiny-croissant-34c918.netlify.app/change-password.html)
-- [Ошибка 404](https://deploy--shiny-croissant-34c918.netlify.app/error-404.html)
-- [Ошибка 5**](https://deploy--shiny-croissant-34c918.netlify.app/error-500.html)
+- [Чат детально](https://deploy--shiny-croissant-34c918.netlify.app/chat/)
+- [Поиск по чатам](https://deploy--shiny-croissant-34c918.netlify.app/empty-search/)
+- [Профиль](https://deploy--shiny-croissant-34c918.netlify.app/profile/)
+- [Изменение настроек профиля](https://deploy--shiny-croissant-34c918.netlify.app/change-settings/)
+- [Изменение пароля](https://deploy--shiny-croissant-34c918.netlify.app/change-password/)
+- [Ошибка 404](https://deploy--shiny-croissant-34c918.netlify.app/error-404/)
+- [Ошибка 5**](https://deploy--shiny-croissant-34c918.netlify.app/error-500/)
 
 ## Стек
 - `parcel` - упаковщик приложения
