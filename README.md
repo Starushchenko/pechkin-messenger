@@ -85,6 +85,7 @@ createComponent.js             # - node-скрипт для удобного с�
 - `npm run lint:fix` - проверка директории `/src` на наличие ошибок eslint и stylelint + автоматическое исправление
 
 ## Страницы на Netlify
+- [Список страниц](https://deploy--shiny-croissant-34c918.netlify.app/index/)
 - [Регистрация](https://deploy--shiny-croissant-34c918.netlify.app/register/)
 - [Авторизация](https://deploy--shiny-croissant-34c918.netlify.app/auth/)
 - [Чаты](https://deploy--shiny-croissant-34c918.netlify.app/)
