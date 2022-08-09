@@ -16,7 +16,7 @@
   width: 36px;
   height: 26px;
   cursor: pointer;
-  
+
   &:hover {
     path {
       fill: $success;
@@ -27,10 +27,11 @@
 .search__field {
   border: 0;
   background: $gray-2;
-  -webkit-box-shadow: inset 0 0 0 50px $gray-2;
+  box-shadow: inset 0 0 0 50px $gray-2;
   font-size: 14px;
   color: $text-dark;
   font-family: $main-font;
+  flex-grow: 1;
   
   @include input-placeholder {
     font-family: $main-font;

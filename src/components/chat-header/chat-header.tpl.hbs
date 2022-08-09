@@ -1,0 +1,18 @@
+<div class="chat-header">
+  <div class="chat-header__avatar">
+    <img src="{{ avatar }}" alt="{{ name }}">
+  </div>
+  <div class="chat-header__title">{{ name }}</div>
+  <div class="chat-header__actions-wrap">
+    <button class="chat-header__actions-trigger js-dropdown-trigger" title="Открыть опции">
+      Открыть опции
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <path d="M18 11.52C19.1929 11.52 20.16 10.5529 20.16 9.35995C20.16 8.16702 19.1929 7.19995 18 7.19995C16.8071 7.19995 15.84 8.16702 15.84 9.35995C15.84 10.5529 16.8071 11.52 18 11.52Z" fill="#1E1E1E"/>
+        <path d="M18 20.16C19.1929 20.16 20.16 19.1929 20.16 18C20.16 16.807 19.1929 15.84 18 15.84C16.8071 15.84 15.84 16.807 15.84 18C15.84 19.1929 16.8071 20.16 18 20.16Z" fill="#1E1E1E"/>
+        <path d="M18 28.8C19.1929 28.8 20.16 27.8329 20.16 26.64C20.16 25.447 19.1929 24.48 18 24.48C16.8071 24.48 15.84 25.447 15.84 26.64C15.84 27.8329 16.8071 28.8 18 28.8Z" fill="#1E1E1E"/>
+      </svg>
+    </button>
+    
+    {{{ dropdown }}}
+  </div>
+</div>

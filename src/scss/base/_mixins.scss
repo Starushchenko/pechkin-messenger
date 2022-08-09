@@ -1,63 +1,57 @@
 // Стили для IE
 @mixin ie11() {
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        @content
-    }
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+  }
 }
 
 // Кроссбраузерная стилизация placeholder
 @mixin input-placeholder {
-    &.placeholder {
-        @content;
-    }
-    &:-moz-placeholder {
-        @content;
-    }
-    &::-moz-placeholder {
-        @content;
-    }
-    &:-ms-input-placeholder {
-        @content;
-    }
-    &::-webkit-input-placeholder {
-        @content;
-    }
+  &.placeholder {
+    @content;
+  }
+
+  &::placeholder {
+    @content;
+  }
 }
 
 // Задание градиента тексту
 @mixin text-gradient($gradient) {
-    background-image: $gradient; /* Standard syntax; must be last */
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
+  background-image: $gradient; /* Standard syntax; must be last */
+  color: transparent;
+  background-clip: text;
 }
 
 // Миксины медиавыражений
 @mixin up($res) {
-    @media screen and (min-width: $res) {
-        @content;
-    }
+  @media screen and (min-width: $res) {
+    @content;
+  }
 }
 
 @mixin down($res) {
-    @media screen and (max-width: $res) {
-        @content;
-    }
+  @media screen and (max-width: $res) {
+    @content;
+  }
 }
 
 // Кастомный скроллбар
 @mixin scrollbar {
-    &::-webkit-scrollbar {
-        width: 8px
-    }
-    &::-webkit-scrollbar-track {
-        background: #1F1F23
-    }
-    &::-webkit-scrollbar-thumb {
-        background: $accent;
-        border-radius: 10px
-    }
-    &::-webkit-scrollbar-thumb:hover {
-        background: $accent
-    }
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #1f1f23;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $accent;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $accent;
+  }
 }

@@ -32,11 +32,11 @@
   max-width: 340px;
   background: $gray-5;
   border-right: 1px solid $gray-3;
-  
+
   &--white {
-    background: #ffffff;
+    background: #fff;
   }
-  
+
   &--slim {
     min-width: 65px;
     padding: 18px;
@@ -62,6 +62,10 @@
   padding: 10px 15px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  
+  svg {
+    min-width: 18px;
+  }
 }
 
 .app__sidebar-title {
@@ -76,4 +80,20 @@
 .app__sidebar-form {
   padding: 0 30px;
   margin-bottom: 20px;
+}
+
+.app__pages-links {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+}
+ 
+.app__pages-link-item {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: $text-dark;
+  
+  &:hover {
+    background: $gray-2;
+  }
 }

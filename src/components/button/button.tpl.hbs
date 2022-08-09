@@ -1,0 +1,15 @@
+<button
+  class="button {{#if classes}}{{classes}}{{/if}}"
+  title="{{ text }}"
+  {{#if type}}
+    type="{{type}}"
+  {{/if}}
+  {{#if disabled}}
+    disabled
+  {{/if}}
+>
+  {{ text }}
+  {{#if this.icon}}
+    {{{ icon }}}
+  {{/if}}
+</button>

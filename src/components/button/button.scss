@@ -16,9 +16,9 @@
   outline: none;
   border: 0;
   font-family: $main-font;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -27,10 +27,10 @@
     opacity: 0;
     transition: 0.3s;
   }
-  
+
   &:hover {
     box-shadow: none;
-    
+
     &::before {
       opacity: 1;
       box-shadow: $btn-inner-shadow;
@@ -57,15 +57,22 @@
 
 .button--icon-l {
   flex-direction: row-reverse;
-  
+
   svg {
     margin-right: 6px;
   }
 }
 
-.button--disabled {
+.button--disabled, [disabled] {
   box-shadow: none;
   background: $gray-1;
+  
+  &:hover {
+    &:before {
+      display: none;
+    }
+    cursor: not-allowed;
+  }
 }
 
 .button--icon {
@@ -78,12 +85,12 @@
   box-shadow: none;
   text-decoration: underline;
   color: $success;
-  
+
   &:hover {
     &::before {
       display: none;
     }
-    
+
     opacity: 0.75;
   }
 }

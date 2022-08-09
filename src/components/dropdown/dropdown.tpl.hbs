@@ -1,0 +1,10 @@
+<div class="dropdown {{#if classes}}{{classes}}{{/if}}">
+  <div class="dropdown__items">
+    {{#each items }}
+      <a href="{{{ this.href }}}" class="dropdown__item {{#if classes}}{{classes}}{{/if}}">
+        {{{ this.icon }}}
+        {{{ this.title }}}
+      </a>
+    {{/each}}
+  </div>
+</div>

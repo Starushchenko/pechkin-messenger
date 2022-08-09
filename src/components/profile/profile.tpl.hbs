@@ -1,0 +1,46 @@
+<div class="profile">
+  <div class="profile__content">
+    <div class="profile__avatar">
+      {{#if avatar }}
+        <img src="{{ avatar }}" alt="{{ userName }}">
+      {{ else }}
+        <img src="./../images/svg/placeholder.svg" alt="Изображение не загружено">
+      {{/if}}
+    </div>
+
+    <h1 class="profile__name">{{ userName }}</h1>
+
+    <div class="profile__info">
+      <div class="profile__info-item">
+        <div class="profile__info-item-prop">Почта</div>
+        <div class="profile__info-item-value">{{ email }}</div>
+      </div>
+      <div class="profile__info-item">
+        <div class="profile__info-item-prop">Логин</div>
+        <div class="profile__info-item-value">{{ login }}</div>
+      </div>
+      <div class="profile__info-item">
+        <div class="profile__info-item-prop">Имя</div>
+        <div class="profile__info-item-value">{{ userName }}</div>
+      </div>
+      <div class="profile__info-item">
+        <div class="profile__info-item-prop">Фамилия</div>
+        <div class="profile__info-item-value">{{ userSurname }}</div>
+      </div>
+      <div class="profile__info-item">
+        <div class="profile__info-item-prop">Имя в чате</div>
+        <div class="profile__info-item-value">{{ nameInChat }}</div>
+      </div>
+      <div class="profile__info-item">
+        <div class="profile__info-item-prop">Телефон</div>
+        <div class="profile__info-item-value">{{ phone }}</div>
+      </div>
+    </div>
+
+    <div class="profile__actions">
+      <a href="/change-settings/" class="profile__actions-item">Изменить данные</a>
+      <a href="/change-password/" class="profile__actions-item">Изменить пароль</a>
+      <a href="#" class="profile__actions-item profile__actions-item--alert">Выйти</a>
+    </div>
+  </div>
+</div>

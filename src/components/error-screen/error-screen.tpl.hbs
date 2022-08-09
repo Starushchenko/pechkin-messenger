@@ -1,0 +1,16 @@
+<div class="error-screen">
+  {{#if isClient }}
+    <div class="error-screen__image">
+      <img src="../images/404-bg.png" alt="Ошибка 404">
+    </div>
+  {{ else }}
+    <div class="error-screen__image">
+      <img src="../images/500-bg.png" alt="Ошибка 500">
+    </div>
+  {{/if}}
+  
+  <h1 class="error-screen__code error-screen__code--{{ code }}">{{ code }}</h1>
+  <p class="error-screen__description">{{ description }}</p>
+
+  <a class="error-screen__go-back" href="/chats/">Назад к чатам</a>
+</div>

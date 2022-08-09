@@ -1,0 +1,32 @@
+<div class="chats-list">
+  {{#if chats}}
+    {{#each chats}}
+      <a class="chats-list__item" href="/chat/">
+        <div class="chats-list__item-img">
+          <img src="{{ this.avatar }}" alt="{{ this.name }}">
+        </div>
+
+        <div class="chats-list__item-content">
+          <span class="chats-list__item-title">{{ this.name }}</span>
+          <span class="chats-list__item-desc">
+            {{#if this.lastMessageIsMine }}
+              <span class="chats-list__item-yours">Вы: </span>
+            {{/if}}
+            {{ this.lastMessage }}
+          </span>
+        </div>
+
+        <div class="chats-list__item-info">
+          <span class="chats-list__item-datetime">{{ this.lastMessageDatetime }}</span>
+          {{#if this.unreadCount }}
+            <span class="chats-list__unread">
+              {{ this.unreadCount }}
+            </span>
+          {{/if}}
+        </div>
+      </a>
+    {{/each}}
+  {{ else }}
+    <span class="chats-list__empty">{{{ emptyText}}} </span>
+  {{/if}}
+</div>

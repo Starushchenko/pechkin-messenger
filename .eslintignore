@@ -1,2 +1,4 @@
 .eslintrc.js
 createComponent.js
+/server
+**/*.html

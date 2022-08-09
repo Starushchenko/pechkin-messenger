@@ -1,0 +1,24 @@
+<a class="chats-list__item" href="/chat/">
+  <div class="chats-list__item-img">
+    <img src="{{ avatar }}" alt="{{ name }}">
+  </div>
+
+  <div class="chats-list__item-content">
+    <span class="chats-list__item-title">{{ name }}</span>
+    <span class="chats-list__item-desc">
+      {{#if lastMessageIsMine }}
+        <span class="chats-list__item-yours">Вы: </span>
+      {{/if}}
+      {{ lastMessage }}
+    </span>
+  </div>
+
+  <div class="chats-list__item-info">
+    <span class="chats-list__item-datetime">{{ lastMessageDatetime }}</span>
+    {{#if unreadCount }}
+      <span class="chats-list__unread">
+        {{ unreadCount }}
+      </span>
+    {{/if}}
+  </div>
+</a>

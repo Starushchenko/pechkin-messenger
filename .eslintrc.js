@@ -1,6 +1,11 @@
 module.exports = {
-  'extends': [
-    'google',
-  ],
-  'parser': 'babel-eslint'
+  env: {
+    es6: true,
+    browser: true,
+    node: true
+  },
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
+  root: true
 };
