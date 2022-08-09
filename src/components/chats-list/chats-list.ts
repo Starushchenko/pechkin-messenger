@@ -2,7 +2,7 @@ import Block from '../../utils/Block';
 import IChatsList from './interface';
 import IChatPreview from '../chat-item/interface';
 
-import LogoPlaceholder from '../../images/svg/placeholder.svg'
+import LogoPlaceholder from '../../../assets/images/svg/placeholder.svg'
 
 import template from './chats-list.tpl.hbs';
 

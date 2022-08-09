@@ -3,7 +3,7 @@ import renderDOM from '../../utils/renderDOM';
 import {TStringObject} from '../../types/common';
 import {formatFormData} from '../../utils/helpers';
 
-import Image from '../../images/welcome.png';
+import Image from '../../../assets/images/welcome.png';
 import RegisterForm from '../../blocks/form/register-form/form';
 import Welcome from '../../components/welcome/welcome';
 

@@ -1,6 +1,6 @@
 import Block from '../../utils/Block';
 import IChatHeader from './interface';
-import LogoPlaceholder from '../../images/svg/placeholder.svg'
+import LogoPlaceholder from '../../../assets/images/svg/placeholder.svg'
 import chatMenu = require('../../enums/chat-menu.json');
 
 import template from './chat-header.tpl.hbs';

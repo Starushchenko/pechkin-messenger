@@ -2,7 +2,7 @@ import Block from '../../utils/Block';
 import renderDOM from '../../utils/renderDOM';
 import {TStringObject} from '../../types/common';
 
-import Image from '../../images/welcome.png';
+import Image from '../../../assets/images/welcome.png';
 import AuthForm from '../../blocks/form/auth-form/form';
 import Welcome from '../../components/welcome/welcome';
 

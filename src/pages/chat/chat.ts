@@ -1,6 +1,6 @@
 import Block from '../../utils/Block';
 import renderDOM from '../../utils/renderDOM';
-import Logo from '../../images/logo.png';
+import Logo from '../../../assets/images/logo.png';
 import chats = require('../../enums/chats.json');
 import chatHistory = require('../../enums/chat-history.json');
 

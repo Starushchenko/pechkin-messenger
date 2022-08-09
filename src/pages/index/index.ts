@@ -1,7 +1,7 @@
 import Block from '../../utils/Block';
 import renderDOM from '../../utils/renderDOM';
 
-import Image from '../../images/welcome.png';
+import Image from '../../../assets/images/welcome.png';
 import Welcome from '../../components/welcome/welcome';
 
 import template from './index.tpl.hbs';
