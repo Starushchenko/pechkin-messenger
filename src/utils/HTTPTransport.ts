@@ -4,28 +4,28 @@ import {queryStringify} from './helpers';
 export type RequestOptions = {
   headers?: Record<string, string>;
   method?: string;
-  data?: any;
   timeout?: number;
+  data?: any;
 };
 
 class HTTPTransport {
   get = (url: string, options: RequestOptions = {}) => {
-    return this.request(url, {...options, method: METHODS.GET}, options.timeout);
+    return this.request(url, {...options, method: METHODS.GET});
   };
 
   post = (url: string, options: RequestOptions = {}) => {
-    return this.request(url, {...options, method: METHODS.POST}, options.timeout);
+    return this.request(url, {...options, method: METHODS.POST});
   };
 
   put = (url: string, options: RequestOptions = {}) => {
-    return this.request(url, {...options, method: METHODS.PUT}, options.timeout);
+    return this.request(url, {...options, method: METHODS.PUT});
   };
 
   delete = (url: string, options: RequestOptions = {}) => {
-    return this.request(url, {...options, method: METHODS.DELETE}, options.timeout);
+    return this.request(url, {...options, method: METHODS.DELETE});
   };
 
-  request = (url: string, options: RequestOptions = {}, timeout = 5000) => {
+  request = (url: string, options: RequestOptions = {}) => {
     const {headers = {}, method, data} = options;
 
     return new Promise(function(resolve, reject) {
@@ -55,7 +55,7 @@ class HTTPTransport {
       xhr.onabort = reject;
       xhr.onerror = reject;
 
-      xhr.timeout = timeout;
+      xhr.timeout = options.timeout || 5000;
       xhr.ontimeout = reject;
 
       if (isGet || !data) {

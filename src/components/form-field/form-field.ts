@@ -50,25 +50,24 @@ class FormField extends Block {
   }
 
   validate(field?: HTMLInputElement | null): void {
-    if (field) {
-      if (!isValid(field)) {
-        if (this.element) {
-          this.element.classList.add(classes.FIELD_HAS_ERROR)
-        }
-        if (this.fieldInfoElement && this.fieldInfoElement instanceof HTMLElement) {
-          this.fieldInfoElement.innerText = getErrorText(field, this.props.errorText);
-        }
-        if (!this.isOnInputValidateEnabled) {
-          this.fieldElement?.addEventListener('input', this.onInput.bind(this));
-          this.isOnInputValidateEnabled = true;
-        }
-      } else {
-        if (this.element) {
-          this.element.classList.remove(classes.FIELD_HAS_ERROR)
-        }
-        if (this.fieldInfoElement && this.fieldInfoElement instanceof HTMLElement) {
-          this.fieldInfoElement.innerText = '';
-        }
+    if (!field) return;
+    if (!isValid(field)) {
+      if (this.element) {
+        this.element.classList.add(classes.FIELD_HAS_ERROR)
+      }
+      if (this.fieldInfoElement && this.fieldInfoElement instanceof HTMLElement) {
+        this.fieldInfoElement.innerText = getErrorText(field, this.props.errorText);
+      }
+      if (!this.isOnInputValidateEnabled) {
+        this.fieldElement?.addEventListener('input', this.onInput.bind(this));
+        this.isOnInputValidateEnabled = true;
+      }
+    } else {
+      if (this.element) {
+        this.element.classList.remove(classes.FIELD_HAS_ERROR)
+      }
+      if (this.fieldInfoElement && this.fieldInfoElement instanceof HTMLElement) {
+        this.fieldInfoElement.innerText = '';
       }
     }
   }
