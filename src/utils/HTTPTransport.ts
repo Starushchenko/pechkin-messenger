@@ -1,4 +1,4 @@
-import {METHODS} from '../enums/http-methods';
+import {METHODS} from '../constants/http-methods';
 import {queryStringify} from './helpers';
 
 export type RequestOptions = {

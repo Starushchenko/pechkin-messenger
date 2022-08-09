@@ -1,6 +1,6 @@
 import Block from '../../../utils/Block';
 import IForm from "../interface";
-import {LOGIN, PASSWORD} from '../../../enums/validation-rules';
+import {LOGIN, PASSWORD} from '../../../constants/validation-rules';
 
 import FormField from '../../../components/form-field/form-field';
 import Button from '../../../components/button/button';

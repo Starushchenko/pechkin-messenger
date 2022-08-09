@@ -1,6 +1,6 @@
 import Block from '../../utils/Block';
 import renderDOM from '../../utils/renderDOM';
-import profileInfo = require('../../enums/profile.json');
+import profileInfo = require('../../stubs/profile.json');
 
 import Button from '../../components/button/button';
 import Profile from '../../components/profile/profile';

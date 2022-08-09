@@ -1,7 +1,7 @@
 import Block from '../../utils/Block';
 import IChatActions from './interface';
-import {MESSAGE} from '../../enums/validation-rules';
-import filesMenu = require('../../enums/files-menu.json');
+import {MESSAGE} from '../../constants/validation-rules';
+import filesMenu = require('../../stubs/files-menu.json');
 
 import template from './chat-actions.tpl.hbs';
 

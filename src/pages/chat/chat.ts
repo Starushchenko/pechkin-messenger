@@ -1,8 +1,8 @@
 import Block from '../../utils/Block';
 import renderDOM from '../../utils/renderDOM';
 import Logo from '../../../assets/images/logo.png';
-import chats = require('../../enums/chats.json');
-import chatHistory = require('../../enums/chat-history.json');
+import chats = require('../../stubs/chats.json');
+import chatHistory = require('../../stubs/chat-history.json');
 
 import Chat from '../../blocks/chat/chat';
 import Button from '../../components/button/button';
