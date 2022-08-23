@@ -30,3 +30,10 @@ export const queryStringify = (data: Record<string, string>): string => {
     return `${result}${key}=${data[key]}${index < keys.length - 1 ? '&' : ''}`;
   }, '?');
 };
+
+export const trim = (string: string, cuted = ''): string => {
+  if (!cuted) {
+    return string.trim();
+  }
+  return string.replace(new RegExp(`^[${cuted}]+|[${cuted}]+$`, "g"), '');
+}

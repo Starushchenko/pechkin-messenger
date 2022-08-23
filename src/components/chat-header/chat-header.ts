@@ -2,11 +2,11 @@ import Block from '../../utils/Block';
 import IChatHeader from './interface';
 import LogoPlaceholder from '../../../assets/images/svg/placeholder.svg'
 import chatMenu = require('../../stubs/chat-menu.json');
+import {onDropdownTrigger} from '../../utils/dropdownTrigger';
 
 import template from './chat-header.tpl.hbs';
 
 import Dropdown from '../dropdown/dropdown';
-import {onDropdownTrigger} from '../../utils/dropdownTrigger';
 
 class ChatHeader extends Block {
   constructor(props: IChatHeader) {
@@ -14,7 +14,6 @@ class ChatHeader extends Block {
     
     this.onDropdownClick()
   }
-
 
   onDropdownClick() {
     const dropdownTrigger = this.element?.querySelector('.js-dropdown-trigger');
