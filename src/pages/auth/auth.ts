@@ -1,5 +1,4 @@
-import Block from '../../utils/Block';
-import renderDOM from '../../utils/renderDOM';
+import Block from '../../utils/block';
 import {TStringObject} from '../../types/common';
 
 import Image from '../../../assets/images/welcome.png';
@@ -13,7 +12,7 @@ const classes: TStringObject = {
   FORM_CLASS: 'app__sidebar-form'
 };
 
-class AuthPage extends Block {
+export default class AuthPage extends Block {
   protected initChildren() {
 
     this.children['auth-form'] = new AuthForm({
@@ -37,14 +36,7 @@ class AuthPage extends Block {
     console.log(formatFormData(formData));
   }
 
-
   render() {
     return this.compile(template, {});
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const page = new AuthPage();
-
-  renderDOM('#app', page);
-});

@@ -1,13 +1,11 @@
-import Block from '../../utils/Block';
-import renderDOM from '../../utils/renderDOM';
-
+import Block from '../../utils/block';
 import Button from '../../components/button/button';
 import ProfileForm from '../../blocks/form/profile-form/form';
 
 import template from './change-settings.tpl.hbs';
 import {formatFormData} from '../../utils/helpers';
 
-class ChangeSettings extends Block {
+export default class ChangeSettings extends Block {
   protected initChildren() {
 
     this.children['button-back'] = new Button({
@@ -49,9 +47,3 @@ class ChangeSettings extends Block {
     return this.compile(template, {});
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const page = new ChangeSettings();
-
-  renderDOM('#app', page);
-});

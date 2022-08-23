@@ -1,6 +1,6 @@
-import Block from './Block';
+import Block from './block';
 
-export default function renderDOM(rootSelector: string, component: Block) {
+export default function renderDom(rootSelector: string, component: Block) {
   const root = document.querySelector(rootSelector);
 
   if (!root) {

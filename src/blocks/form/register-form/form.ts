@@ -1,6 +1,6 @@
-import Block from '../../../utils/Block';
+import Block from '../../../utils/block';
 import IForm from "../interface";
-import {EMAIL, LOGIN, NAME, PHONE, PASSWORD} from '../../../constants/validation-rules';
+import {EMAIL, LOGIN, NAME, PHONE, PASSWORD} from '../../../utils/validation-rules';
 
 import FormField from '../../../components/form-field/form-field';
 import Button from '../../../components/button/button';
@@ -127,7 +127,7 @@ class RegisterForm extends Block {
 
   onLoginLinkClick(e: Event) : void {
     e.preventDefault();
-    location.replace("/auth/");
+    location.replace("auth/");
   }
 
   render() {

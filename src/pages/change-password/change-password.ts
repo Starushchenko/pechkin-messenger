@@ -1,5 +1,4 @@
-import Block from '../../utils/Block';
-import renderDOM from '../../utils/renderDOM';
+import Block from '../../utils/block';
 
 import Button from '../../components/button/button';
 
@@ -7,7 +6,7 @@ import template from './change-password.tpl.hbs';
 import PasswordForm from '../../blocks/form/password-form/form';
 import {formatFormData} from '../../utils/helpers';
 
-class ChangePassword extends Block {
+export default class ChangePassword extends Block {
   protected initChildren() {
 
     this.children['button-back'] = new Button({
@@ -49,9 +48,3 @@ class ChangePassword extends Block {
     return this.compile(template, {});
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const page = new ChangePassword();
-
-  renderDOM('#app', page);
-});

@@ -1,4 +1,4 @@
-import EventBus from './EventBus';
+import EventBus from './event-bus';
 import { nanoid } from 'nanoid';
 
 class Block {

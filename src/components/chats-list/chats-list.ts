@@ -1,4 +1,4 @@
-import Block from '../../utils/Block';
+import Block from '../../utils/block';
 import IChatsList from './interface';
 import IChatPreview from '../chat-item/interface';
 

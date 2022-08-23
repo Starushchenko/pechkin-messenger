@@ -1,14 +1,14 @@
-import Block from '../../utils/Block';
+import Block from '../../utils/block';
 import IChatActions from './interface';
-import {MESSAGE} from '../../constants/validation-rules';
+import {MESSAGE} from '../../utils/validation-rules';
 import filesMenu = require('../../stubs/files-menu.json');
 
 import template from './chat-actions.tpl.hbs';
 
 import FormField from '../form-field/form-field';
 import Button from '../button/button';
-import {onDropdownTrigger} from '../../utils/dropdownTrigger';
 import Dropdown from '../dropdown/dropdown';
+import {onDropdownTrigger} from '../dropdown/helpers';
 
 class ChatActions extends Block {
   constructor(props: IChatActions) {

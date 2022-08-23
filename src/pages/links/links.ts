@@ -1,12 +1,11 @@
-import Block from '../../utils/Block';
-import renderDOM from '../../utils/renderDOM';
+import Block from '../../utils/block';
 
 import Image from '../../../assets/images/welcome.png';
 import Welcome from '../../components/welcome/welcome';
 
-import template from './index.tpl.hbs';
+import template from './links.tpl.hbs';
 
-class IndexPage extends Block {
+export default class LinksPage extends Block {
   protected initChildren() {
     this.children.welcome = new Welcome({
       title: 'Pechkin Messenger',
@@ -19,9 +18,3 @@ class IndexPage extends Block {
     return this.compile(template, {});
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const page = new IndexPage();
-
-  renderDOM('#app', page);
-});

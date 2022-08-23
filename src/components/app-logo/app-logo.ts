@@ -1,4 +1,4 @@
-import Block from '../../utils/Block';
+import Block from '../../utils/block';
 import IAppLogo from './interface';
 
 import template from './app-logo.tpl.hbs';

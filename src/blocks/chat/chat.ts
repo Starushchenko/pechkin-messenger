@@ -1,4 +1,4 @@
-import Block from '../../utils/Block';
+import Block from '../../utils/block';
 import IChat from './interface';
 
 import template from './chat.tpl.hbs';

@@ -1,5 +1,4 @@
-import Block from '../../utils/Block';
-import renderDOM from '../../utils/renderDOM';
+import Block from '../../utils/block';
 import Logo from '../../../assets/images/logo.png';
 import chats = require('../../stubs/chats.json');
 
@@ -11,7 +10,7 @@ import Placeholder from '../../components/placeholder/placeholder';
 
 import template from './chats.tpl.hbs';
 
-class ChatsPage extends Block {
+export default class ChatsPage extends Block {
   protected initChildren() {
     this.children['app-logo'] = new AppLogo({
       name: 'Pechkin',
@@ -56,9 +55,3 @@ class ChatsPage extends Block {
     return this.compile(template, {});
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const page = new ChatsPage();
-
-  renderDOM('#app', page);
-});

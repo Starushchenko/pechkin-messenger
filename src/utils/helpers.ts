@@ -37,3 +37,7 @@ export const trim = (string: string, cuted = ''): string => {
   }
   return string.replace(new RegExp(`^[${cuted}]+|[${cuted}]+$`, "g"), '');
 }
+
+export const stringSanitize = (str: string) => {
+  str.replace(/[&<>"']/gi, '')
+}

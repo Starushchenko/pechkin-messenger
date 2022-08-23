@@ -1,5 +1,4 @@
-import Block from '../../utils/Block';
-import renderDOM from '../../utils/renderDOM';
+import Block from '../../utils/block';
 import profileInfo = require('../../stubs/profile.json');
 
 import Button from '../../components/button/button';
@@ -7,7 +6,7 @@ import Profile from '../../components/profile/profile';
 
 import template from './profile.tpl.hbs';
 
-class ProfilePage extends Block {
+export default class ProfilePage extends Block {
   protected initChildren() {
 
     this.children['button-back'] = new Button({
@@ -37,9 +36,3 @@ class ProfilePage extends Block {
     return this.compile(template, {});
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const page = new ProfilePage();
-
-  renderDOM('#app', page);
-});

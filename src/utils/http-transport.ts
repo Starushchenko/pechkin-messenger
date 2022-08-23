@@ -1,4 +1,4 @@
-import {METHODS} from '../constants/http-methods';
+import {METHODS} from '../constants/constants';
 import {queryStringify} from './helpers';
 
 export type RequestOptions = {
@@ -8,7 +8,7 @@ export type RequestOptions = {
   data?: any;
 };
 
-class HTTPTransport {
+class HttpTransport {
   get = (url: string, options: RequestOptions = {}) => {
     return this.request(url, {...options, method: METHODS.GET});
   };

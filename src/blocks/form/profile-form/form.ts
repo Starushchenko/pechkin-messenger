@@ -1,6 +1,6 @@
-import Block from '../../../utils/Block';
+import Block from '../../../utils/block';
 import IForm from "../interface";
-import {EMAIL, LOGIN, NAME, PHONE} from '../../../constants/validation-rules';
+import {EMAIL, LOGIN, NAME, PHONE} from '../../../utils/validation-rules';
 
 import FormField from '../../../components/form-field/form-field';
 import Button from '../../../components/button/button';

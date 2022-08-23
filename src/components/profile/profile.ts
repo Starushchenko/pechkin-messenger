@@ -1,4 +1,4 @@
-import Block from '../../utils/Block';
+import Block from '../../utils/block';
 import IProfile from './interface';
 
 import template from './profile.tpl.hbs';
