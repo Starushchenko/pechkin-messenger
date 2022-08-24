@@ -3,7 +3,7 @@ import Block from '../../utils/block';
 import Button from '../../components/button/button';
 
 import template from './change-password.tpl.hbs';
-import PasswordForm from '../../blocks/form/password-form/form';
+import PasswordForm from '../../modules/form/password-form/form';
 import {formatFormData} from '../../utils/helpers';
 
 export default class ChangePassword extends Block {

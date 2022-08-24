@@ -3,7 +3,7 @@ import Logo from '../../../assets/images/logo.png';
 import chats = require('../../stubs/chats.json');
 import chatHistory = require('../../stubs/chat-history.json');
 
-import Chat from '../../blocks/chat/chat';
+import Chat from '../../modules/chat/chat';
 import Button from '../../components/button/button';
 import AppLogo from '../../components/app-logo/app-logo';
 import Search from '../../components/search/search';

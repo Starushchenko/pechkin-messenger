@@ -1,6 +1,6 @@
 import Block from '../../utils/block';
 import IChatActions from './interface';
-import {MESSAGE} from '../../utils/validation-rules';
+import {VALIDATION_RULES} from '../../constants/constants';
 import filesMenu = require('../../stubs/files-menu.json');
 
 import template from './chat-actions.tpl.hbs';
@@ -31,13 +31,13 @@ class ChatActions extends Block {
     this.children['message-field'] = new FormField({
       name: 'message',
       label: 'Сообщение',
-      errorText: MESSAGE.errorText,
+      errorText: VALIDATION_RULES.MESSAGE.errorText,
       field: {
         type: 'text',
         name: 'message',
         placeholder: 'Введите текст',
         required: true,
-        rule: MESSAGE.rule
+        rule: VALIDATION_RULES.MESSAGE.rule
       }
     });
     

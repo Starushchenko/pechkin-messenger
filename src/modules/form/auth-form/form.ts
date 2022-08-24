@@ -1,6 +1,6 @@
 import Block from '../../../utils/block';
 import IForm from "../interface";
-import {LOGIN, PASSWORD} from '../../../utils/validation-rules';
+import {VALIDATION_RULES} from '../../../constants/constants';
 
 import FormField from '../../../components/form-field/form-field';
 import Button from '../../../components/button/button';
@@ -16,7 +16,7 @@ class AuthForm extends Block {
     this.children['login-field'] = new FormField({
       name: 'login',
       label: 'Логин',
-      errorText: LOGIN.errorText,
+      errorText: VALIDATION_RULES.LOGIN.errorText,
       field: {
         type: 'text',
         name: 'login',
@@ -24,14 +24,14 @@ class AuthForm extends Block {
         minlength: 3,
         maxlength: 20,
         required: true,
-        rule: LOGIN.rule
+        rule: VALIDATION_RULES.LOGIN.rule
       }
     });
 
     this.children['password-field'] = new FormField({
       name: 'password',
       label: 'Пароль',
-      errorText: PASSWORD.errorText,
+      errorText: VALIDATION_RULES.PASSWORD.errorText,
       field: {
         type: 'password',
         name: 'password',
@@ -39,7 +39,7 @@ class AuthForm extends Block {
         minlength: 8,
         maxlength: 40,
         required: true,
-        rule: PASSWORD.rule
+        rule: VALIDATION_RULES.PASSWORD.rule
       }
     });
 

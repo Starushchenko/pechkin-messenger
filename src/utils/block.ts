@@ -1,5 +1,6 @@
 import EventBus from './event-bus';
-import { nanoid } from 'nanoid';
+import {nanoid} from 'nanoid';
+import {isEqual} from './helpers';
 
 class Block {
   /** JSDoc
@@ -122,8 +123,7 @@ class Block {
   }
 
   protected componentDidUpdate(oldProps: any, newProps: any) {
-    // TODO: Доработать
-    if (oldProps !== newProps) return true;
+    if (!isEqual(oldProps, newProps)) return true;
 
     return;
   }

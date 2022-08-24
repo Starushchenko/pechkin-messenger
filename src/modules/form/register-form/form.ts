@@ -1,6 +1,6 @@
 import Block from '../../../utils/block';
 import IForm from "../interface";
-import {EMAIL, LOGIN, NAME, PHONE, PASSWORD} from '../../../utils/validation-rules';
+import {VALIDATION_RULES} from '../../../constants/constants';
 
 import FormField from '../../../components/form-field/form-field';
 import Button from '../../../components/button/button';
@@ -16,20 +16,20 @@ class RegisterForm extends Block {
     this.children['email-field'] = new FormField({
       name: 'email',
       label: 'Электронная почта',
-      errorText: EMAIL.errorText,
+      errorText: VALIDATION_RULES.EMAIL.errorText,
       field: {
         type: 'email',
         name: 'email',
         placeholder: 'Например, ivanoff@yandex.ru',
         required: true,
-        rule: EMAIL.rule
+        rule: VALIDATION_RULES.EMAIL.rule
       }
     });
     
     this.children['login-field'] = new FormField({
       name: 'login',
       label: 'Логин',
-      errorText: LOGIN.errorText,
+      errorText: VALIDATION_RULES.LOGIN.errorText,
       field: {
         type: 'text',
         name: 'login',
@@ -37,53 +37,53 @@ class RegisterForm extends Block {
         minlength: 3,
         maxlength: 20,
         required: true,
-        rule: LOGIN.rule
+        rule: VALIDATION_RULES.LOGIN.rule
       }
     });
 
     this.children['name-field'] = new FormField({
       name: 'name',
       label: 'Имя',
-      errorText: NAME.errorText,
+      errorText: VALIDATION_RULES.NAME.errorText,
       field: {
         type: 'text',
         name: 'name',
         placeholder: 'Например, Константин',
         required: true,
-        rule: NAME.rule
+        rule: VALIDATION_RULES.NAME.rule
       }
     });
 
     this.children['second-name-field'] = new FormField({
       name: 'second_name',
       label: 'Фамилия',
-      errorText: NAME.errorText,
+      errorText: VALIDATION_RULES.NAME.errorText,
       field: {
         type: 'text',
         name: 'second_name',
         placeholder: 'Например, Иванов',
         required: true,
-        rule: NAME.rule
+        rule: VALIDATION_RULES.NAME.rule
       }
     });
 
     this.children['second-name-field'] = new FormField({
       name: 'phone',
       label: 'Телефон',
-      errorText: PHONE.errorText,
+      errorText: VALIDATION_RULES.PHONE.errorText,
       field: {
         type: 'text',
         name: 'phone',
         placeholder: '+7 911 911 91 91',
         required: true,
-        rule: PHONE.rule
+        rule: VALIDATION_RULES.PHONE.rule
       }
     });
 
     this.children['password-field'] = new FormField({
       name: 'password',
       label: 'Пароль',
-      errorText: PASSWORD.errorText,
+      errorText: VALIDATION_RULES.PASSWORD.errorText,
       field: {
         type: 'password',
         name: 'password',
@@ -91,14 +91,14 @@ class RegisterForm extends Block {
         minlength: 8,
         maxlength: 40,
         required: true,
-        rule: PASSWORD.rule
+        rule: VALIDATION_RULES.PASSWORD.rule
       }
     });
 
     this.children['password-confirm-field'] = new FormField({
       name: 'password-confirm',
       label: 'Пароль (ещё раз)',
-      errorText: PASSWORD.errorText,
+      errorText: VALIDATION_RULES.PASSWORD.errorText,
       field: {
         type: 'password',
         name: 'password-confirm',
@@ -106,7 +106,7 @@ class RegisterForm extends Block {
         minlength: 8,
         maxlength: 40,
         required: true,
-        rule: PASSWORD.rule
+        rule: VALIDATION_RULES.PASSWORD.rule
       }
     });
 

@@ -1,6 +1,6 @@
 import Block from '../../../utils/block';
 import IForm from "../interface";
-import {PASSWORD} from '../../../utils/validation-rules';
+import {VALIDATION_RULES} from '../../../constants/constants';
 
 import FormField from '../../../components/form-field/form-field';
 import Button from '../../../components/button/button';
@@ -16,7 +16,7 @@ class PasswordForm extends Block {
     this.children['old-password-field'] = new FormField({
       name: 'old-password',
       label: 'Старый пароль',
-      errorText: PASSWORD.errorText,
+      errorText: VALIDATION_RULES.PASSWORD.errorText,
       field: {
         type: 'password',
         name: 'old-password',
@@ -24,14 +24,14 @@ class PasswordForm extends Block {
         minlength: 8,
         maxlength: 40,
         required: true,
-        rule: PASSWORD.rule
+        rule: VALIDATION_RULES.PASSWORD.rule
       }
     });
 
     this.children['password-field'] = new FormField({
       name: 'password',
       label: 'Новый пароль',
-      errorText: PASSWORD.errorText,
+      errorText: VALIDATION_RULES.PASSWORD.errorText,
       field: {
         type: 'password',
         name: 'password',
@@ -39,14 +39,14 @@ class PasswordForm extends Block {
         minlength: 8,
         maxlength: 40,
         required: true,
-        rule: PASSWORD.rule
+        rule: VALIDATION_RULES.PASSWORD.rule
       }
     });
 
     this.children['password-confirm-field'] = new FormField({
       name: 'password-confirm',
       label: 'Повторите пароль',
-      errorText: PASSWORD.errorText,
+      errorText: VALIDATION_RULES.PASSWORD.errorText,
       field: {
         type: 'password',
         name: 'password-confirm',
@@ -54,7 +54,7 @@ class PasswordForm extends Block {
         minlength: 8,
         maxlength: 40,
         required: true,
-        rule: PASSWORD.rule
+        rule: VALIDATION_RULES.PASSWORD.rule
       }
     });
 

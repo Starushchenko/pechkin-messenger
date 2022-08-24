@@ -3,7 +3,7 @@ import {TStringObject} from '../../types/common';
 import {formatFormData} from '../../utils/helpers';
 
 import Image from '../../../assets/images/welcome.png';
-import RegisterForm from '../../blocks/form/register-form/form';
+import RegisterForm from '../../modules/form/register-form/form';
 import Welcome from '../../components/welcome/welcome';
 
 import template from './register.hbs';

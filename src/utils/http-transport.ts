@@ -8,24 +8,8 @@ export type RequestOptions = {
   data?: any;
 };
 
-class HttpTransport {
-  get = (url: string, options: RequestOptions = {}) => {
-    return this.request(url, {...options, method: METHODS.GET});
-  };
-
-  post = (url: string, options: RequestOptions = {}) => {
-    return this.request(url, {...options, method: METHODS.POST});
-  };
-
-  put = (url: string, options: RequestOptions = {}) => {
-    return this.request(url, {...options, method: METHODS.PUT});
-  };
-
-  delete = (url: string, options: RequestOptions = {}) => {
-    return this.request(url, {...options, method: METHODS.DELETE});
-  };
-
-  request = (url: string, options: RequestOptions = {}) => {
+class HTTPTransport {
+  private _request = <T>(url: string, options: RequestOptions = {}): Promise<T> => {
     const {headers = {}, method, data} = options;
 
     return new Promise(function(resolve, reject) {
@@ -49,7 +33,12 @@ class HttpTransport {
       });
 
       xhr.onload = function() {
-        resolve(xhr);
+        try {
+          resolve(JSON.parse(xhr.response));
+        }
+        catch {
+          resolve(xhr.response)
+        }
       };
 
       xhr.onabort = reject;
@@ -60,9 +49,27 @@ class HttpTransport {
 
       if (isGet || !data) {
         xhr.send();
+      } else if (options.headers && options.headers['content-type'] === 'application/json') {
+        xhr.send(JSON.stringify(data))
       } else {
         xhr.send(data);
       }
     });
+  };
+  
+  public get = <T>(url: string, options: RequestOptions = {}): Promise<T> => {
+    return this._request<T>(url, {...options, method: METHODS.GET});
+  };
+
+  public post = <T>(url: string, options: RequestOptions = {}): Promise<T> => {
+    return this._request<T>(url, {...options, method: METHODS.POST});
+  };
+
+  public put = <T>(url: string, options: RequestOptions = {}): Promise<T> => {
+    return this._request<T>(url, {...options, method: METHODS.PUT});
+  };
+
+  public delete = <T>(url: string, options: RequestOptions = {}): Promise<T> => {
+    return this._request<T>(url, {...options, method: METHODS.DELETE});
   };
 }

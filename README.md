@@ -35,15 +35,15 @@ src/                           # Ресурсы
         interface.js
         example.scss
         example.tpl.hbs
-  blocks/                      # - блоки - компоненты, собирающие в себя компоненты из /components.
-    block/                     #   Структура аналогична компонентам
-        block1.ts
-          block1.ts
-          block1.tpl.hbs
-        block2.ts
-          block2.ts
-          block2.tpl.hbs
-        block.scss
+  modules/                     # - модули - компоненты, собирающие в себя другие компоненты из /components.
+    module/                    #   Структура аналогична компонентам
+        module.ts
+          module.ts
+          module.tpl.hbs
+        module2.ts
+          module2.ts
+          module2.tpl.hbs
+        module.scss
         interface.js
   pages/                       # - страницы - высший уровень компонентов, включающий компоненты из /components
     page/                      #   и блоки из /blocks. Содержат .ts, описывающий структуру, .tpl.hbs с шаблоном
@@ -51,8 +51,7 @@ src/                           # Ресурсы
         page.ts
         page.tpl.hbs
   constants/                   # - константы
-    validation-rules.ts        # - правила валидации и тексты ошибок
-    http-methods.ts            # - методы xhr-запросов
+    constants.ts               
   stubs/                       # - словари статических данных
     *.json
   types/                       # - описание типов, используемых во всём проекте

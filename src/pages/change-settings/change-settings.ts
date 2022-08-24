@@ -1,6 +1,6 @@
 import Block from '../../utils/block';
 import Button from '../../components/button/button';
-import ProfileForm from '../../blocks/form/profile-form/form';
+import ProfileForm from '../../modules/form/profile-form/form';
 
 import template from './change-settings.tpl.hbs';
 import {formatFormData} from '../../utils/helpers';
