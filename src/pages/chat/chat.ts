@@ -10,6 +10,8 @@ import Search from '../../components/search/search';
 import ChatsList from '../../components/chats-list/chats-list';
 
 import template from './chat.tpl.hbs';
+import {router} from '../../index';
+import {ROUTES} from '../../constants/constants';
 
 export default class ChatPage extends Block {
   protected initChildren() {
@@ -56,7 +58,7 @@ export default class ChatPage extends Block {
 
   onProfileClick(e: Event) {
     e.preventDefault();
-    location.replace('/profile/');
+    router.go(ROUTES.PROFILE);
   }
 
   render() {

@@ -1,7 +1,7 @@
 import {TValidationRules, TStringObject} from '../types/common';
 
 // API
-export const METHODS = {
+export const METHODS: TStringObject = {
   GET: 'GET',
   POST: 'POST',
   PUT: 'PUT',
@@ -11,7 +11,7 @@ export const API_URL = 'https://ya-praktikum.tech/api/v2';
 export const WEBSOCKET_CHATS_URL = 'wss://ya-praktikum.tech/ws/chats/';
 
 // Routing
-export const ROUTES = {
+export const ROUTES: TStringObject = {
   HOME: '/',
   AUTH: '/auth',
   REGISTER: '/register',
@@ -23,6 +23,10 @@ export const ROUTES = {
   ERROR_500: '/error_500',
   ERROR_404: '/error_404',
   LINKS: '/links'
+}
+
+export const ROUTER_EVENTS: TStringObject = {
+  CHANGED: 'changed'
 }
 
 // Validation

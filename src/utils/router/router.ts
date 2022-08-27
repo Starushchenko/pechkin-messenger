@@ -1,8 +1,11 @@
 import Block from '../block';
 import Route from './route';
+import EventBus from '../event-bus';
 
-export class Router {
+export class Router extends EventBus {
   constructor(rootQuery?: string, pageNotFound?: string) {
+    super();
+    
     if (Router.__instance) {
       return Router.__instance;
     }
@@ -18,7 +21,6 @@ export class Router {
   private static __instance: Router;
   private routes: Route[] = [];
   private history = window.history;
-  private _currentRoute: Route | null = null;
   private readonly _rootQuery: string
   private readonly _pageNotFound: string | null = null;
 
@@ -31,12 +33,7 @@ export class Router {
       }
       return;
     }
-
-    if (this._currentRoute) {
-      this._currentRoute.leave();
-    }
-
-    this._currentRoute = route;
+    
     route.render();
   }
 
@@ -60,8 +57,10 @@ export class Router {
   }
 
   public go(pathname: string) {
-    this.history.pushState({}, '', pathname);
-    this._onRoute(pathname);
+    if (window.location.pathname !== pathname) {
+      this.history.pushState({}, '', pathname);
+      this._onRoute(pathname);
+    }
   }
 
   public back() {

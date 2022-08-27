@@ -1,11 +1,12 @@
 import Block from '../../../utils/block';
 import IForm from "../interface";
-import {VALIDATION_RULES} from '../../../constants/constants';
+import {ROUTES, VALIDATION_RULES} from '../../../constants/constants';
 
 import FormField from '../../../components/form-field/form-field';
 import Button from '../../../components/button/button';
 
 import template from './form.tpl.hbs';
+import {router} from '../../../index';
 
 class AuthForm extends Block {
   constructor(props: IForm) {
@@ -60,7 +61,7 @@ class AuthForm extends Block {
 
   onRegisterLinkClick(e: Event) : void {
     e.preventDefault();
-    location.replace("/register");
+    router.go(ROUTES.REGISTER);
   }
 
   render() {

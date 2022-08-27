@@ -1,4 +1,4 @@
-import {TStringObject, TIndexedObject} from '../types/common';
+import {TStringObject, TIndexedObject, ResponseError} from '../types/common';
 
 export const getErrorText = (field: HTMLInputElement, errorText: string) => {
   if (field.validity.patternMismatch && errorText) {
@@ -45,6 +45,10 @@ export const stringSanitize = (str: string) => {
 export const isObject = (object: TIndexedObject | unknown):object is TIndexedObject => {
   return typeof object === 'object' && object !== null
 }
+
+export const hasResponseError = <T>(response: T | ResponseError ): response is ResponseError => (
+  response instanceof Object && response.reason !== undefined
+);
 
 export const isEqual = (lhs: object, rhs: object): boolean => {
   if (lhs === rhs) {

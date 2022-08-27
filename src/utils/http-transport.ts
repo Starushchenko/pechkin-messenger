@@ -6,9 +6,11 @@ export type RequestOptions = {
   method?: string;
   timeout?: number;
   data?: any;
+  credentials?: string;
+  mode?: string;
 };
 
-class HTTPTransport {
+export class HTTPTransport {
   private _request = <T>(url: string, options: RequestOptions = {}): Promise<T> => {
     const {headers = {}, method, data} = options;
 
@@ -41,6 +43,9 @@ class HTTPTransport {
         }
       };
 
+      xhr.withCredentials = true;
+      xhr.responseType = 'json';
+
       xhr.onabort = reject;
       xhr.onerror = reject;
 
@@ -49,7 +54,7 @@ class HTTPTransport {
 
       if (isGet || !data) {
         xhr.send();
-      } else if (options.headers && options.headers['content-type'] === 'application/json') {
+      } else if(options?.headers && options.headers['content-type'] === 'application/json') {
         xhr.send(JSON.stringify(data))
       } else {
         xhr.send(data);

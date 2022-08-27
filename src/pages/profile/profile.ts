@@ -5,6 +5,7 @@ import Button from '../../components/button/button';
 import Profile from '../../components/profile/profile';
 
 import template from './profile.tpl.hbs';
+import {router} from '../../index';
 
 export default class ProfilePage extends Block {
   protected initChildren() {
@@ -28,7 +29,7 @@ export default class ProfilePage extends Block {
 
   onStepBack(e: Event) {
     e.preventDefault();
-    history.back();
+    router.back();
   }
 
 

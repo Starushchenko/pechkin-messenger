@@ -44,12 +44,12 @@ class ProfileForm extends Block {
     });
 
     this.children['name-field'] = new FormField({
-      name: 'name',
+      name: 'first_name',
       label: 'Имя',
       errorText: VALIDATION_RULES.NAME.errorText,
       field: {
         type: 'text',
-        name: 'name',
+        name: 'first_name',
         placeholder: 'Например, Константин',
         required: true,
         value: 'Константин',
@@ -72,12 +72,12 @@ class ProfileForm extends Block {
     });
 
     this.children['nickname-field'] = new FormField({
-      name: 'nickname',
+      name: 'display_name',
       label: 'Имя в чате',
       errorText: VALIDATION_RULES.LOGIN.errorText,
       field: {
         type: 'text',
-        name: 'nickname',
+        name: 'display_name',
         placeholder: 'Например, mr_ivanoff',
         required: false,
         value: 'Mr_ivanoff',

@@ -1,6 +1,9 @@
 import EventBus from './event-bus';
 import {nanoid} from 'nanoid';
 import {isEqual} from './helpers';
+import store from './store/store';
+import {router} from '../index';
+import {ROUTER_EVENTS, STORE_EVENTS} from '../constants/constants';
 
 class Block {
   /** JSDoc
@@ -19,6 +22,9 @@ class Block {
     this._registerEvents(eventBus);
 
     eventBus.emit(Block.EVENTS.INIT);
+
+    router.on(ROUTER_EVENTS.CHANGED, () => {return});
+    store.on(STORE_EVENTS.UPDATED, () => {return});
   }
   
   static EVENTS = {
@@ -114,10 +120,6 @@ class Block {
   
   protected children: Record<string, Block>;
 
-  protected init() {
-    this.eventBus().emit(Block.EVENTS.FLOW_CDM);
-  }
-
   protected componentDidMount() {
     return;
   }
@@ -190,16 +192,24 @@ class Block {
     return this.element;
   }
 
+  public init() {
+    this.eventBus().emit(Block.EVENTS.FLOW_CDM);
+  }
+
   public show() {
     const el = this.getContent();
 
-    if (el) el.style.display = 'block';
+    if (el) {
+      el.style.display = 'block';
+    }
   }
 
   public hide() {
     const el = this.getContent();
 
-    if (el) el.style.display = 'none';
+    if (el) {
+      el.style.display = 'none';
+    }
   }
 }
 

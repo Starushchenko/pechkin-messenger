@@ -5,6 +5,7 @@ import Button from '../../components/button/button';
 import template from './change-password.tpl.hbs';
 import PasswordForm from '../../modules/form/password-form/form';
 import {formatFormData} from '../../utils/helpers';
+import {router} from '../../index';
 
 export default class ChangePassword extends Block {
   protected initChildren() {
@@ -40,7 +41,7 @@ export default class ChangePassword extends Block {
 
   onStepBack(e: Event) {
     e.preventDefault();
-    history.back();
+    router.back();
   }
 
 

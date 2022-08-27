@@ -22,6 +22,6 @@
     pattern="{{rule}}"
     minlength="{{minlength}}"
     maxlength="{{maxlength}}"
-    autocomplete="{{#if autocomplete }}{{autocomplete}}{{ else }}none{{/if}}"
+    {{#if autocomplete }}autocomplete="{{autocomplete}}"{{/if}}
   >
 {{/if}}

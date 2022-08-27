@@ -1,4 +1,4 @@
-type Handler = (...args: unknown[]) => void;
+export type Handler = (...args: unknown[]) => void;
 
 class EventBus {
   private listeners: Record<string, Handler[]> = {};

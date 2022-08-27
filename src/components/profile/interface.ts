@@ -1,10 +1,10 @@
 interface IProfile {
   avatar?: HTMLImageElement | string | boolean;
-  userName?: string;
+  first_name?: string;
+  second_name?: string;
+  display_name?: string;
   email?: string;
   login?: string;
-  userSurname?: string;
-  nameInChat?: string;
   phone?: string;
 }
 

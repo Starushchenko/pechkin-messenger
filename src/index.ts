@@ -12,7 +12,10 @@ import Page500 from './pages/error-500/error-500';
 import Page404 from './pages/error-404/error-404';
 import LinksPage from './pages/links/links';
 
-const router = new Router('#app', ROUTES.ERROR_404)
+import store from './utils/store/store';
+import AuthService from './utils/services/auth';
+
+export const router = new Router('#app', ROUTES.ERROR_404);
 
 router
   .use(ROUTES.AUTH, AuthPage)
@@ -27,3 +30,7 @@ router
   .use(ROUTES.HOME, ChatsPage)
   .use(ROUTES.LINKS, LinksPage)
   .start()
+
+if (!store.getState().currentUser) {
+  AuthService.getUser();
+}

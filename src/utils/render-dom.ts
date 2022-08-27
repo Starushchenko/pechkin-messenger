@@ -9,4 +9,5 @@ export default function renderDom(rootSelector: string, component: Block) {
 
   root.innerHTML = '';
   root.append(component.getContent() as HTMLElement);
+  component.init();
 }

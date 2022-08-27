@@ -1,11 +1,12 @@
 import Block from '../../../utils/block';
 import IForm from "../interface";
-import {VALIDATION_RULES} from '../../../constants/constants';
+import {ROUTES, VALIDATION_RULES} from '../../../constants/constants';
 
 import FormField from '../../../components/form-field/form-field';
 import Button from '../../../components/button/button';
 
 import template from './form.tpl.hbs';
+import {router} from '../../../index';
 
 class RegisterForm extends Block {
   constructor(props: IForm) {
@@ -41,13 +42,13 @@ class RegisterForm extends Block {
       }
     });
 
-    this.children['name-field'] = new FormField({
-      name: 'name',
+    this.children['first-name-field'] = new FormField({
+      name: 'first_name',
       label: 'Имя',
       errorText: VALIDATION_RULES.NAME.errorText,
       field: {
         type: 'text',
-        name: 'name',
+        name: 'first_name',
         placeholder: 'Например, Константин',
         required: true,
         rule: VALIDATION_RULES.NAME.rule
@@ -67,7 +68,7 @@ class RegisterForm extends Block {
       }
     });
 
-    this.children['second-name-field'] = new FormField({
+    this.children['phone-field'] = new FormField({
       name: 'phone',
       label: 'Телефон',
       errorText: VALIDATION_RULES.PHONE.errorText,
@@ -127,7 +128,7 @@ class RegisterForm extends Block {
 
   onLoginLinkClick(e: Event) : void {
     e.preventDefault();
-    location.replace("auth/");
+    router.go(ROUTES.AUTH);
   }
 
   render() {
