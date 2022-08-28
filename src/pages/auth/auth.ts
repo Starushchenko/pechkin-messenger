@@ -4,7 +4,7 @@ import {formatFormData} from '../../utils/helpers';
 import IProfile from '../../components/profile/interface';
 import store from '../../utils/store/store';
 import {router} from '../../index';
-import {ROUTER_EVENTS, ROUTES, STORE_EVENTS} from '../../constants/constants';
+import {ROUTES} from '../../constants/constants';
 
 import Image from '../../../assets/images/welcome.png';
 import AuthForm from '../../modules/form/auth-form/form';
@@ -12,7 +12,7 @@ import Welcome from '../../components/welcome/welcome';
 
 import template from './auth.tpl.hbs';
 import AuthService from '../../utils/services/auth';
-import {ILogin} from '../../types/auth';
+import {ILogin} from '../../types/user';
 
 const classes: TStringObject = {
   FORM_CLASS: 'app__sidebar-form'
@@ -21,12 +21,13 @@ const classes: TStringObject = {
 export default class AuthPage extends Block {
   constructor() {
     super();
-    
-    store.on(STORE_EVENTS.UPDATED, this.checkUserExist);
-    router.on(ROUTER_EVENTS.CHANGED, this.checkUserExist);
   }
 
   protected componentDidMount() {
+    this.checkUserExist();
+  }
+
+  protected storeUpdated() {
     this.checkUserExist();
   }
   

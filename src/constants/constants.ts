@@ -25,10 +25,6 @@ export const ROUTES: TStringObject = {
   LINKS: '/links'
 }
 
-export const ROUTER_EVENTS: TStringObject = {
-  CHANGED: 'changed'
-}
-
 // Validation
 export const VALIDATION_RULES: TValidationRules = {
   NAME: {

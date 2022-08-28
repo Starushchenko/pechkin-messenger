@@ -1,4 +1,4 @@
-import {IRegister, ILogin} from '../../types/auth';
+import {IUser, ILogin} from '../../types/user';
 import {API_URL} from '../../constants/constants';
 import {HTTPTransport} from '../http-transport';
 
@@ -6,7 +6,7 @@ export default class AuthAPI {
   private _http: HTTPTransport = new HTTPTransport();
   private _apiURL = API_URL;
 
-  register(data: IRegister): Promise<XMLHttpRequestResponseType> {
+  register(data: IUser): Promise<XMLHttpRequestResponseType> {
     return this._http.post(`${this._apiURL}/auth/signup`, {
       headers: {'content-type': 'application/json'},
       data: data

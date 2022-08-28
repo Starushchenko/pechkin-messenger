@@ -2,7 +2,7 @@ import Block from '../../utils/block';
 import {router} from '../../index';
 import store from '../../utils/store/store';
 import {TStringObject} from '../../types/common';
-import {IRegister} from '../../types/auth';
+import {IUser} from '../../types/user';
 import IProfile from '../../components/profile/interface';
 import {formatFormData} from '../../utils/helpers';
 
@@ -11,7 +11,7 @@ import AuthService from  '../../utils/services/auth';
 import Image from '../../../assets/images/welcome.png';
 import RegisterForm from '../../modules/form/register-form/form';
 import Welcome from '../../components/welcome/welcome';
-import {ROUTER_EVENTS, ROUTES, STORE_EVENTS} from '../../constants/constants';
+import {ROUTES} from '../../constants/constants';
 
 import template from './register.hbs';
 
@@ -22,17 +22,17 @@ const classes: TStringObject = {
 export default class RegisterPage extends Block {
   constructor() {
     super();
-
-    store.on(STORE_EVENTS.UPDATED, this.checkUserExist);
-    router.on(ROUTER_EVENTS.CHANGED, this.checkUserExist);
   }
   
   protected componentDidMount() {
     this.checkUserExist();
   }
 
-  protected initChildren() {
+  protected storeUpdated() {
+    this.checkUserExist();
+  }
 
+  protected initChildren() {
     this.children['auth-form'] = new RegisterForm({
       classes: classes.FORM_CLASS,
       events: {
@@ -52,7 +52,7 @@ export default class RegisterPage extends Block {
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
 
-    AuthService.register(formatFormData(formData) as unknown as IRegister);
+    AuthService.register(formatFormData(formData) as unknown as IUser);
   }
 
   protected checkUserExist(): void {

@@ -1,4 +1,4 @@
-export interface IRegister {
+export interface IUser {
   first_name: string;
   second_name: string;
   login: string;

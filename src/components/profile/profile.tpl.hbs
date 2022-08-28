@@ -2,13 +2,13 @@
   <div class="profile__content">
     <div class="profile__avatar">
       {{#if avatar }}
-        <img src="{{ avatar }}" alt="{{ userName }}">
+        <img src="{{ avatar }}" alt="{{ first_name }}">
       {{ else }}
         <img src="./../images/svg/placeholder.svg" alt="Изображение не загружено">
       {{/if}}
     </div>
 
-    <h1 class="profile__name">{{ userName }}</h1>
+    <h1 class="profile__name">{{ first_name }}</h1>
 
     <div class="profile__info">
       <div class="profile__info-item">
@@ -21,15 +21,15 @@
       </div>
       <div class="profile__info-item">
         <div class="profile__info-item-prop">Имя</div>
-        <div class="profile__info-item-value">{{ userName }}</div>
+        <div class="profile__info-item-value">{{ first_name }}</div>
       </div>
       <div class="profile__info-item">
         <div class="profile__info-item-prop">Фамилия</div>
-        <div class="profile__info-item-value">{{ userSurname }}</div>
+        <div class="profile__info-item-value">{{ second_name }}</div>
       </div>
       <div class="profile__info-item">
         <div class="profile__info-item-prop">Имя в чате</div>
-        <div class="profile__info-item-value">{{ nameInChat }}</div>
+        <div class="profile__info-item-value">{{ display_name }}</div>
       </div>
       <div class="profile__info-item">
         <div class="profile__info-item-prop">Телефон</div>

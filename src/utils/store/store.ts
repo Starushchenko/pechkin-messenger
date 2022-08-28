@@ -11,7 +11,7 @@ export interface IState {
   activeChat?: IChat;
 }
 
-class Store extends EventBus {
+export class Store extends EventBus {
   private state: IState = {
     chats: [],
   };

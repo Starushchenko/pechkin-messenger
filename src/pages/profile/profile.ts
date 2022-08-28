@@ -1,5 +1,4 @@
 import Block from '../../utils/block';
-import profileInfo = require('../../stubs/profile.json');
 
 import Button from '../../components/button/button';
 import Profile from '../../components/profile/profile';
@@ -8,8 +7,8 @@ import template from './profile.tpl.hbs';
 import {router} from '../../index';
 
 export default class ProfilePage extends Block {
-  protected initChildren() {
 
+  protected initChildren() {
     this.children['button-back'] = new Button({
       classes: 'button--icon app__back-btn',
       text: 'Назад',
@@ -24,14 +23,13 @@ export default class ProfilePage extends Block {
       }
     });
 
-    this.children['profile'] = new Profile(profileInfo);
+    this.children['profile'] = new Profile({});
   }
 
   onStepBack(e: Event) {
     e.preventDefault();
     router.back();
   }
-
 
   render() {
     return this.compile(template, {});

@@ -1,4 +1,4 @@
-import {IRegister, ILogin} from '../../types/auth';
+import {IUser, ILogin} from '../../types/user';
 
 import AuthAPI from '../api/auth';
 
@@ -7,14 +7,14 @@ import {router} from '../../index';
 import store from '../store/store';
 import {hasResponseError} from '../helpers';
 
-class AuthService {
+export class AuthService {
   private api: AuthAPI;
 
   constructor() {
     this.api = new AuthAPI();
   }
 
-  async register(data: IRegister): Promise<void> {
+  async register(data: IUser): Promise<void> {
     await this.api.register(data);
     await this.getUser();
 

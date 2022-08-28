@@ -1,9 +1,8 @@
 import EventBus from './event-bus';
 import {nanoid} from 'nanoid';
 import {isEqual} from './helpers';
-import store from './store/store';
-import {router} from '../index';
-import {ROUTER_EVENTS, STORE_EVENTS} from '../constants/constants';
+import store, {Store} from './store/store';
+import {STORE_EVENTS} from '../constants/constants';
 
 class Block {
   /** JSDoc
@@ -19,12 +18,9 @@ class Block {
     this.props = this._makePropsProxy(props);
     this.initChildren();
     this.eventBus = () => eventBus;
-    this._registerEvents(eventBus);
+    this._registerEvents(eventBus, store);
 
     eventBus.emit(Block.EVENTS.INIT);
-
-    router.on(ROUTER_EVENTS.CHANGED, () => {return});
-    store.on(STORE_EVENTS.UPDATED, () => {return});
   }
   
   static EVENTS = {
@@ -38,11 +34,12 @@ class Block {
   
   private eventBus: () => EventBus;
 
-  private _registerEvents(eventBus: EventBus) {
+  private _registerEvents(eventBus: EventBus, store: Store) {
     eventBus.on(Block.EVENTS.INIT, this.init.bind(this));
     eventBus.on(Block.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
     eventBus.on(Block.EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
     eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
+    store.on(STORE_EVENTS.UPDATED, this.storeUpdated.bind(this));
   }
 
   private _componentDidMount() {
@@ -112,7 +109,7 @@ class Block {
     });
   }
 
-  private _createDocumentElement(tagName: string): HTMLElement {
+  private static _createDocumentElement(tagName: string): HTMLElement {
     return document.createElement(tagName);
   }
   
@@ -125,8 +122,14 @@ class Block {
   }
 
   protected componentDidUpdate(oldProps: any, newProps: any) {
-    if (!isEqual(oldProps, newProps)) return true;
+    if (!isEqual(oldProps, newProps)) {
+      return true;
+    } 
 
+    return;
+  }
+
+  protected storeUpdated() {
     return;
   }
 
@@ -154,14 +157,13 @@ class Block {
   }
 
   protected compile(template: (context: any) => string, context: any) {
-    const fragment = this._createDocumentElement('template') as HTMLTemplateElement;
+    const fragment = Block._createDocumentElement('template') as HTMLTemplateElement;
 
     Object.entries(this.children).forEach(([key, child]) => {
       context[key] = `<div data-id="id-${child.id}"></div>`;
     });
 
-    const htmlString = template(context);
-    fragment.innerHTML = htmlString;
+    fragment.innerHTML = template(context);
 
     Object.entries(this.children).forEach(([, child]) => {
       const stub = fragment.content.querySelector(`[data-id="id-${child.id}"]`);
@@ -182,6 +184,7 @@ class Block {
     }
 
     Object.assign(this.props, nextProps);
+    this.eventBus().emit(Block.EVENTS.FLOW_CDU);
   };
 
   public get element(): HTMLElement | null {
