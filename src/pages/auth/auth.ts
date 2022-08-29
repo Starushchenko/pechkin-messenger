@@ -27,7 +27,7 @@ export default class AuthPage extends Block {
     this.checkUserExist();
   }
 
-  protected storeUpdated() {
+  protected onStoreUpdate() {
     this.checkUserExist();
   }
   

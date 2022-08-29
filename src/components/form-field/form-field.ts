@@ -14,53 +14,46 @@ const classes: TStringObject = {
 class FormField extends Block {
   constructor(props: IFormField) {
     super(props);
-
-    this.fieldElement?.addEventListener('focus', this.onFocus.bind(this));
-    this.fieldElement?.addEventListener('blur', this.onBlur.bind(this));
   }
 
-  isOnInputValidateEnabled = false;
-  
-  fieldElement = this.element?.querySelector('input');
-  
   fieldInfoElement = this.element?.querySelector('.' + classes.FIELD_INFO);
+
+  protected initChildren(): void {
+    this.children.field = new Field({
+      ...this.props.field,
+      events: {
+        focus: (e) => this.onFocus(e.target as HTMLInputElement),
+        blur: (e) => this.onBlur(e.target as HTMLInputElement)
+      },
+    });
+  }
 
   render() {
     return this.compile(template, {...this.props});
   }
 
-  onFocus(): void {
-    if (this.fieldElement && this.fieldElement.value) {
-      this.validate(this.fieldElement);
+  onFocus(field: HTMLInputElement | null): void {
+    if (field && field.value) {
+      this.validate(field);
     }
   }
 
-  onBlur(): void {
-    if (this.fieldElement) {
-      this.validate(this.fieldElement);
-      if (!isValid(this.fieldElement) && !this.isOnInputValidateEnabled) {
-        this.fieldElement?.addEventListener('input', this.onInput.bind(this));
-        this.isOnInputValidateEnabled = true;
-      }
+  onBlur(field: HTMLInputElement): void {
+    if (field) {
+      this.validate(field);
     }
-  }
-
-  onInput(): void {
-    this.validate(this.fieldElement);
   }
 
   validate(field?: HTMLInputElement | null): void {
-    if (!field) return;
+    if (!field) {
+      return;
+    }
     if (!isValid(field)) {
       if (this.element) {
         this.element.classList.add(classes.FIELD_HAS_ERROR)
       }
       if (this.fieldInfoElement && this.fieldInfoElement instanceof HTMLElement) {
         this.fieldInfoElement.innerText = getErrorText(field, this.props.errorText);
-      }
-      if (!this.isOnInputValidateEnabled) {
-        this.fieldElement?.addEventListener('input', this.onInput.bind(this));
-        this.isOnInputValidateEnabled = true;
       }
     } else {
       if (this.element) {
@@ -70,10 +63,6 @@ class FormField extends Block {
         this.fieldInfoElement.innerText = '';
       }
     }
-  }
-
-  protected initChildren(): void {
-    this.children.field = new Field({...this.props.field});
   }
 }
 

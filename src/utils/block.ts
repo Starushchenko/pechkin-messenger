@@ -1,7 +1,7 @@
 import EventBus from './event-bus';
 import {nanoid} from 'nanoid';
 import {isEqual} from './helpers';
-import store, {Store} from './store/store';
+import store from './store/store';
 import {STORE_EVENTS} from '../constants/constants';
 
 class Block {
@@ -18,7 +18,7 @@ class Block {
     this.props = this._makePropsProxy(props);
     this.initChildren();
     this.eventBus = () => eventBus;
-    this._registerEvents(eventBus, store);
+    this._registerEvents(eventBus);
 
     eventBus.emit(Block.EVENTS.INIT);
   }
@@ -28,23 +28,28 @@ class Block {
     FLOW_CDM: 'flow:component-did-mount',
     FLOW_CDU: 'flow:component-did-update',
     FLOW_RENDER: 'flow:render',
+    FLOW_READY: "flow:ready"
   };
 
   private _element: HTMLElement | null = null;
   
   private eventBus: () => EventBus;
 
-  private _registerEvents(eventBus: EventBus, store: Store) {
+  private _registerEvents(eventBus: EventBus) {
     eventBus.on(Block.EVENTS.INIT, this.init.bind(this));
     eventBus.on(Block.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
     eventBus.on(Block.EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
     eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
-    store.on(STORE_EVENTS.UPDATED, this.storeUpdated.bind(this));
+    eventBus.on(Block.EVENTS.FLOW_READY, this._componentReady.bind(this));
   }
 
   private _componentDidMount() {
     this.componentDidMount();
     this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
+  }
+
+  private _componentReady() {
+    this.componentReady();
   }
 
   private _componentDidUpdate(oldProps: any, newProps: any) {
@@ -66,6 +71,9 @@ class Block {
 
     this._element = newElement;
     this._addEvents();
+
+    this.eventBus().emit(Block.EVENTS.FLOW_READY);
+    store.on(STORE_EVENTS.UPDATED, this._storeUpdated.bind(this));
   }
 
   private _makePropsProxy(props: any) {
@@ -114,8 +122,6 @@ class Block {
   }
   
   protected props: any;
-  
-  protected children: Record<string, Block>;
 
   protected componentDidMount() {
     return;
@@ -129,8 +135,8 @@ class Block {
     return;
   }
 
-  protected storeUpdated() {
-    return;
+  protected _storeUpdated() {
+    this.onStoreUpdate();
   }
 
   protected render(): DocumentFragment {
@@ -176,6 +182,14 @@ class Block {
     return fragment.content;
   }
   
+  protected componentReady() {
+    return;
+  }
+
+  protected onStoreUpdate() {
+    return;
+  }
+  
   public id = nanoid(10);
 
   public setProps = (nextProps: any) => {
@@ -186,6 +200,8 @@ class Block {
     Object.assign(this.props, nextProps);
     this.eventBus().emit(Block.EVENTS.FLOW_CDU);
   };
+
+  public children: Record<string, Block>;
 
   public get element(): HTMLElement | null {
     return this._element;

@@ -15,32 +15,43 @@ export class AuthService {
   }
 
   async register(data: IUser): Promise<void> {
-    await this.api.register(data);
-    await this.getUser();
+    const response = await this.api.register(data);
 
-    router.go(ROUTES.CHATS);
+    if (hasResponseError(response)) {
+      console.error(`Ошибка запроса: ${response.reason}`);
+    } else {
+      await this.getUser();
+      router.go(ROUTES.CHATS);
+    }
   }
 
   async login(data: ILogin): Promise<void> {
-    await this.api.login(data);
-    await this.getUser();
+    const response = await this.api.login(data);
 
-    router.go(ROUTES.CHATS);
+    if (hasResponseError(response)) {
+      console.error(`Ошибка запроса: ${response.reason}`);
+    } else {
+      await this.getUser();
+      router.go(ROUTES.CHATS);
+    }
   }
 
   async getUser(): Promise<void> {
-    const user = await this.api.getCurrentUser();
-    if (hasResponseError(user)) {
+    const response = await this.api.getCurrentUser();
+    if (hasResponseError(response)) {
       store.set('currentUser', null);
     } else {
-      store.set('currentUser', user);
+      store.set('currentUser', response);
     }
   }
 
   async logout() {
-    await this.api.logout();
-
-    router.go(ROUTES.AUTH);
+    const response = await this.api.logout();
+    if (hasResponseError(response)) {
+      console.error(`Ошибка запроса: ${response.reason}`);
+    } else {
+      router.go(ROUTES.AUTH);
+    }
   }
 }
 

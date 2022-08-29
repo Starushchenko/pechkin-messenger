@@ -28,7 +28,7 @@ export default class RegisterPage extends Block {
     this.checkUserExist();
   }
 
-  protected storeUpdated() {
+  protected onStoreUpdate() {
     this.checkUserExist();
   }
 

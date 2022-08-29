@@ -4,10 +4,17 @@ import ProfileForm from '../../modules/form/profile-form/form';
 
 import template from './change-settings.tpl.hbs';
 import {formatFormData} from '../../utils/helpers';
+import {router} from '../../index';
+import ProfileService from '../../utils/services/profile';
+import {IUser} from '../../types/user';
+import store from '../../utils/store/store';
 
 export default class ChangeSettings extends Block {
+  constructor() {
+    super();
+  }
+  
   protected initChildren() {
-
     this.children['button-back'] = new Button({
       classes: 'button--icon app__back-btn',
       text: 'Назад',
@@ -23,9 +30,9 @@ export default class ChangeSettings extends Block {
     });
 
     this.children['profile-form'] = new ProfileForm({
-      title: 'Константин',
+      title: store.getState().currentUser?.first_name,
       events: {
-        submit: (e) => this.onSubmit(e),
+        submit: (e: Event) => this.onSubmit(e)
       },
     });
   }
@@ -34,14 +41,13 @@ export default class ChangeSettings extends Block {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
-    console.log(formatFormData(formData));
+    ProfileService.editUser(formatFormData(formData) as unknown as IUser);
   }
 
   onStepBack(e: Event) {
     e.preventDefault();
-    history.back();
+    router.back();
   }
-
 
   render() {
     return this.compile(template, {});

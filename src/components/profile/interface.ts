@@ -1,12 +1,12 @@
 export interface IProfile {
-  id?: number
+  id?: string
   first_name?: string;
   second_name?: string;
   display_name?: string;
   login?: string;
   email?: string;
   phone?: string;
-  avatar?: string | null;
+  avatar?: string;
 }
 
 export default IProfile;

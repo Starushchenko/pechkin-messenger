@@ -1,3 +1,5 @@
+import {TEvents} from '../../types/common';
+
 export interface IField {
   name: string;
   type: string;
@@ -9,6 +11,7 @@ export interface IField {
   maxlength?: number;
   rule?: string | RegExp;
   autocomplete?: string;
+  events?: TEvents;
 }
 
 export default IField;
