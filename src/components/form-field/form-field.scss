@@ -18,7 +18,7 @@
     resize: vertical;
   }
 
-  &--error {
+  &.form-field--error {
     input[type="text"],
     input[type="email"],
     input[type="number"],

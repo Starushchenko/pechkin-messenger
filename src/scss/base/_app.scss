@@ -32,6 +32,8 @@
   max-width: 340px;
   background: $gray-5;
   border-right: 1px solid $gray-3;
+  display: flex;
+  flex-direction: column;
 
   &--white {
     background: #fff;
