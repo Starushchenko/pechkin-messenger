@@ -1,6 +1,5 @@
 import Block from '../../utils/block';
 import Logo from '../../../assets/images/logo.png';
-import chats = require('../../stubs/chats.json');
 
 import Button from '../../components/button/button';
 import AppLogo from '../../components/app-logo/app-logo';
@@ -40,7 +39,7 @@ export default class ChatsPage extends Block {
 
     this.children['chats-list'] = new ChatsList({
       emptyText: 'По запросу ничего не найдено',
-      chats: chats
+      chats: []
     });
 
     this.children['placeholder'] = new Placeholder({

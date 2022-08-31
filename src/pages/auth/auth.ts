@@ -1,7 +1,6 @@
 import Block from '../../utils/block';
 import {TStringObject} from '../../types/common';
 import {formatFormData} from '../../utils/helpers';
-import IProfile from '../../components/profile/interface';
 import store from '../../utils/store/store';
 import {router} from '../../index';
 import {ROUTES} from '../../constants/constants';
@@ -12,7 +11,7 @@ import Welcome from '../../components/welcome/welcome';
 
 import template from './auth.tpl.hbs';
 import AuthService from '../../utils/services/auth';
-import {ILogin} from '../../types/user';
+import {ILogin, IUser} from '../../types/user';
 
 const classes: TStringObject = {
   FORM_CLASS: 'app__sidebar-form'
@@ -56,7 +55,7 @@ export default class AuthPage extends Block {
   }
 
   protected checkUserExist(): void {
-    const currentUser: IProfile | undefined | null = store.getState().currentUser;
+    const currentUser: IUser | undefined | null = store.getState().currentUser;
     if (currentUser) {
       router.go(ROUTES.CHATS);
     }

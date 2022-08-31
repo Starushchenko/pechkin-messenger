@@ -5,6 +5,9 @@ export interface IUser {
   email: string;
   password: string;
   phone: string;
+  id?: number;
+  avatar?: string;
+  display_name?: string;
 }
 
 export interface ILogin {

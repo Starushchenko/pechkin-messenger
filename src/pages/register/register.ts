@@ -3,7 +3,6 @@ import {router} from '../../index';
 import store from '../../utils/store/store';
 import {TStringObject} from '../../types/common';
 import {IUser} from '../../types/user';
-import IProfile from '../../components/profile/interface';
 import {formatFormData} from '../../utils/helpers';
 
 import AuthService from  '../../utils/services/auth';
@@ -56,7 +55,7 @@ export default class RegisterPage extends Block {
   }
 
   protected checkUserExist(): void {
-    const currentUser: IProfile | undefined | null = store.getState().currentUser;
+    const currentUser: IUser | undefined | null = store.getState().currentUser;
     if (currentUser) {
       router.go(ROUTES.CHATS);
     }

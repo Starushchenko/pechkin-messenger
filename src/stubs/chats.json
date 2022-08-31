@@ -1,74 +1,56 @@
 [
   {
-    "name": "Кот Матроскин",
+    "title": "Кот Матроскин",
     "avatar": false,
-    "lastMessage": "Изображение",
-    "lastMessageDatetime": "10:49",
-    "lastMessageIsMine": false,
-    "unreadCount": 2
+    "last_message": "Изображение",
+    "unread_count": 2
   },
   {
-    "name": "Киноклуб",
+    "title": "Киноклуб",
     "avatar": false,
-    "lastMessage": "Cтикер",
-    "lastMessageDatetime": "12:00",
-    "lastMessageIsMine": true,
-    "unreadCount": 0
+    "last_message": "Cтикер",
+    "unread_count": 0
   },
   {
-    "name": "Шарик",
+    "title": "Шарик",
     "avatar": false,
-    "lastMessage": "Друзья, у меня для вас особенный выпуск новостей!...",
-    "lastMessageDatetime": "12:00",
-    "lastMessageIsMine": false,
-    "unreadCount": 4
+    "last_message": "Друзья, у меня для вас особенный выпуск новостей!...",
+    "unread_count": 4
   },
   {
-    "name": "Вадим",
+    "title": "Вадим",
     "avatar": false,
-    "lastMessage": "Круто!",
-    "lastMessageDatetime": "Пт",
-    "lastMessageIsMine": true,
-    "unreadCount": 0
+    "last_message": "Круто!",
+    "unread_count": 0
   },
   {
-    "name": "тет-а-теты",
+    "title": "тет-а-теты",
     "avatar": false,
-    "lastMessage": "И Human Interface Guidelines и Material Design рекомендуют...",
-    "lastMessageDatetime": "Ср",
-    "lastMessageIsMine": false,
-    "unreadCount": 0
+    "last_message": "И Human Interface Guidelines и Material Design рекомендуют...",
+    "unread_count": 0
   },
   {
-    "name": "1, 2, 3",
+    "title": "1, 2, 3",
     "avatar": false,
-    "lastMessage": "Миллионы россиян ежедневно проводят десятки часов свое...",
-    "lastMessageDatetime": "Пн",
-    "lastMessageIsMine": false,
-    "unreadCount": 0
+    "last_message": "Миллионы россиян ежедневно проводят десятки часов свое...",
+    "unread_count": 0
   },
   {
-    "name": "Design Destroyer",
+    "title": "Design Destroyer",
     "avatar": false,
-    "lastMessage": "В 2008 году художник Jon Rafman начал собирать...",
-    "lastMessageDatetime": "Пн",
-    "lastMessageIsMine": false,
-    "unreadCount": 0
+    "last_message": "В 2008 году художник Jon Rafman начал собирать...",
+    "unread_count": 0
   },
   {
-    "name": "Day.",
+    "title": "Day.",
     "avatar": false,
-    "lastMessage": "Так увлёкся работой по курсу, что совсем забыл его анонсир...",
-    "lastMessageDatetime": "1 Мая 2020",
-    "lastMessageIsMine": false,
-    "unreadCount": 0
+    "last_message": "Так увлёкся работой по курсу, что совсем забыл его анонсир...",
+    "unread_count": 0
   },
   {
-    "name": "Стас Рогозин",
+    "title": "Стас Рогозин",
     "avatar": false,
-    "lastMessage": "Можно или сегодня или завтра вечером.",
-    "lastMessageDatetime": "12 Апр 2020",
-    "lastMessageIsMine": false,
-    "unreadCount": 0
+    "last_message": "Можно или сегодня или завтра вечером.",
+    "unread_count": 0
   }
 ]

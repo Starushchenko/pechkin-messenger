@@ -1,12 +1,11 @@
 import Block from '../block';
 import {isEqual} from '../helpers';
-import store, {IState} from '../store/store';
+import store from '../store/store';
+import {IStoreState} from '../../types/store';
 import {STORE_EVENTS} from '../../constants/constants';
 
-const withStore =
-  (mapStateToProps: (state: IState) => Record<string, unknown>) => (Component: typeof Block) => {
+const withStore = (mapStateToProps: (state: IStoreState) => Record<string, unknown>) => (Component: typeof Block) => {
     let state: Record<string, unknown>;
-
     return class extends Component {
       constructor(props: Record<string, unknown>) {
         state = mapStateToProps(store.getState());

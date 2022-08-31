@@ -1,6 +1,6 @@
 import withStore from './withStore';
-import {IState} from '../store/store';
+import {IStoreState} from '../../types/store';
 
-export const withUser = withStore((state: IState) => ({ 
+export const withUser = withStore((state: IStoreState) => ({ 
   ...state.currentUser
 }));

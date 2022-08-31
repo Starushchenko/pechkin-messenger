@@ -8,7 +8,7 @@ import Button from '../../../components/button/button';
 import template from './form.tpl.hbs';
 import store from '../../../utils/store/store';
 import {withUser} from '../../../utils/high-ordered/withUser';
-import IProfile from '../../../components/profile/interface';
+import {IUser} from '../../../types/user';
 
 class ProfileForm extends Block {
   constructor(props: IForm) {
@@ -24,7 +24,7 @@ class ProfileForm extends Block {
   }
   
   private _updateFieldValues() {
-    const currentUser: IProfile | undefined = store.getState().currentUser;
+    const currentUser: IUser | undefined = store.getState().currentUser;
     if (currentUser) {
       Object.keys(currentUser).forEach((value) => {
         const child = this.children[value];

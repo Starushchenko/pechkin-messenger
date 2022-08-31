@@ -3,30 +3,34 @@
     {{#each chats}}
       <a class="chats-list__item" href="/chat/">
         <div class="chats-list__item-img">
-          <img src="{{ this.avatar }}" alt="{{ this.name }}">
+          {{#if avatar }}
+            <img src="{{ avatar }}" alt="{{ first_name }}">
+          {{ else }}
+            <img src="./../images/svg/placeholder.svg" alt="Изображение не загружено">
+          {{/if}}
         </div>
 
         <div class="chats-list__item-content">
-          <span class="chats-list__item-title">{{ this.name }}</span>
+          <span class="chats-list__item-title">{{ this.title }}</span>
           <span class="chats-list__item-desc">
-            {{#if this.lastMessageIsMine }}
-              <span class="chats-list__item-yours">Вы: </span>
-            {{/if}}
-            {{ this.lastMessage }}
+            {{ this.last_message.content }}
           </span>
         </div>
 
         <div class="chats-list__item-info">
-          <span class="chats-list__item-datetime">{{ this.lastMessageDatetime }}</span>
-          {{#if this.unreadCount }}
+          <span class="chats-list__item-datetime">{{ this.last_message.time }}</span>
+          {{#if this.unread_count }}
             <span class="chats-list__unread">
-              {{ this.unreadCount }}
+              {{ this.unread_count }}
             </span>
           {{/if}}
         </div>
       </a>
     {{/each}}
   {{ else }}
-    <span class="chats-list__empty">{{{ emptyText}}} </span>
+    <span class="chats-list__empty">{{{ emptyText}}}</span>
   {{/if}}
+  
+  {{{add-chat-button}}}
+  {{{add-chat-modal}}}
 </div>
