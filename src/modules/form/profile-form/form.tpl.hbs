@@ -2,9 +2,9 @@
   <div class="profile__content">
     <div class="profile__avatar profile__avatar--editable" data-change-text="Поменять аватар">
       {{#if avatar }}
-        <img src="{{ avatar }}" alt="{{ userName }}">
+        <img src="https://ya-praktikum.tech/api/v2/resources/{{ avatar }}" alt="{{ title }}">
       {{ else }}
-        <img src="../images/svg/placeholder.svg" alt="Изображение не загружено">
+        <img class="profile__avatar-placeholder" src="./../images/svg/placeholder.svg" alt="Изображение не загружено">
       {{/if}}
     </div>
 

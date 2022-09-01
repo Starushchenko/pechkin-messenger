@@ -49,7 +49,11 @@ export class AuthService {
     const response = await this.api.logout();
     if (hasResponseError(response)) {
       console.error(`Ошибка запроса: ${response.reason}`);
+      if (response.reason === 'Cookie is not valid') {
+        router.go(ROUTES.AUTH);
+      }
     } else {
+      store.set('currentUser', null);
       router.go(ROUTES.AUTH);
     }
   }

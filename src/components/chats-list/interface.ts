@@ -4,9 +4,6 @@ import {IChatItem} from '../../types/chats';
 interface IChatsList {
   emptyText?: string;
   chats?: IChatItem[];
-}
-
-export interface IAddChatButton {
   events?: TEvents;
 }
 

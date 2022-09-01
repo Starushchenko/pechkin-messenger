@@ -6,8 +6,8 @@ export class Router extends EventBus {
   constructor(rootQuery?: string, pageNotFound?: string) {
     super();
     
-    if (Router.__instance) {
-      return Router.__instance;
+    if (Router._instance) {
+      return Router._instance;
     }
 
     this._rootQuery = rootQuery || ''
@@ -15,10 +15,10 @@ export class Router extends EventBus {
       this._pageNotFound = pageNotFound;
     }
 
-    Router.__instance = this;
+    Router._instance = this;
   }
   
-  private static __instance: Router;
+  private static _instance: Router;
   private routes: Route[] = [];
   private history = window.history;
   private readonly _rootQuery: string

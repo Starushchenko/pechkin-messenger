@@ -5,9 +5,15 @@
   border-top: 1px solid $gray-3;
   padding: 12px 20px;
   column-gap: 8px;
+  transition: 0.3s;
 
   &.form {
     flex-direction: row;
+  }
+
+  &--hidden {
+    opacity: 0;
+    visibility: visible;
   }
 
   .form-field {

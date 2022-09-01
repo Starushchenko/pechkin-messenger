@@ -4,6 +4,16 @@
   padding: 10px 20px;
   column-gap: 10px;
   border-bottom: 1px solid $gray-3;
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  transition: 0.3s;
+
+  &--hidden {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+  }
 }
 
 .chat-header__avatar {

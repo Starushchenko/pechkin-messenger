@@ -1,12 +1,12 @@
 import Block from '../../utils/block';
 import IChatHeader from './interface';
-import LogoPlaceholder from '../../../assets/images/svg/placeholder.svg'
 import chatMenu = require('../../stubs/chat-menu.json');
 
 import template from './chat-header.tpl.hbs';
 
 import Dropdown from '../dropdown/dropdown';
 import {onDropdownTrigger} from '../dropdown/helpers';
+import {withChat} from '../../utils/high-ordered/withChat';
 
 class ChatHeader extends Block {
   constructor(props: IChatHeader) {
@@ -28,11 +28,11 @@ class ChatHeader extends Block {
   }
 
   render() {
-    if (!this.props.avatar) {
-      this.props.avatar = LogoPlaceholder;
-    }
-    return this.compile(template, {...this.props});
+    return this.compile(template, {
+      data: this.props.chat ? this.props.chat[0] : false,
+      ...this.props
+    });
   }
 }
 
-export default ChatHeader;
+export default withChat(ChatHeader);

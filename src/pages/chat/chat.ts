@@ -1,6 +1,5 @@
 import Block from '../../utils/block';
 import Logo from '../../../assets/images/logo.png';
-import chats = require('../../stubs/chats.json');
 import chatHistory = require('../../stubs/chat-history.json');
 
 import Chat from '../../modules/chat/chat';
@@ -41,7 +40,7 @@ export default class ChatPage extends Block {
 
     this.children['chats-list'] = new ChatsList({
       emptyText: 'По запросу ничего не найдено',
-      chats: chats
+      chats: []
     });
 
     this.children['chat'] = new Chat({

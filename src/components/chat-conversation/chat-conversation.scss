@@ -3,6 +3,8 @@
   padding: 30px 20px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  align-items: baseline;
   overflow-y: auto;
 }
 

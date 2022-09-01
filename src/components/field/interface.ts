@@ -11,6 +11,7 @@ export interface IField {
   maxlength?: number;
   rule?: string | RegExp;
   autocomplete?: string;
+  noValidateOnBlur?: boolean;
   events?: TEvents;
 }
 

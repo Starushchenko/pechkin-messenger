@@ -33,13 +33,13 @@ class FormField extends Block {
   }
 
   onFocus(field: HTMLInputElement | null): void {
-    if (field && field.value) {
+    if (field && field.value && !field.hasAttribute('data-no-blur-validate')) {
       this.validate(field);
     }
   }
 
   onBlur(field: HTMLInputElement): void {
-    if (field) {
+    if (field && !field.hasAttribute('data-no-blur-validate')) {
       this.validate(field);
     }
   }

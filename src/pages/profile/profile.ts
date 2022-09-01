@@ -5,8 +5,15 @@ import Profile from '../../components/profile/profile';
 
 import template from './profile.tpl.hbs';
 import {router} from '../../index';
+import store from '../../utils/store/store';
+import {ROUTES} from '../../constants/constants';
 
 export default class ProfilePage extends Block {
+  protected onStoreUpdate() {
+    if (!store.getState().currentUser) {
+      router.go(ROUTES.AUTH);
+    }
+  }
 
   protected initChildren() {
     this.children['button-back'] = new Button({

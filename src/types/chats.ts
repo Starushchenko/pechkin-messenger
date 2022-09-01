@@ -35,3 +35,15 @@ export interface IChatTitle {
 export interface IChatToken {
   token: string;
 }
+
+export interface IMessage {
+  id: number;
+  user_id: number;
+  chat_id: number;
+  type: 'message';
+  time: string;
+  content: string;
+  is_read: boolean;
+  file: null;
+  not_mine?: boolean
+}

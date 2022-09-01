@@ -1,5 +1,5 @@
 import store from '../store/store';
-import {formatDate, hasResponseError} from '../helpers';
+import {closeModal, formatDate, hasResponseError} from '../helpers';
 import ProfileService from '../services/profile';
 import ChatsAPI from '../api/chats';
 import {IChatTitle} from '../../types/chats';
@@ -38,7 +38,7 @@ class ChatService {
     } else {
       this.getChats();
     }
-    // TODO: действие после добавления чата
+    closeModal('add-chat');
   }
 
   public async addUser(login: string, chatId: number) {
@@ -90,12 +90,12 @@ class ChatService {
       console.error(result.reason);
     } else {
       await this.getChats();
-      store.set('activeChat.chat.id', null);
+      store.set('currentChat.chat.id', null);
       // TODO: действие после удаления пользователя из чата
     }
   }
 
-  public async connectSocket(userId: string, chatId: number) {
+  public async connectSocket(userId: number, chatId: number) {
     const {token} = await this._chatAPI.getToken(chatId) as unknown as Record<string, unknown>;
     const endpoint = `${userId}/${chatId}/${token}`;
 
@@ -105,6 +105,7 @@ class ChatService {
   public async sendMessage(message: string) {
     if (this._socket) {
       this._socket.sendMessage(message);
+      await this.getChats();
     }
   }
 }

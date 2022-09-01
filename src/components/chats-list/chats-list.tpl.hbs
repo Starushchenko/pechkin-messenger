@@ -1,10 +1,10 @@
 <div class="chats-list">
   {{#if chats}}
     {{#each chats}}
-      <a class="chats-list__item" href="/chat/">
+      <a class="chats-list__item" data-chat-id="{{this.id}}">
         <div class="chats-list__item-img">
-          {{#if avatar }}
-            <img src="{{ avatar }}" alt="{{ first_name }}">
+          {{#if this.avatar }}
+            <img src="{{ this.avatar }}" alt="{{ this.title }}">
           {{ else }}
             <img src="./../images/svg/placeholder.svg" alt="Изображение не загружено">
           {{/if}}

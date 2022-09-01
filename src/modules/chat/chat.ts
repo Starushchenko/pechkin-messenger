@@ -4,9 +4,10 @@ import IChat from './interface';
 import template from './chat.tpl.hbs';
 
 import ChatHeader from '../../components/chat-header/chat-header';
-import ChatConversation from '../../components/chat-conversation/chat-conversation';1
+import ChatConversation from '../../components/chat-conversation/chat-conversation';
 import ChatActions from '../../components/chat-actions/chat-actions';
 import {formatFormData} from '../../utils/helpers';
+import ChatService from '../../utils/services/chats';
 
 class Chat extends Block {
   constructor(props: IChat) {
@@ -14,13 +15,13 @@ class Chat extends Block {
   }
 
   protected initChildren() {
-    this.children['chat-header'] = new ChatHeader(this.props.chatHeader);
+    this.children['chat-header'] = new ChatHeader({});
     
-    this.children['chat-conversation'] = new ChatConversation(this.props.chatConversation);
+    this.children['chat-conversation'] = new ChatConversation({});
 
     this.children['chat-actions'] = new ChatActions({
       events: {
-        submit: (e) => this.onMessageSend(e)
+        submit: (e: Event) => this.onMessageSend(e)
       }
     });
   }
@@ -28,8 +29,9 @@ class Chat extends Block {
   onMessageSend(e: Event) {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
-    const formData = new FormData(form);
-    console.log(formatFormData(formData));
+    const formData = formatFormData(new FormData(form));
+    ChatService.sendMessage(formData.message);
+    form.reset();
   }
 
   render() {

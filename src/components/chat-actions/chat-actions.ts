@@ -9,6 +9,7 @@ import FormField from '../form-field/form-field';
 import Button from '../button/button';
 import Dropdown from '../dropdown/dropdown';
 import {onDropdownTrigger} from '../dropdown/helpers';
+import {withChat} from '../../utils/high-ordered/withChat';
 
 class ChatActions extends Block {
   constructor(props: IChatActions) {
@@ -37,7 +38,8 @@ class ChatActions extends Block {
         name: 'message',
         placeholder: 'Введите текст',
         required: true,
-        rule: VALIDATION_RULES.MESSAGE.rule
+        rule: VALIDATION_RULES.MESSAGE.rule,
+        noValidateOnBlur: true
       }
     });
     
@@ -52,10 +54,13 @@ class ChatActions extends Block {
         </svg>`,
     });
   }
-
+  
   render() {
-    return this.compile(template, {...this.props});
+    return this.compile(template, {
+      data: this.props.chat ? this.props.chat[0] : false,
+      ...this.props
+    });
   }
 }
 
-export default ChatActions;
+export default withChat(ChatActions);

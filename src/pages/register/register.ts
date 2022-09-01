@@ -18,11 +18,7 @@ const classes: TStringObject = {
   FORM_CLASS: 'app__sidebar-form'
 };
 
-export default class RegisterPage extends Block {
-  constructor() {
-    super();
-  }
-  
+export default class RegisterPage extends Block {  
   protected componentDidMount() {
     this.checkUserExist();
   }

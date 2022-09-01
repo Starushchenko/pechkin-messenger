@@ -8,10 +8,13 @@ import {router} from '../../index';
 import ProfileService from '../../utils/services/profile';
 import {IUser} from '../../types/user';
 import store from '../../utils/store/store';
+import {ROUTES} from '../../constants/constants';
 
 export default class ChangeSettings extends Block {
-  constructor() {
-    super();
+  protected onStoreUpdate() {
+    if (!store.getState().currentUser) {
+      router.go(ROUTES.AUTH);
+    }
   }
   
   protected initChildren() {

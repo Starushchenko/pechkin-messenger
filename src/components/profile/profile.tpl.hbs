@@ -2,9 +2,9 @@
   <div class="profile__content">
     <div class="profile__avatar">
       {{#if avatar }}
-        <img src="{{ avatar }}" alt="{{ first_name }}">
+        <img src="https://ya-praktikum.tech/api/v2/resources/{{ avatar }}" alt="{{ first_name }}">
       {{ else }}
-        <img src="./../images/svg/placeholder.svg" alt="Изображение не загружено">
+        <img class="profile__avatar-placeholder" src="./../images/svg/placeholder.svg" alt="Изображение не загружено">
       {{/if}}
     </div>
 

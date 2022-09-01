@@ -6,7 +6,7 @@ import {IStoreState} from '../../types/store';
 export class Store extends EventBus {
   private state: IStoreState = {
     chats: [],
-    activeChat: undefined,
+    currentChat: undefined,
     currentUser: undefined
   };
 

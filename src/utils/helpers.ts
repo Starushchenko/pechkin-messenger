@@ -23,7 +23,7 @@ export const formatFormData = (data: FormData) => {
   const result: TStringObject = {};
   for(const [name, value] of data) {
     if (typeof value === 'string') {
-      result[name] = value;
+      result[name] = stringSanitize(trim(value)) as unknown as string;
     }
   }
   return result;
@@ -72,7 +72,7 @@ export const trim = (string: string, cuted = ''): string => {
 }
 
 export const stringSanitize = (str: string) => {
-  str.replace(/[&<>"']/gi, '')
+  return str.replace(/[&<>"']/gi, '')
 }
 // ------------
 

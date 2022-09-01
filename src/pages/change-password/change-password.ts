@@ -6,10 +6,17 @@ import template from './change-password.tpl.hbs';
 import PasswordForm from '../../modules/form/password-form/form';
 import {formatFormData} from '../../utils/helpers';
 import {router} from '../../index';
+import store from '../../utils/store/store';
+import {ROUTES} from '../../constants/constants';
 
 export default class ChangePassword extends Block {
+  protected onStoreUpdate() {
+    if (!store.getState().currentUser) {
+      router.go(ROUTES.AUTH);
+    }
+  }
+  
   protected initChildren() {
-
     this.children['button-back'] = new Button({
       classes: 'button--icon app__back-btn',
       text: 'Назад',
