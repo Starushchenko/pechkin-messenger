@@ -8,19 +8,11 @@ import template from './chat-actions.tpl.hbs';
 import FormField from '../form-field/form-field';
 import Button from '../button/button';
 import Dropdown from '../dropdown/dropdown';
-import {onDropdownTrigger} from '../dropdown/helpers';
 import {withChat} from '../../utils/high-ordered/withChat';
 
 class ChatActions extends Block {
   constructor(props: IChatActions) {
     super(props);
-
-    this.onDropdownClick()
-  }
-
-  onDropdownClick() {
-    const trigger = this.element?.querySelector('.js-dropdown-trigger');
-    onDropdownTrigger(trigger);
   }
 
   protected initChildren() {

@@ -26,7 +26,7 @@ class ChatsList extends Block {
       title: 'Добавить чат',
       content: new AddChatForm({
         events: {
-          submit: (e) => this.onChatAdd(e),
+          submit: (e: Event) => this.onChatAdd(e)
         }
       })
     });
@@ -41,7 +41,6 @@ class ChatsList extends Block {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
-
     ChatsService.addChat({title: formatFormData(formData).add_chat as unknown as string})
   }
 

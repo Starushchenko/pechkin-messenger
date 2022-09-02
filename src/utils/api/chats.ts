@@ -25,6 +25,15 @@ export default class ChatsAPI {
     });
   }
 
+  public deleteChat(chatId: number) {
+    return this._http.delete<undefined | ResponseError>(`${this._apiURL}/chats`, {
+      headers: {'content-type': 'application/json'},
+      data: {
+        chatId: chatId
+      }
+    });
+  }
+
   public addUser(userId: number[], chatId: number) {
     return this._http.put<undefined | ResponseError>(`${this._apiURL}/chats/users`, {
       headers: {'content-type': 'application/json'},
@@ -40,15 +49,6 @@ export default class ChatsAPI {
       headers: {'content-type': 'application/json'},
       data: {
         users: usersId,
-        chatId: chatId
-      }
-    });
-  }
-
-  public deleteChat(chatId: number) {
-    return this._http.delete<undefined | ResponseError>(`${this._apiURL}/chats`, {
-      headers: {'content-type': 'application/json'},
-      data: {
         chatId: chatId
       }
     });

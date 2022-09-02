@@ -16,7 +16,6 @@ export const ROUTES: TStringObject = {
   AUTH: '/auth',
   REGISTER: '/register',
   CHATS: '/chats',
-  CHAT: '/chat',
   PROFILE: '/profile',
   CHANGE_SETTINGS: '/change-settings',
   CHANGE_PASSWORD: '/change-password',

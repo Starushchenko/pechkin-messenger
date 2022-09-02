@@ -166,7 +166,6 @@ export function openModal(id: string) {
   modalOverlay?.addEventListener('click', closeModal);
 }
 
-
 export function closeModal(id: string) {
   const modal = document.getElementById(id);
   const modalClose = modal?.querySelector('.modal__close');
@@ -180,5 +179,24 @@ export function closeModal(id: string) {
   modal?.classList.remove('open');
   modalClose?.removeEventListener('click', closeModal);
   modalOverlay?.removeEventListener('click', closeModal);
+}
+
+export function onDropdownTrigger(trigger: HTMLElement | Element | undefined | null): void {
+  if (!trigger || !trigger.nextElementSibling) {
+    return;
+  } else {
+    if (trigger.nextElementSibling) {
+      const onDocumentClick = () => {
+        trigger.nextElementSibling?.classList.toggle('dropdown--visible');
+        setTimeout(() => {
+          document.removeEventListener('click', onDocumentClick);
+        })
+      };
+      trigger.nextElementSibling.classList.toggle('dropdown--visible');
+      setTimeout(() => {
+        document.addEventListener('click', onDocumentClick);
+      })
+    }
+  }
 }
 // ------------

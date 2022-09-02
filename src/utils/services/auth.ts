@@ -55,6 +55,7 @@ export class AuthService {
     } else {
       store.set('currentUser', null);
       router.go(ROUTES.AUTH);
+      router.reload();
     }
   }
 }

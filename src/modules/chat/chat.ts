@@ -6,7 +6,7 @@ import template from './chat.tpl.hbs';
 import ChatHeader from '../../components/chat-header/chat-header';
 import ChatConversation from '../../components/chat-conversation/chat-conversation';
 import ChatActions from '../../components/chat-actions/chat-actions';
-import {formatFormData} from '../../utils/helpers';
+import {formatFormData, onDropdownTrigger} from '../../utils/helpers';
 import ChatService from '../../utils/services/chats';
 
 class Chat extends Block {
@@ -15,13 +15,18 @@ class Chat extends Block {
   }
 
   protected initChildren() {
-    this.children['chat-header'] = new ChatHeader({});
+    this.children['chat-header'] = new ChatHeader({
+      events: {
+        click: (e: Event) => this.onDropdownTrigger(e)
+      }
+    });
     
     this.children['chat-conversation'] = new ChatConversation({});
 
     this.children['chat-actions'] = new ChatActions({
       events: {
-        submit: (e: Event) => this.onMessageSend(e)
+        submit: (e: Event) => this.onMessageSend(e),
+        click: (e: Event) => this.onDropdownTrigger(e)
       }
     });
   }
@@ -32,6 +37,13 @@ class Chat extends Block {
     const formData = formatFormData(new FormData(form));
     ChatService.sendMessage(formData.message);
     form.reset();
+  }
+
+  onDropdownTrigger(e: Event) {
+    const trigger = e.target as HTMLElement;
+    if (trigger.classList.contains('js-dropdown-trigger')) {
+      onDropdownTrigger(trigger);
+    }
   }
 
   render() {

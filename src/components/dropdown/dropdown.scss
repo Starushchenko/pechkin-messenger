@@ -41,6 +41,7 @@
   color: $text-dark;
   white-space: nowrap;
   font-weight: 500;
+  cursor: pointer;
 
   &:hover {
     background: $gray-5;
@@ -53,4 +54,8 @@
 
 .dropdown__item--alert {
   color: $alert;
+  
+  path, circle {
+    stroke: $alert;
+  }
 }

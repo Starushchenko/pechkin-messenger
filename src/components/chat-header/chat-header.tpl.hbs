@@ -1,7 +1,7 @@
 <div class="chat-header {{#unless data}}chat-header--hidden{{/unless}}">
   <div class="chat-header__avatar">
     {{#if data.avatar }}
-      <img src="https://ya-praktikum.tech/api/v2/resources/{{ avatar }}" alt="{{ data.title }}">
+      <img src="https://ya-praktikum.tech/api/v2/resources/{{ data.avatar }}" alt="{{ data.title }}">
     {{ else }}
       <img src="./../images/svg/placeholder.svg" alt="Изображение не загружено">
     {{/if}}
@@ -20,6 +20,15 @@
       </svg>
     </button>
 
-    {{{ dropdown }}}
+    <div class="dropdown dropdown--right">
+      <div class="dropdown__items">
+        {{{add-user-link}}}
+        {{{delete-user-link}}}
+        {{{delete-chat-link}}}
+      </div>
+    </div>
   </div>
+  {{{add-user-modal}}}
+  {{{delete-user-modal}}}
+  {{{delete-chat-modal}}}
 </div>

@@ -11,7 +11,7 @@ export default class ProfileAPI {
   public searchUser(login: string) {
     return this._http.post<IProfile[] | ResponseError>(`${this._apiURL}/user/search`, {
       headers: {'content-type': 'application/json'},
-      data: login
+      data: {login: login}
     });
   }
 

@@ -21,6 +21,7 @@ export class Router extends EventBus {
   private static _instance: Router;
   private routes: Route[] = [];
   private history = window.history;
+  private location = window.location;
   private readonly _rootQuery: string
   private readonly _pageNotFound: string | null = null;
 
@@ -69,5 +70,9 @@ export class Router extends EventBus {
 
   public forward() {
     this.history.forward();
+  }
+
+  public reload() {
+    this.location.reload();
   }
 }

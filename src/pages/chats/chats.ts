@@ -62,9 +62,9 @@ export default class ChatsPage extends Block {
   }
 
   onActiveChatTrigger(e: Event) {
-    e.preventDefault();
     const target = e.target as HTMLAnchorElement;
     if (target.hasAttribute('data-chat-id')) {
+      e.preventDefault();
       const chatID = Number(target.getAttribute('data-chat-id'));
       const state = store.getState();
       const currentChat = state.chats?.filter((item) => item.id === chatID);

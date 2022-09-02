@@ -7,12 +7,12 @@ import Socket from '../api/socket';
 
 class ChatService {
   private readonly _chatAPI: ChatsAPI;
-  private readonly _authService;
+  private readonly _profileService;
   private _socket: Socket | null;
 
   constructor() {
     this._chatAPI = new ChatsAPI();
-    this._authService = ProfileService;
+    this._profileService = ProfileService;
     this._socket = null;
   }
 
@@ -37,34 +37,34 @@ class ChatService {
       console.error(result.reason);
     } else {
       this.getChats();
+      closeModal('add-chat');
     }
-    closeModal('add-chat');
   }
 
   public async addUser(login: string, chatId: number) {
-    const user = await this._authService.searchUser(login);
+    const user = await this._profileService.searchUser(login);
     
     if (hasResponseError(user)) {
       console.error(user.reason);
       return;
     }
     if (user.length === 0) {
-      console.error('Пользователь не найден');
+      console.error(`Не найден пользователь с id ${login}`);
       return;
     }
 
     const result = await this._chatAPI.addUser([user[0].id as unknown as number], chatId);
     
-    if (!hasResponseError(result)) {
-      await this.getChats();
-    } else {
+    if (hasResponseError(result)) {
       console.error(result.reason);
-      // TODO: действие после добавления пользователя в чат
+    } else {
+      await this.getChats();
+      closeModal('add-user');
     }
   }
 
   public async deleteUser(login: string, chatId: number) {
-    const user = await this._authService.searchUser(login);
+    const user = await this._profileService.searchUser(login);
     if (hasResponseError(user)) {
       console.error(user.reason);
       return;
@@ -80,7 +80,7 @@ class ChatService {
       console.error(result.reason);
     } else {
       await this.getChats();
-      // TODO: действие после удаления пользователя из чата
+      closeModal('delete-user');
     }
   }
 
@@ -89,9 +89,9 @@ class ChatService {
     if (hasResponseError(result)) {
       console.error(result.reason);
     } else {
+      store.set('currentChat', undefined);
       await this.getChats();
-      store.set('currentChat.chat.id', null);
-      // TODO: действие после удаления пользователя из чата
+      closeModal('delete-chat');
     }
   }
 
