@@ -11,7 +11,7 @@ class ChatConversation extends Block {
 
   render() {
     return this.compile(template, {
-      isChatOpen: !!this.props.chat,
+      isChatOpen: this.props.messages && this.props.messages.length,
       messages: this.props.messages,
       ...this.props
     });

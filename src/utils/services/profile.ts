@@ -1,14 +1,13 @@
 import ProfileAPI from '../api/profile';
 import {closeModal, hasResponseError} from '../helpers';
 import store from '../store/store';
-import {AuthService} from './auth';
 import {IUser} from '../../types/user';
 import {router} from '../../index';
 import {ROUTES} from '../../constants/constants';
+import {TStringObject} from '../../types/common';
 
 class ProfileService {
   private readonly _profileApiService = new ProfileAPI();
-  private readonly _authService = new AuthService();
 
   public async searchUser(login: string) {
     return await this._profileApiService.searchUser(login);
@@ -25,14 +24,13 @@ class ProfileService {
     }
   }
 
-  public async editPassword(oldPass: string, newPass: string) {
-    const response = await this._profileApiService.editPassword(oldPass, newPass);
+  public async editPassword(formData: TStringObject) {
+    const response = await this._profileApiService.editPassword(formData);
 
     if (hasResponseError(response)) {
       console.error(`Ошибка запроса: ${response.reason}`);
     } else {
-      store.set('currentUser', null);
-      await this._authService.logout();
+      router.go(ROUTES.PROFILE);
     }
   }
 

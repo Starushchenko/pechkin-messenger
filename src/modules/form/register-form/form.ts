@@ -90,6 +90,7 @@ class RegisterForm extends Block {
       field: {
         type: 'password',
         name: 'password',
+        confirmField: 'password-confirm',
         placeholder: '****************',
         minlength: 8,
         maxlength: 40,
@@ -101,13 +102,11 @@ class RegisterForm extends Block {
     this.children['password-confirm-field'] = new FormField({
       name: 'password-confirm',
       label: 'Пароль (ещё раз)',
-      errorText: VALIDATION_RULES.PASSWORD.errorText,
+      errorText: VALIDATION_RULES.CONFIRM.errorText,
       field: {
         type: 'password',
         name: 'password-confirm',
         placeholder: '****************',
-        minlength: 8,
-        maxlength: 40,
         required: true,
         rule: VALIDATION_RULES.PASSWORD.rule
       }

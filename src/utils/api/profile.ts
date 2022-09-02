@@ -1,5 +1,5 @@
 import {HTTPTransport} from '../http-transport';
-import {ResponseError} from '../../types/common';
+import {ResponseError, TStringObject} from '../../types/common';
 import IProfile from '../../components/profile/interface';
 import {IUser} from '../../types/user';
 import {API_URL} from '../../constants/constants';
@@ -22,13 +22,10 @@ export default class ProfileAPI {
     });
   }
 
-  public editPassword(oldPassword: string, newPassword: string) {
+  public editPassword(formData: TStringObject) {
     return this._http.put<undefined | ResponseError>(`${this._apiURL}/user/password`, {
       headers: {'content-type': 'application/json'},
-      data: {
-        oldPassword,
-        newPassword
-      }
+      data: formData
     });
   }
 

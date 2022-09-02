@@ -53,6 +53,10 @@ export const VALIDATION_RULES: TValidationRules = {
   MESSAGE: {
     rule: '.+',
     errorText: 'Поле не должно быть пустым'
+  },
+  CONFIRM: {
+    rule: '',
+    errorText: 'Поля не совпадают'
   }
 }
 

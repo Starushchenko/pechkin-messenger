@@ -6,12 +6,14 @@ export interface IField {
   class?: string;
   required?: boolean;
   value?: string;
+  label?: string;
   placeholder?: string;
   minlength?: number;
   maxlength?: number;
   rule?: string | RegExp;
   autocomplete?: string;
   noValidateOnBlur?: boolean;
+  confirmField?: string;
   events?: TEvents;
 }
 

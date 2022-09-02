@@ -60,6 +60,7 @@ class ChatService {
     } else {
       await this.getChats();
       closeModal('add-user');
+      this.sendMessage(`${login} приземлился в чат. Поприветствуйте!`);
     }
   }
 
@@ -89,8 +90,8 @@ class ChatService {
     if (hasResponseError(result)) {
       console.error(result.reason);
     } else {
-      store.set('currentChat', undefined);
       await this.getChats();
+      store.set('currentChat.chat', null);
       closeModal('delete-chat');
     }
   }

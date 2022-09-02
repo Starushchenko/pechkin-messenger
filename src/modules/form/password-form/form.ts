@@ -14,12 +14,12 @@ class PasswordForm extends Block {
 
   protected initChildren() {
     this.children['old-password-field'] = new FormField({
-      name: 'old-password',
+      name: 'oldPassword',
       label: 'Старый пароль',
       errorText: VALIDATION_RULES.PASSWORD.errorText,
       field: {
         type: 'password',
-        name: 'old-password',
+        name: 'oldPassword',
         placeholder: '****************',
         minlength: 8,
         maxlength: 40,
@@ -29,12 +29,13 @@ class PasswordForm extends Block {
     });
 
     this.children['password-field'] = new FormField({
-      name: 'password',
+      name: 'newPassword',
       label: 'Новый пароль',
       errorText: VALIDATION_RULES.PASSWORD.errorText,
       field: {
         type: 'password',
-        name: 'password',
+        name: 'newPassword',
+        confirmField: 'passwordConfirm',
         placeholder: '****************',
         minlength: 8,
         maxlength: 40,
@@ -44,12 +45,12 @@ class PasswordForm extends Block {
     });
 
     this.children['password-confirm-field'] = new FormField({
-      name: 'password-confirm',
+      name: 'passwordConfirm',
       label: 'Повторите пароль',
-      errorText: VALIDATION_RULES.PASSWORD.errorText,
+      errorText: VALIDATION_RULES.CONFIRM.errorText,
       field: {
         type: 'password',
-        name: 'password-confirm',
+        name: 'passwordConfirm',
         placeholder: '****************',
         minlength: 8,
         maxlength: 40,

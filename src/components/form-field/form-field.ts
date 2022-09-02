@@ -23,7 +23,8 @@ class FormField extends Block {
       ...this.props.field,
       events: {
         focus: (e) => this.onFocus(e.target as HTMLInputElement),
-        blur: (e) => this.onBlur(e.target as HTMLInputElement)
+        blur: (e) => this.onBlur(e.target as HTMLInputElement),
+        change: (e) => this.checkRelatedFields(e.target as HTMLInputElement)
       },
     });
   }
@@ -62,6 +63,15 @@ class FormField extends Block {
       if (this.fieldInfoElement && this.fieldInfoElement instanceof HTMLElement) {
         this.fieldInfoElement.innerText = '';
       }
+    }
+  }
+
+  checkRelatedFields(field: HTMLInputElement): void {
+    if (field.hasAttribute('data-confirm-field')) {
+      const relatedField = document.querySelector(
+        `[name='${field.getAttribute('data-confirm-field')}']`
+      ) as HTMLInputElement;
+      relatedField.pattern = field.value;
     }
   }
 }

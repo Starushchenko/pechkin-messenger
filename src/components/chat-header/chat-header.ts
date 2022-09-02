@@ -46,7 +46,7 @@ class ChatHeader extends Block {
 
     this.children['add-user-modal'] = new Modal({
       id: 'add-user',
-      title: 'Добавить пользователя по id',
+      title: 'Добавить пользователя по логину',
       content: new AddUserForm({
         events: {
           submit: (e: Event) => this.onUserAdd(e),
@@ -56,7 +56,7 @@ class ChatHeader extends Block {
 
     this.children['delete-user-modal'] = new Modal({
       id: 'delete-user',
-      title: 'Удалить пользователя по id',
+      title: 'Удалить пользователя по логину',
       content: new DeleteUserForm({
         events: {
           submit: (e: Event) => this.onUserDelete(e),
