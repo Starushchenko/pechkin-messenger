@@ -3,12 +3,14 @@ import Button from '../../components/button/button';
 import ProfileForm from '../../modules/form/profile-form/form';
 
 import template from './change-settings.tpl.hbs';
-import {formatFormData} from '../../utils/helpers';
+import {formatFormData, openModal} from '../../utils/helpers';
 import {router} from '../../index';
 import ProfileService from '../../utils/services/profile';
 import {IUser} from '../../types/user';
 import store from '../../utils/store/store';
 import {ROUTES} from '../../constants/constants';
+import Modal from '../../components/modal/modal';
+import UploadAvatarForm from '../../modules/form/upload-avatar/form';
 
 export default class ChangeSettings extends Block {
   protected onStoreUpdate() {
@@ -35,8 +37,19 @@ export default class ChangeSettings extends Block {
     this.children['profile-form'] = new ProfileForm({
       title: store.getState().currentUser?.first_name,
       events: {
+        click: (e: Event) => this.listenAvatarModal(e),
         submit: (e: Event) => this.onSubmit(e)
       },
+    });
+
+    this.children['upload-avatar-modal'] = new Modal({
+      id: 'upload-avatar',
+      title: 'Поменять аватар',
+      content: new UploadAvatarForm({
+        events: {
+          submit: (e: Event) => this.onAvatarUpload(e)
+        }
+      })
     });
   }
 
@@ -50,6 +63,21 @@ export default class ChangeSettings extends Block {
   onStepBack(e: Event) {
     e.preventDefault();
     router.back();
+  }
+
+  listenAvatarModal(e: Event) {
+    const target = e.target as HTMLElement;
+    if (target.classList.contains('js-edit-avatar')) {
+      openModal('upload-avatar');
+    }
+  }
+
+  onAvatarUpload(e: Event) {
+    e.preventDefault();
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    ProfileService.uploadAvatar(formData);
   }
 
   render() {

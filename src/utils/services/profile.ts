@@ -1,5 +1,5 @@
 import ProfileAPI from '../api/profile';
-import {hasResponseError} from '../helpers';
+import {closeModal, hasResponseError} from '../helpers';
 import store from '../store/store';
 import {AuthService} from './auth';
 import {IUser} from '../../types/user';
@@ -20,7 +20,8 @@ class ProfileService {
     if (hasResponseError(response)) {
       console.error(`Ошибка запроса: ${response.reason}`);
     } else {
-      store.set('user', response);
+      store.set('currentUser.avatar', response.avatar);
+      closeModal('upload-avatar');
     }
   }
 
