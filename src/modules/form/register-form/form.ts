@@ -8,8 +8,6 @@ import Button from '../../../components/button/button';
 import template from './form.tpl.hbs';
 import {router} from '../../../index';
 
-// TODO: Сделать валидацию для подтверждения пароля
-
 class RegisterForm extends Block {
   constructor(props: IForm) {
     super(props);
