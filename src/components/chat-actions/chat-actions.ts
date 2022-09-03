@@ -1,7 +1,7 @@
 import Block from '../../utils/block/block';
 import IChatActions from './interface';
 import {VALIDATION_RULES} from '../../constants/constants';
-import filesMenu = require('../../stubs/files-menu.json');
+import * as filesMenu from '../../stubs/files-menu.json';
 
 import template from './chat-actions.tpl.hbs';
 

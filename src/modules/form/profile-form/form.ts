@@ -27,7 +27,7 @@ class ProfileForm extends Block {
     if (currentUser) {
       Object.keys(currentUser).forEach((value) => {
         const child = this.getChildren()[value];
-        if (child && child.children.field) {
+        if (child && child.getChildren().field) {
           child.getChildren().field.setProps({ value: currentUser[value]});
         }
       })

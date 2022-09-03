@@ -13,8 +13,8 @@ class Block {
   private _element: HTMLElement | null = null;
   private eventBus: () => EventBus;
   protected props: any;
+  protected children: Record<string, Block>;
   public id = nanoid(10);
-  public children: Record<string, Block>;
   
   constructor(args: any = {}) {
     const eventBus = new EventBus();
@@ -206,6 +206,10 @@ class Block {
   public getContent(): HTMLElement | null {
     return this.element;
   }
+
+  public getProps = (): Record<string, any> => {
+    return this.props;
+  };
 
   public getChildren(): Record<string, Block> {
     return this.children;
