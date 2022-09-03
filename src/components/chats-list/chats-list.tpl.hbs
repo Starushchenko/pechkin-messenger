@@ -1,5 +1,5 @@
 <div class="chats-list">
-  {{#if chats}}
+  {{#if chats.[0]}}
     {{#each chats}}
       <a class="chats-list__item" data-chat-id="{{this.id}}">
         <div class="chats-list__item-img">

@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "target": "es2018",
+    "target": "es2017",
     "declaration": false,
     "module": "commonjs",
     "noImplicitAny": true,
@@ -9,18 +9,15 @@
     "noUnusedParameters": true,
     "sourceMap": true,
     "strictNullChecks": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "allowJs": true,
-    "moduleResolution": "node"
+    "resolveJsonModule": true
   },
-  "include": [
-    "src/**/*.ts"
-  ],
   "exclude": [
     "node_modules",
     "dist",
     "server",
     "src/**/*.spec.ts"
+  ],
+  "include": [
+    "src/**/*.ts"
   ]
 } 

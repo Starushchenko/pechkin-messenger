@@ -46,7 +46,7 @@ export default class ChatsPage extends Block {
     });
 
     this.children['chats-list'] = new ChatsList({
-      emptyText: 'По запросу ничего не найдено',
+      emptyText: 'Добавьте свой первый чат',
       chats: [],
       events: {
         click: (e: Event) => this.onActiveChatTrigger(e)
