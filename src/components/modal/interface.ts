@@ -1,5 +1,5 @@
 import {TEvents} from '../../types/common';
-import Block from '../../utils/block';
+import Block from '../../utils/block/block';
 
 interface IModal {
   id?: string;

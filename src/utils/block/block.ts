@@ -1,8 +1,8 @@
-import EventBus from './event-bus';
+import EventBus from '../event-bus';
 import {nanoid} from 'nanoid';
-import {isEqual} from './helpers';
-import store from './store/store';
-import {STORE_EVENTS} from '../constants/constants';
+import {isEqual} from '../helpers';
+import store from '../store/store';
+import {STORE_EVENTS} from '../../constants/constants';
 
 class Block {
   /** JSDoc

@@ -1,4 +1,4 @@
-import Block from '../block';
+import Block from '../block/block';
 import Route from './route';
 import EventBus from '../event-bus';
 

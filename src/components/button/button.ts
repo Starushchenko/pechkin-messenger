@@ -1,4 +1,4 @@
-import Block from '../../utils/block';
+import Block from '../../utils/block/block';
 import IButton from "./interface";
 
 import template from './button.tpl.hbs';

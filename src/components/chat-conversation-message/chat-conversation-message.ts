@@ -1,4 +1,4 @@
-import Block from '../../utils/block';
+import Block from '../../utils/block/block';
 import IChatConversationMessage from './interface';
 
 import template from './chat-conversation-message.tpl.hbs';

@@ -1,4 +1,4 @@
-import Block from '../../utils/block';
+import Block from '../../utils/block/block';
 import {IChatItem} from '../../types/chats';
 
 import LogoPlaceholder from '../../../assets/images/svg/placeholder.svg'

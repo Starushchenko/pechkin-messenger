@@ -1,4 +1,4 @@
-import Block from '../../utils/block';
+import Block from '../../utils/block/block';
 import IErrorScreen from './interface';
 
 import template from './error-screen.tpl.hbs';

@@ -1,4 +1,4 @@
-import Block from '../../utils/block';
+import Block from '../../utils/block/block';
 import Button from '../../components/button/button';
 import ProfileForm from '../../modules/form/profile-form/form';
 

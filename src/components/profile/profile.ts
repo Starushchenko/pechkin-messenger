@@ -1,4 +1,4 @@
-import Block from '../../utils/block';
+import Block from '../../utils/block/block';
 import IProfile from './interface';
 
 import {router} from '../../index';

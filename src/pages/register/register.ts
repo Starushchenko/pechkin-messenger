@@ -1,4 +1,4 @@
-import Block from '../../utils/block';
+import Block from '../../utils/block/block';
 import {router} from '../../index';
 import store from '../../utils/store/store';
 import {TStringObject} from '../../types/common';

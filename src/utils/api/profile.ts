@@ -1,4 +1,4 @@
-import {HTTPTransport} from '../http-transport';
+import {HTTPTransport} from '../http-transport/http-transport';
 import {ResponseError, TStringObject} from '../../types/common';
 import IProfile from '../../components/profile/interface';
 import {IUser} from '../../types/user';

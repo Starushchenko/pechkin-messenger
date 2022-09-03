@@ -1,4 +1,4 @@
-import Block from '../../utils/block';
+import Block from '../../utils/block/block';
 
 import ErrorScreen from '../../components/error-screen/error-screen';
 

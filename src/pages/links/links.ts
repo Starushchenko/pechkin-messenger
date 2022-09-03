@@ -1,4 +1,4 @@
-import Block from '../../utils/block';
+import Block from '../../utils/block/block';
 
 import Image from '../../../assets/images/welcome.png';
 import Welcome from '../../components/welcome/welcome';

@@ -1,5 +1,5 @@
-import {METHODS} from '../constants/constants';
-import {queryStringify} from './helpers';
+import {METHODS} from '../../constants/constants';
+import {queryStringify} from '../helpers';
 
 export type RequestOptions = {
   headers?: Record<string, string>;

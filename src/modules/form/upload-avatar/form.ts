@@ -1,4 +1,4 @@
-import Block from '../../../utils/block';
+import Block from '../../../utils/block/block';
 import IForm from "../interface";
 import Button from '../../../components/button/button';
 

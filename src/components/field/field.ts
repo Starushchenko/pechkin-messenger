@@ -1,4 +1,4 @@
-import Block from '../../utils/block';
+import Block from '../../utils/block/block';
 import IField from "./interface";
 
 import template from './field.hbs';

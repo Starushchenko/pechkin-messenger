@@ -1,4 +1,4 @@
-import Block from '../../utils/block';
+import Block from '../../utils/block/block';
 
 import template from './add-chat-btn.tpl.hbs';
 

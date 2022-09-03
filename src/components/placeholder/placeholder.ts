@@ -1,4 +1,4 @@
-import Block from '../../utils/block';
+import Block from '../../utils/block/block';
 import IPlaceholder from "./interface";
 
 import template from './placeholder.tpl.hbs';

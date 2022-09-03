@@ -1,4 +1,4 @@
-import Block from '../../utils/block';
+import Block from '../../utils/block/block';
 import IChatsList from './interface';
 import {withChats} from '../../utils/high-ordered/withChats';
 

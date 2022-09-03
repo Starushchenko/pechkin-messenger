@@ -1,4 +1,4 @@
-import Block from '../../utils/block';
+import Block from '../../utils/block/block';
 import Logo from '../../../assets/images/logo.png';
 
 import Button from '../../components/button/button';

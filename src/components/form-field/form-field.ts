@@ -1,4 +1,4 @@
-import Block from '../../utils/block';
+import Block from '../../utils/block/block';
 import IFormField from './interface';
 import {TStringObject} from '../../types/common';
 import {isValid, getErrorText} from '../../utils/helpers';

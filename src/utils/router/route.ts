@@ -1,5 +1,5 @@
-import Block from '../block';
-import renderDom from '../render-dom';
+import Block from '../block/block';
+import renderDom from '../render-dom/render-dom';
 
 export default class Route {
   constructor(pathname: string, view: typeof Block, props: any) {

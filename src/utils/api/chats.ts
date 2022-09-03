@@ -1,4 +1,4 @@
-import {HTTPTransport} from '../http-transport';
+import {HTTPTransport} from '../http-transport/http-transport';
 import {ResponseError} from '../../types/common';
 import {API_URL} from '../../constants/constants';
 import {IChat} from '../../types/chats';

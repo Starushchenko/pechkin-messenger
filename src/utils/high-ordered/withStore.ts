@@ -1,4 +1,4 @@
-import Block from '../block';
+import Block from '../block/block';
 import {isEqual} from '../helpers';
 import store from '../store/store';
 import {IStoreState} from '../../types/store';

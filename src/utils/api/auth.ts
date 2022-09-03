@@ -1,6 +1,6 @@
 import {IUser, ILogin} from '../../types/user';
 import {API_URL} from '../../constants/constants';
-import {HTTPTransport} from '../http-transport';
+import {HTTPTransport} from '../http-transport/http-transport';
 
 export default class AuthAPI {
   private _http: HTTPTransport = new HTTPTransport();
