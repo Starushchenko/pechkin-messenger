@@ -1,47 +1,49 @@
 {{#if chat}}
   <div class="chat-conversation">
-    {{#each messages }}
-      {{#if file }}
-        <div class="chat-conversation__message chat-conversation__message--asset">
-          <img src="https://ya-praktikum.tech/api/v2/resources/{{ this.file }}" alt="{{ time }}">
-          <span class="chat-conversation__timestamp">{{ time }}</span>
-        </div>
-      {{ else }}
-        <div class="chat-conversation__message {{#unless not_mine }}chat-conversation__message--mine{{/unless}}">
-          <p>{{ content }}</p>
-          <span class="chat-conversation__timestamp">
-            <span class="chat-conversation__status-icon">
-              {{#if is_read }}
-                <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <line y1="-0.6" x2="4.85679" y2="-0.6"
-                          transform="matrix(0.705933 0.708278 -0.705933 0.708278 0.700195 2.71973)" stroke="#1eb759"
-                          stroke-width="1.2"/>
-                  <line y1="-0.6" x2="7.28519" y2="-0.6"
-                          transform="matrix(0.705933 -0.708278 0.705933 0.708278 4.12909 6.16003)" stroke="#1eb759"
-                          stroke-width="1.2"/>
-                  <line y1="-0.6" x2="7.28519" y2="-0.6"
-                          transform="matrix(0.705933 -0.708278 0.705933 0.708278 7.55731 6.16003)" stroke="#1eb759"
-                          stroke-width="1.2"/>
-                </svg>
-              {{ else }}
-                <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <line y1="-0.6" x2="4.85679" y2="-0.6"
-                          transform="matrix(0.705933 0.708278 -0.705933 0.708278 0.700195 2.71973)" stroke="#999999"
-                          stroke-width="1.2"/>
-                  <line y1="-0.6" x2="7.28519" y2="-0.6"
-                          transform="matrix(0.705933 -0.708278 0.705933 0.708278 4.12909 6.16003)" stroke="#999999"
-                          stroke-width="1.2"/>
-                  <line y1="-0.6" x2="7.28519" y2="-0.6"
-                          transform="matrix(0.705933 -0.708278 0.705933 0.708278 7.55731 6.16003)" stroke="#999999"
-                          stroke-width="1.2"/>
-                </svg>
-              {{/if}}
+    <div class="chat-conversation__messages">
+      {{#each messages }}
+        {{#if file }}
+          <div class="chat-conversation__message chat-conversation__message--asset">
+            <img src="https://ya-praktikum.tech/api/v2/resources/{{ this.file }}" alt="{{ time }}">
+            <span class="chat-conversation__timestamp">{{ time }}</span>
+          </div>
+        {{ else }}
+          <div class="chat-conversation__message {{#unless not_mine }}chat-conversation__message--mine{{/unless}}">
+            <p>{{ content }}</p>
+            <span class="chat-conversation__timestamp">
+              <span class="chat-conversation__status-icon">
+                {{#if is_read }}
+                  <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line y1="-0.6" x2="4.85679" y2="-0.6"
+                            transform="matrix(0.705933 0.708278 -0.705933 0.708278 0.700195 2.71973)" stroke="#1eb759"
+                            stroke-width="1.2"/>
+                    <line y1="-0.6" x2="7.28519" y2="-0.6"
+                            transform="matrix(0.705933 -0.708278 0.705933 0.708278 4.12909 6.16003)" stroke="#1eb759"
+                            stroke-width="1.2"/>
+                    <line y1="-0.6" x2="7.28519" y2="-0.6"
+                            transform="matrix(0.705933 -0.708278 0.705933 0.708278 7.55731 6.16003)" stroke="#1eb759"
+                            stroke-width="1.2"/>
+                  </svg>
+                {{ else }}
+                  <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line y1="-0.6" x2="4.85679" y2="-0.6"
+                            transform="matrix(0.705933 0.708278 -0.705933 0.708278 0.700195 2.71973)" stroke="#999999"
+                            stroke-width="1.2"/>
+                    <line y1="-0.6" x2="7.28519" y2="-0.6"
+                            transform="matrix(0.705933 -0.708278 0.705933 0.708278 4.12909 6.16003)" stroke="#999999"
+                            stroke-width="1.2"/>
+                    <line y1="-0.6" x2="7.28519" y2="-0.6"
+                            transform="matrix(0.705933 -0.708278 0.705933 0.708278 7.55731 6.16003)" stroke="#999999"
+                            stroke-width="1.2"/>
+                  </svg>
+                {{/if}}
+              </span>
+              {{ time }}
             </span>
-            {{ time }}
-          </span>
-        </div>
-      {{/if}}
-    {{/each}}
+          </div>
+        {{/if}}
+      {{/each}}
+    </div>
   </div>
 {{else if isChatOpen}}
   <div class="placeholder">

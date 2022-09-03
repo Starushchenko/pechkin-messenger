@@ -8,7 +8,6 @@ import Button from '../../../components/button/button';
 import template from './form.tpl.hbs';
 import store from '../../../utils/store/store';
 import {withUser} from '../../../utils/high-ordered/withUser';
-import {IUser} from '../../../types/user';
 
 class ProfileForm extends Block {
   constructor(props: IForm) {
@@ -24,14 +23,12 @@ class ProfileForm extends Block {
   }
   
   private _updateFieldValues() {
-    const currentUser: IUser | undefined = store.getState().currentUser;
+    const currentUser: Record<string, any> | undefined = store.getState().currentUser;
     if (currentUser) {
       Object.keys(currentUser).forEach((value) => {
-        const child = this.children[value];
+        const child = this.getChildren()[value];
         if (child && child.children.field) {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          child.children.field.setProps({ value: currentUser[value]});
+          child.getChildren().field.setProps({ value: currentUser[value]});
         }
       })
     }

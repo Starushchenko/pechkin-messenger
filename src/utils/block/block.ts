@@ -10,9 +10,15 @@ class Block {
    *
    * @returns {void}
    */
+  private _element: HTMLElement | null = null;
+  private eventBus: () => EventBus;
+  protected props: any;
+  public id = nanoid(10);
+  public children: Record<string, Block>;
+  
   constructor(args: any = {}) {
     const eventBus = new EventBus();
-    const { props, children } = this.getChildren(args);
+    const { props, children } = this.separateChildren(args);
 
     this.children = children;
     this.props = this._makePropsProxy(props);
@@ -30,10 +36,6 @@ class Block {
     FLOW_RENDER: 'flow:render',
     FLOW_READY: "flow:ready"
   };
-
-  private _element: HTMLElement | null = null;
-  
-  private eventBus: () => EventBus;
 
   private _registerEvents(eventBus: EventBus) {
     eventBus.on(Block.EVENTS.INIT, this.init.bind(this));
@@ -121,8 +123,6 @@ class Block {
     return document.createElement(tagName);
   }
   
-  protected props: any;
-
   protected componentDidMount() {
     return;
   }
@@ -143,7 +143,7 @@ class Block {
     return new DocumentFragment();
   }
 
-  protected getChildren(args: any) {
+  protected separateChildren(args: any) {
     const children: any = {};
     const props: any = {};
 
@@ -189,8 +189,6 @@ class Block {
   protected onStoreUpdate() {
     return;
   }
-  
-  public id = nanoid(10);
 
   public setProps = (nextProps: any) => {
     if (!nextProps) {
@@ -201,8 +199,6 @@ class Block {
     this.eventBus().emit(Block.EVENTS.FLOW_CDU);
   };
 
-  public children: Record<string, Block>;
-
   public get element(): HTMLElement | null {
     return this._element;
   }
@@ -211,24 +207,12 @@ class Block {
     return this.element;
   }
 
+  public getChildren(): Record<string, Block> {
+    return this.children;
+  }
+
   public init() {
     this.eventBus().emit(Block.EVENTS.FLOW_CDM);
-  }
-
-  public show() {
-    const el = this.getContent();
-
-    if (el) {
-      el.style.display = 'block';
-    }
-  }
-
-  public hide() {
-    const el = this.getContent();
-
-    if (el) {
-      el.style.display = 'none';
-    }
   }
 }
 

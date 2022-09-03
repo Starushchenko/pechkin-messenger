@@ -14,12 +14,6 @@ export default class Route {
   private block: Block | null;
   private props: any;
 
-  leave() {
-    if (this.block) {
-      this.block.hide();
-    }
-  }
-
   match(pathname: string) {
     return pathname === this.pathname;
   }
