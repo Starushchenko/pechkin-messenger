@@ -15,47 +15,64 @@ export class AuthService {
   }
 
   async register(data: IUser): Promise<void> {
-    const response = await this.api.register(data);
+    try {
+      const response = await this.api.register(data);
 
-    if (hasResponseError(response)) {
-      console.error(`Ошибка запроса: ${response.reason}`);
-    } else {
-      await this.getUser();
-      router.go(ROUTES.CHATS);
+      if (hasResponseError(response)) {
+        console.error(`Ошибка запроса: ${response.reason}`);
+      } else {
+        await this.getUser();
+        router.go(ROUTES.CHATS);
+      }
+    } catch (error) {
+      console.error(error)
     }
   }
 
   async login(data: ILogin): Promise<void> {
-    const response = await this.api.login(data);
+    try {
+      const response = await this.api.login(data);
 
-    if (hasResponseError(response)) {
-      console.error(`Ошибка запроса: ${response.reason}`);
-    } else {
-      await this.getUser();
-      router.go(ROUTES.CHATS);
+      if (hasResponseError(response)) {
+        console.error(`Ошибка запроса: ${response.reason}`);
+      } else {
+        await this.getUser();
+        router.go(ROUTES.CHATS);
+      }
+    } catch (error) {
+      console.error(error)
     }
   }
 
   async getUser(): Promise<void> {
-    const response = await this.api.getCurrentUser();
-    if (hasResponseError(response)) {
-      store.set('currentUser', null);
-    } else {
-      store.set('currentUser', response);
+    try {
+      const response = await this.api.getCurrentUser();
+      if (hasResponseError(response)) {
+        console.error(`Ошибка запроса: ${response.reason}`);
+        store.set('currentUser', null);
+      } else {
+        store.set('currentUser', response);
+      }
+    } catch (error) {
+      console.error(error)
     }
   }
 
   async logout() {
-    const response = await this.api.logout();
-    if (hasResponseError(response)) {
-      console.error(`Ошибка запроса: ${response.reason}`);
-      if (response.reason === 'Cookie is not valid') {
+    try {
+      const response = await this.api.logout();
+      if (hasResponseError(response)) {
+        console.error(`Ошибка запроса: ${response.reason}`);
+        if (response.reason === 'Cookie is not valid') {
+          router.go(ROUTES.AUTH);
+        }
+      } else {
+        store.set('currentUser', null);
         router.go(ROUTES.AUTH);
+        router.reload();
       }
-    } else {
-      store.set('currentUser', null);
-      router.go(ROUTES.AUTH);
-      router.reload();
+    } catch (error) {
+      console.error(error)
     }
   }
 }

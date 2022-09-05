@@ -44,13 +44,10 @@ export class HTTPTransport {
           resolve(xhr.response)
         }
       };
-
       xhr.withCredentials = true;
       xhr.responseType = 'json';
-
       xhr.onabort = reject;
       xhr.onerror = reject;
-
       xhr.timeout = options.timeout || 5000;
       xhr.ontimeout = reject;
 
