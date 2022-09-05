@@ -5,7 +5,7 @@ import AuthAPI from '../api/auth';
 import {ROUTES} from '../../constants/constants';
 import {router} from '../../index';
 import store from '../store/store';
-import {hasResponseError} from '../helpers';
+import {hasResponseError} from '../helpers/validate';
 
 export class AuthService {
   private api: AuthAPI;

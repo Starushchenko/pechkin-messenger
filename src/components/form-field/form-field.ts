@@ -1,10 +1,10 @@
 import Block from '../../utils/block/block';
 import IFormField from './interface';
 import {TStringObject} from '../../types/common';
-import {isValid, getErrorText} from '../../utils/helpers';
 import Field from '../field/field';
 
 import template from './form-field.tpl.hbs';
+import {getErrorText, isValid} from '../../utils/helpers/validate';
 
 const classes: TStringObject = {
   FIELD_INFO: 'form-field__info',

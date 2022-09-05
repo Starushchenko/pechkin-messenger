@@ -1,5 +1,5 @@
 import {API_URL, METHODS} from '../../constants/constants';
-import {queryStringify} from '../helpers';
+import {queryStringify} from '../helpers/format-data';
 
 export type RequestOptions = {
   headers?: Record<string, string>;

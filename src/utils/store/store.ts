@@ -1,4 +1,4 @@
-import {set} from '../helpers';
+import {set} from '../helpers/object-helpers';
 import EventBus from '../event-bus';
 import {STORE_EVENTS} from '../../constants/constants';
 import {IStoreState} from '../../types/store';

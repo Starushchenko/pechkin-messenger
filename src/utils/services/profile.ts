@@ -1,10 +1,11 @@
 import ProfileAPI from '../api/profile';
-import {closeModal, hasResponseError} from '../helpers';
 import store from '../store/store';
 import {IUser} from '../../types/user';
 import {router} from '../../index';
 import {ROUTES} from '../../constants/constants';
 import {TStringObject} from '../../types/common';
+import {hasResponseError} from '../helpers/validate';
+import {closeModal} from '../helpers/dom';
 
 class ProfileService {
   private readonly _profileApiService = new ProfileAPI();

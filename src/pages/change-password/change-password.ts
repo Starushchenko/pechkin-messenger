@@ -4,11 +4,11 @@ import Button from '../../components/button/button';
 
 import template from './change-password.tpl.hbs';
 import PasswordForm from '../../modules/form/password-form/form';
-import {formatFormData} from '../../utils/helpers';
 import {router} from '../../index';
 import store from '../../utils/store/store';
 import {ROUTES} from '../../constants/constants';
 import ProfileService from '../../utils/services/profile';
+import {formatFormData} from '../../utils/helpers/format-data';
 
 export default class ChangePassword extends Block {
   protected onStoreUpdate() {

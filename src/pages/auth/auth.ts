@@ -1,6 +1,5 @@
 import Block from '../../utils/block/block';
 import {TStringObject} from '../../types/common';
-import {formatFormData} from '../../utils/helpers';
 
 import Image from '../../../assets/images/welcome.png';
 import AuthForm from '../../modules/form/auth-form/form';
@@ -13,6 +12,7 @@ import {ILogin} from '../../types/user';
 import store from '../../utils/store/store';
 import {router} from '../../index';
 import {ROUTES} from '../../constants/constants';
+import {formatFormData} from '../../utils/helpers/format-data';
 
 const classes: TStringObject = {
   FORM_CLASS: 'app__sidebar-form'

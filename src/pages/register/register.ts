@@ -3,7 +3,6 @@ import {router} from '../../index';
 import store from '../../utils/store/store';
 import {TStringObject} from '../../types/common';
 import {IUser} from '../../types/user';
-import {formatFormData} from '../../utils/helpers';
 
 import AuthService from  '../../utils/services/auth';
 
@@ -13,6 +12,7 @@ import Welcome from '../../components/welcome/welcome';
 import {ROUTES} from '../../constants/constants';
 
 import template from './register.hbs';
+import {formatFormData} from '../../utils/helpers/format-data';
 
 const classes: TStringObject = {
   FORM_CLASS: 'app__sidebar-form'

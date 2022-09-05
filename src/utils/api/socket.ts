@@ -1,7 +1,7 @@
 import {WEBSOCKET_CHATS_URL} from '../../constants/constants';
 import store from '../store/store';
-import {formatDate} from '../helpers';
 import {IMessage} from '../../types/chats';
+import {formatDate} from '../helpers/format-data';
 
 export default class Socket {
   private _socket;

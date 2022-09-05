@@ -1,6 +1,6 @@
 import EventBus from '../event-bus';
 import {nanoid} from 'nanoid';
-import {isEqual} from '../helpers';
+import {isEqual} from '../helpers/object-helpers';
 import store from '../store/store';
 import {STORE_EVENTS} from '../../constants/constants';
 

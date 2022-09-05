@@ -5,9 +5,10 @@ import {withChats} from '../../utils/high-ordered/withChats';
 import template from './chats-list.tpl.hbs';
 import AddChatButton from './add-chat-button';
 import Modal from '../modal/modal';
-import {formatFormData, openModal} from '../../utils/helpers';
 import AddChatForm from '../../modules/form/add-chat-form/form';
 import ChatsService from '../../utils/services/chats';
+import {formatFormData} from '../../utils/helpers/format-data';
+import {openModal} from '../../utils/helpers/dom';
 
 class ChatsList extends Block {
   constructor(props: IChatsList) {

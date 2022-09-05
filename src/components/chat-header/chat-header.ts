@@ -8,9 +8,10 @@ import {withChat} from '../../utils/high-ordered/withChat';
 import Modal from '../modal/modal';
 import AddUserForm from '../../modules/form/add-user-form/form';
 import DeleteUserForm from '../../modules/form/delete-user-form/form';
-import {formatFormData, openModal} from '../../utils/helpers';
 import ChatsService from '../../utils/services/chats';
 import DeleteChatForm from '../../modules/form/delete-chat-form/form';
+import {formatFormData} from '../../utils/helpers/format-data';
+import {openModal} from '../../utils/helpers/dom';
 
 class ChatHeader extends Block {
   constructor(props: IChatHeader) {

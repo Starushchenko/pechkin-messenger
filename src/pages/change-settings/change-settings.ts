@@ -3,7 +3,6 @@ import Button from '../../components/button/button';
 import ProfileForm from '../../modules/form/profile-form/form';
 
 import template from './change-settings.tpl.hbs';
-import {formatFormData, openModal} from '../../utils/helpers';
 import {router} from '../../index';
 import ProfileService from '../../utils/services/profile';
 import {IUser} from '../../types/user';
@@ -11,6 +10,8 @@ import store from '../../utils/store/store';
 import {ROUTES} from '../../constants/constants';
 import Modal from '../../components/modal/modal';
 import UploadAvatarForm from '../../modules/form/upload-avatar/form';
+import {formatFormData} from '../../utils/helpers/format-data';
+import {openModal} from '../../utils/helpers/dom';
 
 export default class ChangeSettings extends Block {
   protected onStoreUpdate() {

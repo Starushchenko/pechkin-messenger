@@ -1,5 +1,5 @@
 import Block from '../block/block';
-import {isEqual} from '../helpers';
+import {isEqual} from '../helpers/object-helpers';
 import store from '../store/store';
 import {IStoreState} from '../../types/store';
 import {STORE_EVENTS} from '../../constants/constants';

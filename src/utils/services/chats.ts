@@ -1,9 +1,11 @@
 import store from '../store/store';
-import {closeModal, formatDate, hasResponseError} from '../helpers';
 import ProfileService from '../services/profile';
 import ChatsAPI from '../api/chats';
 import {IChatTitle} from '../../types/chats';
 import Socket from '../api/socket';
+import {hasResponseError} from '../helpers/validate';
+import {formatDate} from '../helpers/format-data';
+import {closeModal} from '../helpers/dom';
 
 class ChatService {
   private readonly _chatAPI: ChatsAPI;
@@ -22,13 +24,14 @@ class ChatService {
       if (hasResponseError(chats)) {
         console.error(chats.reason)
       } else {
-        chats.map((chat) => {
+        const result = [...chats];
+        result.map((chat) => {
           if (chat.last_message) {
             const day = new Date(chat.last_message.time);
             chat.last_message.time = formatDate(day);
           }
         });
-        store.set('chats', chats);
+        store.set('chats', result);
       }
     } catch (error) {
       console.error(error)
@@ -57,6 +60,8 @@ class ChatService {
         console.error(user.reason);
         return;
       }
+
+      if (!user) return;
       if (user.length === 0) {
         console.error(`Не найден пользователь с id ${login}`);
         return;
@@ -84,6 +89,7 @@ class ChatService {
         return;
       }
 
+      if (!user) return;
       if (user.length === 0) {
         console.error(`Не найден пользователь с id ${login}`);
         return;

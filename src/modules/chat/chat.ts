@@ -6,8 +6,9 @@ import template from './chat.tpl.hbs';
 import ChatHeader from '../../components/chat-header/chat-header';
 import ChatConversation from '../../components/chat-conversation/chat-conversation';
 import ChatActions from '../../components/chat-actions/chat-actions';
-import {formatFormData, onDropdownTrigger} from '../../utils/helpers';
 import ChatService from '../../utils/services/chats';
+import {formatFormData} from '../../utils/helpers/format-data';
+import {onDropdownTrigger} from '../../utils/helpers/dom';
 
 class Chat extends Block {
   constructor(props: IChat) {
