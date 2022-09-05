@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm run build && node ./server/index.js",
     "dev": "parcel src/index.html --no-cache",
-    "build": "rm -rf dist && parcel build src/index.html",
+    "build": "rm -rf dist && parcel build src/index.html --no-scope-hoist",
     "test": "node ./node_modules/mocha/bin/mocha -n loader=ts-node/esm --extension ts",
     "lint": "tsc --noEmit && eslint ./src/**/*.ts && npx stylelint ./src/**/*.scss",
     "lint:fix": "tsc --noEmit && eslint --fix ./src/**/*.ts && npx stylelint ./src/**/*.scss --fix"
