@@ -5,12 +5,12 @@
         {{#if file }}
           <div class="chat-conversation__message chat-conversation__message--asset">
             <img src="https://ya-praktikum.tech/api/v2/resources/{{ this.file }}" alt="{{ time }}">
-            <span class="chat-conversation__timestamp">{{ time }}</span>
+            <time class="chat-conversation__timestamp">{{ time }}</time>
           </div>
         {{ else }}
           <div class="chat-conversation__message {{#unless not_mine }}chat-conversation__message--mine{{/unless}}">
             <p>{{ content }}</p>
-            <span class="chat-conversation__timestamp">
+            <time class="chat-conversation__timestamp">
               <span class="chat-conversation__status-icon">
                 {{#if is_read }}
                   <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +39,7 @@
                 {{/if}}
               </span>
               {{ time }}
-            </span>
+            </time>
           </div>
         {{/if}}
       {{/each}}

@@ -71,7 +71,9 @@ class FormField extends Block {
       const relatedField = document.querySelector(
         `[name='${field.getAttribute('data-confirm-field')}']`
       ) as HTMLInputElement;
-      relatedField.pattern = field.value;
+      if (relatedField) {
+        relatedField.pattern = field.value;
+      }
     }
   }
 }

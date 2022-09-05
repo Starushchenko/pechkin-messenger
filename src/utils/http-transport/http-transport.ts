@@ -1,4 +1,4 @@
-import {METHODS} from '../../constants/constants';
+import {API_URL, METHODS} from '../../constants/constants';
 import {queryStringify} from '../helpers';
 
 export type RequestOptions = {
@@ -11,6 +11,8 @@ export type RequestOptions = {
 };
 
 export class HTTPTransport {
+  private _apiURL = API_URL;
+  private _defaultHeaders = {'content-type': 'application/json'};
   private _request = <T>(url: string, options: RequestOptions = {}): Promise<T> => {
     const {headers = {}, method, data} = options;
 
@@ -63,18 +65,29 @@ export class HTTPTransport {
   };
   
   public get = <T>(url: string, options: RequestOptions = {}): Promise<T> => {
-    return this._request<T>(url, {...options, method: METHODS.GET});
+    return this._request<T>(`${this._apiURL}${url}`, {...options, method: METHODS.GET});
   };
 
   public post = <T>(url: string, options: RequestOptions = {}): Promise<T> => {
-    return this._request<T>(url, {...options, method: METHODS.POST});
+    return this._request<T>(`${this._apiURL}${url}`, {
+      ...options,
+      headers: options.headers ? options.headers : this._defaultHeaders,
+      method: METHODS.POST
+    });
   };
 
   public put = <T>(url: string, options: RequestOptions = {}): Promise<T> => {
-    return this._request<T>(url, {...options, method: METHODS.PUT});
+    return this._request<T>(`${this._apiURL}${url}`, {
+      ...options,
+      headers: options.headers ? options.headers : this._defaultHeaders,
+      method: METHODS.PUT});
   };
 
   public delete = <T>(url: string, options: RequestOptions = {}): Promise<T> => {
-    return this._request<T>(url, {...options, method: METHODS.DELETE});
+    return this._request<T>(`${this._apiURL}${url}`, {
+      ...options,
+      headers: options.headers ? options.headers : this._defaultHeaders,
+      method: METHODS.DELETE
+    });
   };
 }
