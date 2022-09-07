@@ -3,6 +3,14 @@
   padding: 30px 20px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  height: calc(100vh - 131px);
+}
+
+.chat-conversation__messages {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
   overflow-y: auto;
 }
 
@@ -45,6 +53,7 @@
   background: $accent-secondary;
   align-self: flex-end;
   border-radius: 15px 15px 0;
+  margin-left: auto;
 }
 
 .chat-conversation__message--asset {
@@ -59,6 +68,7 @@
   flex-grow: 1;
   text-align: right;
   font-size: 12px;
+  margin-left: 6px;
 }
 
 .chat-conversation__message--mine .chat-conversation__timestamp {

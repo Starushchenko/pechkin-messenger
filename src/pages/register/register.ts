@@ -1,21 +1,33 @@
-import Block from '../../utils/Block';
-import renderDOM from '../../utils/renderDOM';
+import Block from '../../utils/block/block';
+import {router} from '../../index';
+import store from '../../utils/store/store';
 import {TStringObject} from '../../types/common';
-import {formatFormData} from '../../utils/helpers';
+import {IUser} from '../../types/user';
+
+import AuthService from  '../../utils/services/auth';
 
 import Image from '../../../assets/images/welcome.png';
-import RegisterForm from '../../blocks/form/register-form/form';
+import RegisterForm from '../../modules/form/register-form/form';
 import Welcome from '../../components/welcome/welcome';
+import {ROUTES} from '../../constants/constants';
 
 import template from './register.hbs';
+import {formatFormData} from '../../utils/helpers/format-data';
 
 const classes: TStringObject = {
   FORM_CLASS: 'app__sidebar-form'
 };
 
-class AuthPage extends Block {
-  protected initChildren() {
+export default class RegisterPage extends Block {  
+  protected componentDidMount() {
+    this.checkUserExist();
+  }
 
+  protected onStoreUpdate() {
+    this.checkUserExist();
+  }
+
+  protected initChildren() {
     this.children['auth-form'] = new RegisterForm({
       classes: classes.FORM_CLASS,
       events: {
@@ -30,21 +42,22 @@ class AuthPage extends Block {
     });
   }
 
-  onSubmit(e: Event) {
+  protected onSubmit(e: Event) {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
-    console.log(formatFormData(formData));
+
+    AuthService.register(formatFormData(formData) as unknown as IUser);
   }
 
+  protected checkUserExist(): void {
+    const currentUser: IUser | undefined | null = store.getState().currentUser;
+    if (currentUser) {
+      router.go(ROUTES.CHATS);
+    }
+  }
 
-  render() {
+  public render() {
     return this.compile(template, {});
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const page = new AuthPage();
-
-  renderDOM('#app', page);
-});

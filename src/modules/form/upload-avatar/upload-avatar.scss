@@ -1,0 +1,45 @@
+.upload-avatar__button {
+  padding: 9px 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  color: $text-light;
+  background: #c1c1c1;
+  box-shadow: 0 10px 15px 0 rgb(134 134 134 / 20%);
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  border: 0;
+  font-family: $main-font;
+  width: 100%;
+
+  &:hover {
+    background: $gray;
+  }
+
+  svg {
+    margin-right: 10px;
+  }
+}
+
+.upload-avatar__field {
+  input {
+    display: none;
+  }
+}
+
+.upload-avatar__info {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  color: #8d8d8d;
+
+  &--error {
+    color: $alert;
+  }
+}

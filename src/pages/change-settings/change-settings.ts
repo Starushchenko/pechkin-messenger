@@ -1,15 +1,26 @@
-import Block from '../../utils/Block';
-import renderDOM from '../../utils/renderDOM';
-
+import Block from '../../utils/block/block';
 import Button from '../../components/button/button';
-import ProfileForm from '../../blocks/form/profile-form/form';
+import ProfileForm from '../../modules/form/profile-form/form';
 
 import template from './change-settings.tpl.hbs';
-import {formatFormData} from '../../utils/helpers';
+import {router} from '../../index';
+import ProfileService from '../../utils/services/profile';
+import {IUser} from '../../types/user';
+import store from '../../utils/store/store';
+import {ROUTES} from '../../constants/constants';
+import Modal from '../../components/modal/modal';
+import UploadAvatarForm from '../../modules/form/upload-avatar/form';
+import {formatFormData} from '../../utils/helpers/format-data';
+import {openModal} from '../../utils/helpers/dom';
 
-class ChangeSettings extends Block {
+export default class ChangeSettings extends Block {
+  protected onStoreUpdate() {
+    if (!store.getState().currentUser) {
+      router.go(ROUTES.AUTH);
+    }
+  }
+  
   protected initChildren() {
-
     this.children['button-back'] = new Button({
       classes: 'button--icon app__back-btn',
       text: 'Назад',
@@ -25,10 +36,21 @@ class ChangeSettings extends Block {
     });
 
     this.children['profile-form'] = new ProfileForm({
-      title: 'Константин',
+      title: store.getState().currentUser?.first_name,
       events: {
-        submit: (e) => this.onSubmit(e),
+        click: (e: Event) => this.listenAvatarModal(e),
+        submit: (e: Event) => this.onSubmit(e)
       },
+    });
+
+    this.children['upload-avatar-modal'] = new Modal({
+      id: 'upload-avatar',
+      title: 'Поменять аватар',
+      content: new UploadAvatarForm({
+        events: {
+          submit: (e: Event) => this.onAvatarUpload(e)
+        }
+      })
     });
   }
 
@@ -36,22 +58,30 @@ class ChangeSettings extends Block {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
-    console.log(formatFormData(formData));
+    ProfileService.editUser(formatFormData(formData) as unknown as IUser);
   }
 
   onStepBack(e: Event) {
     e.preventDefault();
-    history.back();
+    router.back();
   }
 
+  listenAvatarModal(e: Event) {
+    const target = e.target as HTMLElement;
+    if (target.classList.contains('js-edit-avatar')) {
+      openModal('upload-avatar');
+    }
+  }
+
+  onAvatarUpload(e: Event) {
+    e.preventDefault();
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    ProfileService.uploadAvatar(formData);
+  }
 
   render() {
     return this.compile(template, {});
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const page = new ChangeSettings();
-
-  renderDOM('#app', page);
-});

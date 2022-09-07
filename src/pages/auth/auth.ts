@@ -1,21 +1,31 @@
-import Block from '../../utils/Block';
-import renderDOM from '../../utils/renderDOM';
+import Block from '../../utils/block/block';
 import {TStringObject} from '../../types/common';
 
 import Image from '../../../assets/images/welcome.png';
-import AuthForm from '../../blocks/form/auth-form/form';
+import AuthForm from '../../modules/form/auth-form/form';
 import Welcome from '../../components/welcome/welcome';
 
 import template from './auth.tpl.hbs';
-import {formatFormData} from '../../utils/helpers';
+import AuthService from '../../utils/services/auth';
+import ChatService from '../../utils/services/chats';
+import {ILogin} from '../../types/user';
+import store from '../../utils/store/store';
+import {router} from '../../index';
+import {ROUTES} from '../../constants/constants';
+import {formatFormData} from '../../utils/helpers/format-data';
 
 const classes: TStringObject = {
   FORM_CLASS: 'app__sidebar-form'
 };
 
-class AuthPage extends Block {
+export default class AuthPage extends Block {
+  protected onStoreUpdate() {
+    if (store.getState().currentUser) {
+      router.go(ROUTES.CHATS);
+    }
+  }
+  
   protected initChildren() {
-
     this.children['auth-form'] = new AuthForm({
       classes: classes.FORM_CLASS,
       events: {
@@ -30,21 +40,17 @@ class AuthPage extends Block {
     });
   }
 
-  onSubmit(e: Event) {
+  protected onSubmit(e: Event) {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
-    console.log(formatFormData(formData));
+
+    AuthService.login(formatFormData(formData) as unknown as ILogin).then(() => {
+      ChatService.getChats()
+    });
   }
 
-
-  render() {
+  public render() {
     return this.compile(template, {});
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const page = new AuthPage();
-
-  renderDOM('#app', page);
-});

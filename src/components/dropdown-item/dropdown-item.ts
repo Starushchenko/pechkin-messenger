@@ -1,4 +1,4 @@
-import Block from '../../utils/Block';
+import Block from '../../utils/block/block';
 import IDropdownItem from './interface';
 
 import template from './dropdown-item.tpl.hbs';

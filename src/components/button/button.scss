@@ -63,14 +63,16 @@
   }
 }
 
-.button--disabled, [disabled] {
+.button--disabled,
+[disabled] {
   box-shadow: none;
   background: $gray-1;
-  
+
   &:hover {
-    &:before {
+    &::before {
       display: none;
     }
+
     cursor: not-allowed;
   }
 }

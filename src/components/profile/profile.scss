@@ -23,10 +23,11 @@
   overflow: hidden;
 
   img {
-    width: 60px;
-    height: 60px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
-  
+
   &--editable {
     cursor: pointer;
   }
@@ -61,6 +62,11 @@
   &--editable:hover::after {
     opacity: 1;
   }
+}
+
+img.profile__avatar-placeholder {
+  width: 60px;
+  height: 60px;
 }
 
 .profile__name {
@@ -106,23 +112,4 @@
 .profile__actions {
   display: flex;
   flex-direction: column;
-}
-
-.profile__actions-item {
-  color: $success;
-  padding: 10px 0;
-  border-bottom: 1px solid $gray-3;
-  font-weight: 500;
-
-  &:hover {
-    opacity: 0.75;
-  }
-
-  &:last-of-type {
-    border-bottom: 0;
-  }
-
-  &--alert {
-    color: $alert;
-  }
 }

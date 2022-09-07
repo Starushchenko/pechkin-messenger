@@ -1,0 +1,26 @@
+<form class="profile form">
+  <div class="profile__content">
+    <div class="profile__avatar profile__avatar--editable js-edit-avatar" data-change-text="Поменять аватар">
+      {{#if avatar }}
+        <img src="https://ya-praktikum.tech/api/v2/resources/{{ avatar }}" alt="{{ title }}">
+      {{ else }}
+        <img class="profile__avatar-placeholder" src="./../images/svg/placeholder.svg" alt="Изображение не загружено">
+      {{/if}}
+    </div>
+
+    <h1 class="profile__name">{{ title }}</h1>
+    
+    <div class="profile__fields">
+      {{{ email }}}
+      {{{ login }}}
+      {{{ first_name }}}
+      {{{ second_name }}}
+      {{{ display_name }}}
+      {{{ phone }}}
+    </div>
+
+    <div class="profile__actions">
+      {{{ button-save }}}
+    </div>
+  </div>
+</form>

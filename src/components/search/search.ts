@@ -1,4 +1,4 @@
-import Block from '../../utils/Block';
+import Block from '../../utils/block/block';
 import ISearch from './interface';
 
 import template from './search.tpl.hbs';

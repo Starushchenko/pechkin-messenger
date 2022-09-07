@@ -1,11 +1,12 @@
-interface IProfile {
-  avatar?: HTMLImageElement | string | boolean;
-  userName?: string;
-  email?: string;
+export interface IProfile {
+  id?: string
+  first_name?: string;
+  second_name?: string;
+  display_name?: string;
   login?: string;
-  userSurname?: string;
-  nameInChat?: string;
+  email?: string;
   phone?: string;
+  avatar?: string;
 }
 
 export default IProfile;

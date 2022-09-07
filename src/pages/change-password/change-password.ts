@@ -1,15 +1,23 @@
-import Block from '../../utils/Block';
-import renderDOM from '../../utils/renderDOM';
+import Block from '../../utils/block/block';
 
 import Button from '../../components/button/button';
 
 import template from './change-password.tpl.hbs';
-import PasswordForm from '../../blocks/form/password-form/form';
-import {formatFormData} from '../../utils/helpers';
+import PasswordForm from '../../modules/form/password-form/form';
+import {router} from '../../index';
+import store from '../../utils/store/store';
+import {ROUTES} from '../../constants/constants';
+import ProfileService from '../../utils/services/profile';
+import {formatFormData} from '../../utils/helpers/format-data';
 
-class ChangePassword extends Block {
+export default class ChangePassword extends Block {
+  protected onStoreUpdate() {
+    if (!store.getState().currentUser) {
+      router.go(ROUTES.AUTH);
+    }
+  }
+  
   protected initChildren() {
-
     this.children['button-back'] = new Button({
       classes: 'button--icon app__back-btn',
       text: 'Назад',
@@ -36,12 +44,12 @@ class ChangePassword extends Block {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
-    console.log(formatFormData(formData));
+    ProfileService.editPassword(formatFormData(formData));
   }
 
   onStepBack(e: Event) {
     e.preventDefault();
-    history.back();
+    router.back();
   }
 
 
@@ -49,9 +57,3 @@ class ChangePassword extends Block {
     return this.compile(template, {});
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const page = new ChangePassword();
-
-  renderDOM('#app', page);
-});

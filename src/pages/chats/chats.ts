@@ -1,17 +1,25 @@
-import Block from '../../utils/Block';
-import renderDOM from '../../utils/renderDOM';
+import Block from '../../utils/block/block';
 import Logo from '../../../assets/images/logo.png';
-import chats = require('../../stubs/chats.json');
 
 import Button from '../../components/button/button';
 import AppLogo from '../../components/app-logo/app-logo';
 import Search from '../../components/search/search';
 import ChatsList from '../../components/chats-list/chats-list';
-import Placeholder from '../../components/placeholder/placeholder';
 
 import template from './chats.tpl.hbs';
+import {router} from '../../index';
+import {ROUTES} from '../../constants/constants';
+import store from '../../utils/store/store';
+import Chat from '../../modules/chat/chat';
+import ChatService from '../../utils/services/chats';
 
-class ChatsPage extends Block {
+export default class ChatsPage extends Block {
+  protected onStoreUpdate() {
+    if (!store.getState().currentUser) {
+      router.go(ROUTES.AUTH);
+    }
+  }
+  
   protected initChildren() {
     this.children['app-logo'] = new AppLogo({
       name: 'Pechkin',
@@ -38,27 +46,38 @@ class ChatsPage extends Block {
     });
 
     this.children['chats-list'] = new ChatsList({
-      emptyText: 'По запросу ничего не найдено',
-      chats: chats
+      emptyText: 'Добавьте свой первый чат',
+      chats: [],
+      events: {
+        click: (e: Event) => this.onActiveChatTrigger(e)
+      }
     });
 
-    this.children['placeholder'] = new Placeholder({
-      text: 'Выберите чат, чтобы отправить сообщение'
-    });
+    this.children['chat'] = new Chat({});
   }
 
   onProfileClick(e: Event) {
     e.preventDefault();
-    location.replace('/profile/');
+    router.go(ROUTES.PROFILE);
+  }
+
+  onActiveChatTrigger(e: Event) {
+    const target = e.target as HTMLAnchorElement;
+    if (target.hasAttribute('data-chat-id')) {
+      e.preventDefault();
+      const chatID = Number(target.getAttribute('data-chat-id'));
+      const state = store.getState();
+      const currentChat = state.chats?.filter((item) => item.id === chatID);
+      const userID = state.currentUser?.id;
+
+      if (chatID && userID) {
+        store.set('currentChat.chat', currentChat);
+        ChatService.connectSocket(userID, chatID);
+      }
+    }
   }
 
   render() {
     return this.compile(template, {});
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const page = new ChatsPage();
-
-  renderDOM('#app', page);
-});

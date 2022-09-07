@@ -1,15 +1,21 @@
-import Block from '../../utils/Block';
-import renderDOM from '../../utils/renderDOM';
-import profileInfo = require('../../stubs/profile.json');
+import Block from '../../utils/block/block';
 
 import Button from '../../components/button/button';
 import Profile from '../../components/profile/profile';
 
 import template from './profile.tpl.hbs';
+import {router} from '../../index';
+import store from '../../utils/store/store';
+import {ROUTES} from '../../constants/constants';
 
-class ProfilePage extends Block {
+export default class ProfilePage extends Block {
+  protected onStoreUpdate() {
+    if (!store.getState().currentUser) {
+      router.go(ROUTES.AUTH);
+    }
+  }
+
   protected initChildren() {
-
     this.children['button-back'] = new Button({
       classes: 'button--icon app__back-btn',
       text: 'Назад',
@@ -24,22 +30,15 @@ class ProfilePage extends Block {
       }
     });
 
-    this.children['profile'] = new Profile(profileInfo);
+    this.children['profile'] = new Profile({});
   }
 
   onStepBack(e: Event) {
     e.preventDefault();
-    history.back();
+    router.back();
   }
-
 
   render() {
     return this.compile(template, {});
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const page = new ProfilePage();
-
-  renderDOM('#app', page);
-});

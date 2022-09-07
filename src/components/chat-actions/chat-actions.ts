@@ -1,25 +1,18 @@
-import Block from '../../utils/Block';
+import Block from '../../utils/block/block';
 import IChatActions from './interface';
-import {MESSAGE} from '../../constants/validation-rules';
+import {VALIDATION_RULES} from '../../constants/constants';
 import filesMenu = require('../../stubs/files-menu.json');
 
 import template from './chat-actions.tpl.hbs';
 
 import FormField from '../form-field/form-field';
 import Button from '../button/button';
-import {onDropdownTrigger} from '../../utils/dropdownTrigger';
 import Dropdown from '../dropdown/dropdown';
+import {withChat} from '../../utils/high-ordered/withChat';
 
 class ChatActions extends Block {
   constructor(props: IChatActions) {
     super(props);
-
-    this.onDropdownClick()
-  }
-
-  onDropdownClick() {
-    const trigger = this.element?.querySelector('.js-dropdown-trigger');
-    onDropdownTrigger(trigger);
   }
 
   protected initChildren() {
@@ -31,13 +24,14 @@ class ChatActions extends Block {
     this.children['message-field'] = new FormField({
       name: 'message',
       label: 'Сообщение',
-      errorText: MESSAGE.errorText,
+      errorText: VALIDATION_RULES.MESSAGE.errorText,
       field: {
         type: 'text',
         name: 'message',
         placeholder: 'Введите текст',
         required: true,
-        rule: MESSAGE.rule
+        rule: VALIDATION_RULES.MESSAGE.rule,
+        noValidateOnBlur: true
       }
     });
     
@@ -52,10 +46,13 @@ class ChatActions extends Block {
         </svg>`,
     });
   }
-
+  
   render() {
-    return this.compile(template, {...this.props});
+    return this.compile(template, {
+      data: this.props.chat ? this.props.chat[0] : false,
+      ...this.props
+    });
   }
 }
 
-export default ChatActions;
+export default withChat(ChatActions);

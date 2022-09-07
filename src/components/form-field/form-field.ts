@@ -1,10 +1,10 @@
-import Block from '../../utils/Block';
+import Block from '../../utils/block/block';
 import IFormField from './interface';
 import {TStringObject} from '../../types/common';
-import {isValid, getErrorText} from '../../utils/helpers';
 import Field from '../field/field';
 
 import template from './form-field.tpl.hbs';
+import {getErrorText, isValid} from '../../utils/helpers/validate';
 
 const classes: TStringObject = {
   FIELD_INFO: 'form-field__info',
@@ -14,53 +14,47 @@ const classes: TStringObject = {
 class FormField extends Block {
   constructor(props: IFormField) {
     super(props);
-
-    this.fieldElement?.addEventListener('focus', this.onFocus.bind(this));
-    this.fieldElement?.addEventListener('blur', this.onBlur.bind(this));
   }
 
-  isOnInputValidateEnabled = false;
-  
-  fieldElement = this.element?.querySelector('input');
-  
   fieldInfoElement = this.element?.querySelector('.' + classes.FIELD_INFO);
+
+  protected initChildren(): void {
+    this.children.field = new Field({
+      ...this.props.field,
+      events: {
+        focus: (e) => this.onFocus(e.target as HTMLInputElement),
+        blur: (e) => this.onBlur(e.target as HTMLInputElement),
+        change: (e) => this.checkRelatedFields(e.target as HTMLInputElement)
+      },
+    });
+  }
 
   render() {
     return this.compile(template, {...this.props});
   }
 
-  onFocus(): void {
-    if (this.fieldElement && this.fieldElement.value) {
-      this.validate(this.fieldElement);
+  onFocus(field: HTMLInputElement | null): void {
+    if (field && field.value && !field.hasAttribute('data-no-blur-validate')) {
+      this.validate(field);
     }
   }
 
-  onBlur(): void {
-    if (this.fieldElement) {
-      this.validate(this.fieldElement);
-      if (!isValid(this.fieldElement) && !this.isOnInputValidateEnabled) {
-        this.fieldElement?.addEventListener('input', this.onInput.bind(this));
-        this.isOnInputValidateEnabled = true;
-      }
+  onBlur(field: HTMLInputElement): void {
+    if (field && !field.hasAttribute('data-no-blur-validate')) {
+      this.validate(field);
     }
-  }
-
-  onInput(): void {
-    this.validate(this.fieldElement);
   }
 
   validate(field?: HTMLInputElement | null): void {
-    if (!field) return;
+    if (!field) {
+      return;
+    }
     if (!isValid(field)) {
       if (this.element) {
         this.element.classList.add(classes.FIELD_HAS_ERROR)
       }
       if (this.fieldInfoElement && this.fieldInfoElement instanceof HTMLElement) {
         this.fieldInfoElement.innerText = getErrorText(field, this.props.errorText);
-      }
-      if (!this.isOnInputValidateEnabled) {
-        this.fieldElement?.addEventListener('input', this.onInput.bind(this));
-        this.isOnInputValidateEnabled = true;
       }
     } else {
       if (this.element) {
@@ -72,8 +66,15 @@ class FormField extends Block {
     }
   }
 
-  protected initChildren(): void {
-    this.children.field = new Field({...this.props.field});
+  checkRelatedFields(field: HTMLInputElement): void {
+    if (field.hasAttribute('data-confirm-field')) {
+      const relatedField = document.querySelector(
+        `[name='${field.getAttribute('data-confirm-field')}']`
+      ) as HTMLInputElement;
+      if (relatedField) {
+        relatedField.pattern = field.value;
+      }
+    }
   }
 }
 

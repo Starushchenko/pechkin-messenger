@@ -18,10 +18,12 @@
     placeholder="{{placeholder}}"
     aria-label="{{label}}"
     value="{{value}}"
-    required="{{required}}"
-    pattern="{{rule}}"
-    minlength="{{minlength}}"
-    maxlength="{{maxlength}}"
-    autocomplete="{{#if autocomplete }}{{autocomplete}}{{ else }}none{{/if}}"
+    {{#if confirmField }} data-confirm-field="{{confirmField}}" {{/if}}
+    {{#if noValidateOnBlur }} data-no-blur-validate {{/if}}
+    {{#if required }}required="{{required}}" {{/if}}
+    {{#if rule }} pattern="{{rule}}" {{/if}}
+    {{#if minlength }} minlength="{{minlength}}" {{/if}}
+    {{#if maxlength }} maxlength="{{maxlength}}" {{/if}}
+    {{#if autocomplete }}autocomplete="{{autocomplete}}"{{/if}}
   >
 {{/if}}

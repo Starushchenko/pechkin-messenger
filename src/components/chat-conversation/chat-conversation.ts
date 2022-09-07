@@ -1,24 +1,21 @@
-import Block from '../../utils/Block';
+import Block from '../../utils/block/block';
 import IChatConversation from './interface';
+import {withChat} from '../../utils/high-ordered/withChat';
 
 import template from './chat-conversation.tpl.hbs';
-
-import Placeholder from '../placeholder/placeholder';
 
 class ChatConversation extends Block {
   constructor(props: IChatConversation) {
     super(props);
   }
 
-  protected initChildren() {
-    this.children['placeholder'] = new Placeholder({
-      text: 'История чата пуста. Напишите первым!'
-    });
-  }
-
   render() {
-    return this.compile(template, {...this.props});
+    return this.compile(template, {
+      isChatOpen: this.props.messages && this.props.messages.length,
+      messages: this.props.messages,
+      ...this.props
+    });
   }
 }
 
-export default ChatConversation;
+export default withChat(ChatConversation);
