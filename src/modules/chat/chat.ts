@@ -1,7 +1,7 @@
 import Block from '../../utils/block/block';
 import IChat from './interface';
 
-import template from './chat.tpl.hbs';
+import * as template from './chat.tpl.hbs';
 
 import ChatHeader from '../../components/chat-header/chat-header';
 import ChatConversation from '../../components/chat-conversation/chat-conversation';

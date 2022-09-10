@@ -1,7 +1,7 @@
 import Block from '../../utils/block/block';
 import ILink from "./interface";
 
-import template from './link.tpl.hbs';
+import * as template from './link.tpl.hbs';
 
 class Link extends Block {
   constructor(props: ILink) {

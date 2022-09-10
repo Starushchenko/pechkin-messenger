@@ -2,7 +2,7 @@ import Block from '../../../utils/block/block';
 import IForm from "../interface";
 import Button from '../../../components/button/button';
 
-import template from './form.tpl.hbs';
+import * as template from './form.tpl.hbs';
 
 class DeleteChatForm extends Block {
   constructor(props: IForm) {

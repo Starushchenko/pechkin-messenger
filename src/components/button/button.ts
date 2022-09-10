@@ -1,7 +1,7 @@
 import Block from '../../utils/block/block';
 import IButton from "./interface";
 
-import template from './button.tpl.hbs';
+import * as template from './button.tpl.hbs';
 
 class Button extends Block {
   constructor(props: IButton) {

@@ -1,7 +1,7 @@
 import Block from '../../utils/block/block';
 import IChatHeader from './interface';
 
-import template from './chat-header.tpl.hbs';
+import * as template from './chat-header.tpl.hbs';
 
 import DropdownItem from '../dropdown-item/dropdown-item';
 import {withChat} from '../../utils/high-ordered/withChat';

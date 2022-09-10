@@ -1,7 +1,7 @@
 import Block from '../../utils/block/block';
 import IErrorScreen from './interface';
 
-import template from './error-screen.tpl.hbs';
+import * as template from './error-screen.tpl.hbs';
 
 class ErrorScreen extends Block {
   constructor(props: IErrorScreen) {

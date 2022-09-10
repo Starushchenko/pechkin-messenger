@@ -2,7 +2,7 @@ import Block from '../../utils/block/block';
 
 import ErrorScreen from '../../components/error-screen/error-screen';
 
-import template from './error-500.tpl.hbs';
+import * as template from './error-500.tpl.hbs';
 
 export default class Page500 extends Block {
   protected initChildren() {

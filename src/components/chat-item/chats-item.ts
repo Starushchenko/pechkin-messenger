@@ -3,7 +3,7 @@ import {IChatItem} from '../../types/chats';
 
 import LogoPlaceholder from '../../../assets/images/svg/placeholder.svg'
 
-import template from './chats-item.tpl.hbs';
+import * as template from './chats-item.tpl.hbs';
 
 class ChatsItem extends Block {
   constructor(props: IChatItem) {

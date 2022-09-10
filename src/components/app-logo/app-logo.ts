@@ -1,7 +1,7 @@
 import Block from '../../utils/block/block';
 import IAppLogo from './interface';
 
-import template from './app-logo.tpl.hbs';
+import * as template from './app-logo.tpl.hbs';
 
 class AppLogo extends Block {
   constructor(props: IAppLogo) {

@@ -3,7 +3,7 @@ import Block from '../../utils/block/block';
 import Image from '../../../assets/images/welcome.png';
 import Welcome from '../../components/welcome/welcome';
 
-import template from './links.tpl.hbs';
+import * as template from './links.tpl.hbs';
 
 export default class LinksPage extends Block {
   protected initChildren() {

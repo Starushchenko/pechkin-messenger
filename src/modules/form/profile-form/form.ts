@@ -5,7 +5,7 @@ import {VALIDATION_RULES} from '../../../constants/constants';
 import FormField from '../../../components/form-field/form-field';
 import Button from '../../../components/button/button';
 
-import template from './form.tpl.hbs';
+import * as template from './form.tpl.hbs';
 import store from '../../../utils/store/store';
 import {withUser} from '../../../utils/high-ordered/withUser';
 

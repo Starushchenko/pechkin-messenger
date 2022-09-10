@@ -2,7 +2,7 @@ import Block from '../../utils/block/block';
 import Button from '../../components/button/button';
 import ProfileForm from '../../modules/form/profile-form/form';
 
-import template from './change-settings.tpl.hbs';
+import * as template from './change-settings.tpl.hbs';
 import {router} from '../../index';
 import ProfileService from '../../utils/services/profile';
 import {IUser} from '../../types/user';

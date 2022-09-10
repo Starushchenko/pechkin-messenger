@@ -2,7 +2,7 @@ import Block from '../../utils/block/block';
 import IChatConversation from './interface';
 import {withChat} from '../../utils/high-ordered/withChat';
 
-import template from './chat-conversation.tpl.hbs';
+import * as template from './chat-conversation.tpl.hbs';
 
 class ChatConversation extends Block {
   constructor(props: IChatConversation) {

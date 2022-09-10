@@ -1,9 +1,10 @@
 import Block from '../../utils/block/block';
+import IButton from '../button/interface';
 
-import template from './add-chat-btn.tpl.hbs';
+import * as template from './add-chat-btn.tpl.hbs';
 
 class AddChatButton extends Block {
-  constructor(props: { events: { click: (e: Event) => void } }) {
+  constructor(props: IButton) {
     super(props);
   }
 

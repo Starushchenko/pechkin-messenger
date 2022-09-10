@@ -1,7 +1,7 @@
 import Block from '../../utils/block/block';
 import ISearch from './interface';
 
-import template from './search.tpl.hbs';
+import * as template from './search.tpl.hbs';
 
 class Search extends Block {
   constructor(props: ISearch) {

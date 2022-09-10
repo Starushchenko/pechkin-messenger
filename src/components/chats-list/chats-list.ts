@@ -2,8 +2,8 @@ import Block from '../../utils/block/block';
 import IChatsList from './interface';
 import {withChats} from '../../utils/high-ordered/withChats';
 
-import template from './chats-list.tpl.hbs';
-import AddChatButton from './add-chat-button';
+import * as template from './chats-list.tpl.hbs';
+import AddChatButton from '../chats-list/add-chat-button';
 import Modal from '../modal/modal';
 import AddChatForm from '../../modules/form/add-chat-form/form';
 import ChatsService from '../../utils/services/chats';
@@ -16,7 +16,7 @@ class ChatsList extends Block {
   }
 
   protected initChildren() {
-    this.children['add-chat-button'] = new AddChatButton({
+    this.children['button'] = new AddChatButton({
       events: {
         click: (e: Event) => this.onChatModalOpen(e)
       }
