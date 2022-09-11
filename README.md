@@ -1,12 +1,6 @@
-# Лог 3 спринта
-
-[Пулл-реквест](https://github.com/Starushchenko/middle.messenger.praktikum.yandex/pull/3)
-
-В проект добавлен роутинг, state-менеджмент (через store), утилиты для обновления данных на странице после получения 
-по API. Внедрены unit-тесты для утилит.
-
-
 ## Pechkin Messenger
+
+[Пулл-реквест 4 спринта](https://github.com/Starushchenko/middle.messenger.praktikum.yandex/pull/4)
 
 "Если бы у меня такой чат был, я и не женился бы никогда".
 
@@ -14,6 +8,28 @@
 Учебный проект курса «middle frontend-разработчик» от Яндекс.Практикума. Студент — Ярослав Старущенко.
 
 [![ССЫЛКА НА МАКЕТ](/assets/images/readme-design-link.png)](https://www.figma.com/file/kwyb3JD0tw9wrlqFyZbA1z/pechkin-messenger?node-id=0%3A1)
+
+
+## [Heroku](https://pechkin-messenger.herokuapp.com)
+- [Список ссылок по экранам](https://pechkin-messenger.herokuapp.com/links)
+
+## [Netlify](https://deploy--shiny-croissant-34c918.netlify.app)
+- [Список ссылок по экранам](https://deploy--shiny-croissant-34c918.netlify.app/links)
+
+## Пользователи для тестирования
+| Login           | Password           |
+| --------------- |:------------------:| 
+| Barmalei_2      | 3U7-PS6-wRX-N6b    | 
+| Yaroslav        | 79f-Dn3-gYv-t7Z    | 
+
+
+## Команды
+- `npm run prepare` - установка precommit-хуков
+- `npm run start` - сборка проекта и раздача статики на порту 3000
+- `npm run build` - сборка проекта в папку `/dist` с оптимизацией ресурсов
+- `npm run lint` - проверка директории `/src` на наличие ошибок eslint и stylelint
+- `npm run lint:fix` - проверка директории `/src` на наличие ошибок eslint и stylelint + автоматическое исправление
+- `npm run test` - запуск тестов mocha + chai
 
 
 ## Назначение файлов и папок
@@ -77,30 +93,6 @@ index.ts                       # - входная точка приложени�
 index.html                     # - шаблон страницы приложения
 ```
 
-## Команды
-- `npm run prepare` - установка precommit-хуков
-- `npm run start` - сборка проекта и раздача статики на порту 3000
-- `npm run build` - сборка проекта в папку `/dist` с оптимизацией ресурсов
-- `npm run lint` - проверка директории `/src` на наличие ошибок eslint и stylelint
-- `npm run lint:fix` - проверка директории `/src` на наличие ошибок eslint и stylelint + автоматическое исправление
-- `npm run test` - запуск тестов mocha + chai
-
-## Пользователи для тестирования
-| Login           | Password           |
-| --------------- |:------------------:| 
-| Barmalei_2      | 3U7-PS6-wRX-N6b    | 
-| Yaroslav        | 79f-Dn3-gYv-t7Z    | 
-
-## Страницы на Netlify
-- [Список страниц](https://deploy--shiny-croissant-34c918.netlify.app/links)
-- [Регистрация](https://deploy--shiny-croissant-34c918.netlify.app/register)
-- [Авторизация](https://deploy--shiny-croissant-34c918.netlify.app/auth)
-- [Мессенджер](https://deploy--shiny-croissant-34c918.netlify.app/chats)
-- [Профиль](https://deploy--shiny-croissant-34c918.netlify.app/profile)
-- [Изменение настроек профиля](https://deploy--shiny-croissant-34c918.netlify.app/change-settings)
-- [Изменение пароля](https://deploy--shiny-croissant-34c918.netlify.app/change-password)
-- [Ошибка 404](https://deploy--shiny-croissant-34c918.netlify.app/error_404)
-- [Ошибка 5**](https://deploy--shiny-croissant-34c918.netlify.app/error_500)
 
 ## Стек
 - `webpack` - упаковщик приложения (parcel в предыдущих PR)
