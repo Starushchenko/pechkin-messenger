@@ -5,7 +5,7 @@ import Image from '../../../assets/images/welcome.png';
 import AuthForm from '../../modules/form/auth-form/form';
 import Welcome from '../../components/welcome/welcome';
 
-import template from './auth.tpl.hbs';
+import * as template from './auth.tpl.hbs';
 import AuthService from '../../utils/services/auth';
 import ChatService from '../../utils/services/chats';
 import {ILogin} from '../../types/user';

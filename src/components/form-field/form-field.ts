@@ -3,7 +3,7 @@ import IFormField from './interface';
 import {TStringObject} from '../../types/common';
 import Field from '../field/field';
 
-import template from './form-field.tpl.hbs';
+import * as template from './form-field.tpl.hbs';
 import {getErrorText, isValid} from '../../utils/helpers/validate';
 
 const classes: TStringObject = {

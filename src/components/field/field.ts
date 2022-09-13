@@ -1,7 +1,7 @@
 import Block from '../../utils/block/block';
 import IField from "./interface";
 
-import template from './field.hbs';
+import * as template from './field.hbs';
 
 class Field extends Block {
   constructor(props: IField) {

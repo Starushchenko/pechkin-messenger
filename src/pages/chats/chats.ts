@@ -6,7 +6,7 @@ import AppLogo from '../../components/app-logo/app-logo';
 import Search from '../../components/search/search';
 import ChatsList from '../../components/chats-list/chats-list';
 
-import template from './chats.tpl.hbs';
+import * as template from './chats.tpl.hbs';
 import {router} from '../../index';
 import {ROUTES} from '../../constants/constants';
 import store from '../../utils/store/store';

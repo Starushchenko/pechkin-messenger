@@ -1,7 +1,7 @@
 import Block from '../../utils/block/block';
 import IDropdownItem from './interface';
 
-import template from './dropdown-item.tpl.hbs';
+import * as template from './dropdown-item.tpl.hbs';
 
 class DropdownItem extends Block {
   constructor(props: IDropdownItem) {

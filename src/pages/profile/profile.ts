@@ -3,7 +3,7 @@ import Block from '../../utils/block/block';
 import Button from '../../components/button/button';
 import Profile from '../../components/profile/profile';
 
-import template from './profile.tpl.hbs';
+import * as template from './profile.tpl.hbs';
 import {router} from '../../index';
 import store from '../../utils/store/store';
 import {ROUTES} from '../../constants/constants';
@@ -30,7 +30,7 @@ export default class ProfilePage extends Block {
       }
     });
 
-    this.children['profile'] = new Profile({});
+    this.children['content'] = new Profile({});
   }
 
   onStepBack(e: Event) {

@@ -2,7 +2,7 @@ import Block from '../../utils/block/block';
 
 import Button from '../../components/button/button';
 
-import template from './change-password.tpl.hbs';
+import * as template from './change-password.tpl.hbs';
 import PasswordForm from '../../modules/form/password-form/form';
 import {router} from '../../index';
 import store from '../../utils/store/store';

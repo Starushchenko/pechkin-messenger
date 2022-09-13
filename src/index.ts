@@ -14,6 +14,8 @@ import LinksPage from './pages/links/links';
 import AuthService from './utils/services/auth';
 import ChatService from './utils/services/chats';
 
+import './scss/style.scss';
+
 export const router = new Router('#app', ROUTES.ERROR_404);
 
 router

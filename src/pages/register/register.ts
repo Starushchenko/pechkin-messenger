@@ -11,7 +11,7 @@ import RegisterForm from '../../modules/form/register-form/form';
 import Welcome from '../../components/welcome/welcome';
 import {ROUTES} from '../../constants/constants';
 
-import template from './register.hbs';
+import * as template from './register.hbs';
 import {formatFormData} from '../../utils/helpers/format-data';
 
 const classes: TStringObject = {

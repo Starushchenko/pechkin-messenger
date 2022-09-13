@@ -5,7 +5,7 @@ import {router} from '../../index';
 import {ROUTES} from '../../constants/constants';
 import AuthService from  '../../utils/services/auth';
 
-import template from './profile.tpl.hbs';
+import * as template from './profile.tpl.hbs';
 import {withUser} from '../../utils/high-ordered/withUser';
 import Link from '../link/link';
 

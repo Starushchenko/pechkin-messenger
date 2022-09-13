@@ -1,7 +1,7 @@
 import Block from '../../utils/block/block';
 import IModal from "./interface";
 
-import template from './modal.tpl.hbs';
+import * as template from './modal.tpl.hbs';
 
 class Modal extends Block {
   constructor(props: IModal) {
