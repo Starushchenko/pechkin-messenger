@@ -1,7 +1,5 @@
 ## Pechkin Messenger
 
-[Пулл-реквест 4 спринта](https://github.com/Starushchenko/middle.messenger.praktikum.yandex/pull/4)
-
 "Если бы у меня такой чат был, я и не женился бы никогда".
 
 Уютный мессенджер, где молниеносная доставка ваших emodji — в руках Печкина.
